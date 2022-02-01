@@ -1,0 +1,222 @@
+* {
+    font-family: "Source Sans Pro";
+}
+
+.ind {
+    margin-top: -7px;
+}
+.lead {
+    font-weight: 600 !important;
+    font-size: 50px;
+} @media (max-width: 500px) {
+    .lead {
+        font-size: 36px;
+        text-align: center;
+    }
+} @media (max-width:500px) {
+    br {
+        display: none;
+    }
+} @media (max-width:500px) {
+    .parrafo-intro {
+        text-align: center;
+        font-size: 15px;
+    }
+} 
+
+.clientes-titulo {
+    padding-top: 40px;
+} @media (max-width: 500px) {
+    .clientes-titulo {
+        padding-top: 20px;
+    }
+}
+
+#grecaptcha   {
+    transform: scale(0.70);
+    transform-origin: 0 0;
+   }
+
+.cht {
+    padding-top: 150px;
+} @media (max-width: 500px) {
+    .cht {
+        padding-top: 20px;
+    }
+}
+
+  .btn-primary {
+      border: none;
+      background-color: #9aad40 !important;
+      border-radius: 12px !important;      
+  }
+
+  .btn-primary:hover {
+      background-color: #ffffff !important;
+      color: #0c4c98 !important;
+  } 
+
+
+
+  .formulario {
+    padding: 50px;
+   
+  }
+
+  form {
+      padding: 50px !important;
+  }
+
+  .card {
+      background-color: #fbfcfc;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.07);
+      
+  }
+
+ .form-group {
+     margin-top: 10px;
+ }
+
+ .gracias {
+     position: relative;
+     margin: auto;
+     padding-top: 150px;
+    }   @media (max-width: 500px) {
+        .gracias {
+            padding-top: 20px;
+        }
+    }
+    
+    .clientes {
+        padding-top: 30px;
+    } @media (max-width: 500px) {
+        .clientes {
+            padding-top: 10px;
+            text-align: center;
+        }
+    }
+
+#opiniones {
+    margin-top: 50px;
+}  @media (max-width: 500px) {
+    #opiniones {
+        margin-top: 0px;
+    }
+}
+
+    .uno {
+        margin-top: 50px;
+        background-color: #f5f4f4;
+        border-radius: 15px;
+        padding-bottom: 50px;
+    } 
+
+    .dos-dos {
+        padding-top: 50px;
+    } 
+
+    .review {
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+        text-align: justify;
+        font-weight: 300;
+    } @media (max-width: 500px) {
+        .review {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    } 
+
+    .review-1 {
+        padding-left: 50px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        text-align: justify;
+        font-weight: 300;
+    } @media (max-width: 500px) {
+        .review-1 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    .t-review {
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: justify;
+        font-weight: 600;
+    } @media (max-width: 500px) {
+        .t-review {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+
+    .demo {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .logo-1 {
+        padding-left: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .logo-2 {
+        padding-left: 50px;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    footer {
+        margin-top: 180px;
+        background-color: #000000 !important;
+    }
+    .etecno {
+        padding-top: 20px;
+        text-align: left;
+    } @media (max-width:500px) {
+        .etecno {text-align: center; padding-top: 20px;}
+    }
+    .titulo-sli {
+        padding-top: 40px;
+        color: #f5f4f4;
+    }
+    .titulo-sli-2 {
+        color: #f5f4f4;
+        
+    }
+    .direccion {
+        color: gray;
+    }
+
+    
+    li {
+        list-style: none;
+        color: #ffffff;
+       
+    }
+    .lista {
+        padding-bottom: 5px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+       
+    }
+
+    a:hover {
+        color: #9aad40;
+    }
+
+    .mexico {
+        margin-top: -5px;
+    }
+#opiniones {
+ margin-bottom: 90px;
+}
+
