@@ -1,6 +1,6 @@
 <div x-data="{open:open}" class="mt-2">
     <div class="bg-gray-200 py-1 px-2 cursor-pointer" x-on:click="open=!open">
-        <h2 class="text-xl text-gray-800 font-semibold">Seccion aliados</h2>
+        <h2 class="text-xl text-gray-800 font-semibold">Seccion clientes</h2>
     </div>
 
     <form wire:submit.prevent="store" class="p-4" x-show="open">
@@ -19,7 +19,7 @@
             <div class="absolute">
                 <div class="flex flex-col items-center cursor-pointer">
                     <i class="fa fa-cloud-upload fa-3x text-gray-200 cursor-pointer"></i>
-                    <span class="block text-gray-400 font-normal cursor-pointer">Arrastra la imagen del aliado
+                    <span class="block text-gray-400 font-normal cursor-pointer">Arrastra la imagen del cliente
                         aqui</span>
                     <span class="block text-gray-400 font-normal cursor-pointer">o</span>
                     <span class="block text-blue-400 font-normal cursor-pointer">Examina archivos</span>
@@ -30,8 +30,8 @@
         @error('photo') <span class="error">{{ $message }}</span> @enderror
 
         <div class="flex items-center mt-4 mb-4 space-x-4">
-            @if ($aliados->images)
-                @foreach ($aliados->images as $image)
+            @if ($clientes->images)
+                @foreach ($clientes->images as $image)
                     <div class="shadow-lg">
                         <div class="text-center text-sm font-semibold">
                             {{ $image->name }}
@@ -58,7 +58,7 @@
     </form>
 
      <x-jet-dialog-modal wire:model="editForm.open">
-        <x-slot name="title">Editar aliado</x-slot>
+        <x-slot name="title">Editar cliente</x-slot>
         <x-slot name="content">
             <div class="space-y-3">
                 <div class="flex mx-2">
@@ -75,7 +75,7 @@
                 </div>
                 <div>
                     <x-jet-label value="Nombre" />
-                    <x-jet-input wire:model="editForm.name" type="text" placeholder="Nombre de aliado"
+                    <x-jet-input wire:model="editForm.name" type="text" placeholder="Nombre de cliente"
                         class="w-full" />
                     <x-jet-input-error for="editForm.name" />
                 </div>

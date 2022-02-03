@@ -10,6 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @livewire('admin.header', key('admin.header'))
                 @livewire('admin.aliados', key('admin.aliados'))
+                @livewire('admin.clientes', key('admin.clientes'))
             </div>
         </div>
     </div>
