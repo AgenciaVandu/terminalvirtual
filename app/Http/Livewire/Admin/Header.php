@@ -16,7 +16,9 @@ class Header extends Component
 
     public function mount(){
         $this->header = Section::where('name','header')->where('page','index')->first();
-        $this->link = $this->header->image->link;
+        if ($this->header) {
+            $this->link = $this->header->image->link;
+        }
     }
 
     public function updatedPhoto()
