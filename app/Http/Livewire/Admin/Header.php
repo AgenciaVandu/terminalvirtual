@@ -40,6 +40,11 @@ class Header extends Component
 
     }
 
+    public function delete(Image $image){
+        $image->delete();
+        $this->header = Section::where('name','header')->where('page','index')->first();
+    }
+
     public function render()
     {
         return view('livewire.admin.header');

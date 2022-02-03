@@ -9,10 +9,16 @@
             </div>
         @endif
         @if ($header->image && !$photo)
+            <div>
+                <i wire:click="delete({{ $header->image }})"
+                    class="fas fa-trash cursor-pointer text-gray-800 hover:text-red-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                    alt="Eliminar"></i>
+            </div>
             <div class="flex justify-center mt-4 mb-4">
                 <img class="w-full object-cover object-center h-96 text-center"
                     src="{{ Storage::url($header->image->url) }}">
             </div>
+
         @endif
 
         <div

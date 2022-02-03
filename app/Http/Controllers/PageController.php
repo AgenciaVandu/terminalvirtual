@@ -9,7 +9,8 @@ class PageController extends Controller
 {
     public function index(){
         $aliados = Section::where('name','aliados')->where('page','index')->first();
-        return view('index',compact('aliados'));
+        $header = Section::where('name','header')->where('page','index')->first();
+        return view('index',compact('aliados','header'));
     }
 
     public function aliados(){

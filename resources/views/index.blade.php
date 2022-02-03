@@ -1,8 +1,9 @@
 @extends('layouts.kanan')
 @section('contenido')
-    <header id="b-index" style="background-image: url(/img/banners/1-index.png); background-repeat: no-repeat; background-position: center; background-size: cover;
-    min-height: 100vh;">
-        <div class="container">
+    @if ($header->image)
+        <header id="b-index" style="background-image: url({{ Storage::url($header->image->url) }}); background-repeat: no-repeat; background-position: center; background-size: cover;
+            min-height: 100vh;">
+            {{-- <div class="container">
             <div class="cabecera-titular">
                 <h1 class="source-bold">
                     Administre sus activos <br class="d-none d-sm-none d-md-none d-lg-block"> en un sólo lugar
@@ -11,8 +12,23 @@
                     SOLICITAR DEMO
                 </a>
             </div>
-        </div>
-    </header>
+        </div> --}}
+        </header>
+    @else
+        <header id="b-index" style="background-image: url(/img/banners/1-index.png); background-repeat: no-repeat; background-position: center; background-size: cover;
+                min-height: 100vh;">
+            <div class="container">
+                <div class="cabecera-titular">
+                    <h1 class="source-bold">
+                        Administre sus activos <br class="d-none d-sm-none d-md-none d-lg-block"> en un sólo lugar
+                    </h1>
+                    <a href="" class="btn btn-outline-light source-black">
+                        SOLICITAR DEMO
+                    </a>
+                </div>
+            </div>
+        </header>
+    @endif
     <section id="soluciones">
         <div class="container">
             <div class="text-center">
