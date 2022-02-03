@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PageController::class,'index'])->name('index');
+Route::get('/aliados', [PageController::class,'aliados'])->name('aliados');
+Route::get('/empresa', [PageController::class,'empresas'])->name('empresa');
+Route::get('/sap', [PageController::class,'sap'])->name('sap');
+
 Route::get('/soluciones', function () {
     return view('soluciones');
-});
-Route::get('/aliados', function () {
-    return view('aliados');
-});
-Route::get('/empresa', function () {
-    return view('empresa');
 });
 
 Route::get('/mantenimiento', function () {
@@ -60,9 +57,7 @@ Route::get('/contacto', function () {
 Route::get('/preguntas-frecuentes', function () {
     return view('faq');
 });
-Route::get('/sap', function () {
-    return view('sap');
-});
+
 /* Route::get('/login', function () {
     return view('terminal.login');
 }); */
@@ -78,7 +73,3 @@ Route::get('/gracias-por-tu-pago', function () {
 
 
 Route::post('/sendmail','KananfleetController@email')->name('email');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
