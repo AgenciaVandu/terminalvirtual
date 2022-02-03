@@ -23,7 +23,9 @@
                     </div>
                     @foreach ($aliados->images as $aliado)
                         <div class="col-lg-3 col-md-3 col-sm-3">
-                            <img src="{{ Storage::url($aliado->url) }}" alt="" class="img-flui">
+                            <a href="{{ $aliado->link }}">
+                                <img src="{{ Storage::url($aliado->url) }}" alt="" class="img-flui">
+                            </a>
                         </div>
                     @endforeach
                 </div>
