@@ -1,7 +1,7 @@
 @extends('layouts.kanan')
 @section('contenido')
     @if ($header->image)
-        <a href="">
+        <a href="{{ $header->image->link }}">
             <header id="b-index" style="background-image: url({{ Storage::url($header->image->url) }}); background-repeat: no-repeat; background-position: center; background-size: cover;
                     min-height: 100vh;">
                 {{-- <div class="container">
