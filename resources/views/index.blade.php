@@ -273,84 +273,111 @@ min-height: 100vh;">
 <section id="reel-aliados" class="mb-4">
 <div class="container text-center">
     <h2 class="source-bold pt-3 pb-4">Nuestros Aliados</h2>
-    <div class="carrusel">
-        <div class="carrusel__items">
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
+    <div>
+        <div class="glider-contain">
+            <div class="glider">
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
             </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/algory.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/b1pro.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/b1pro.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/b1pro.png')}}" alt="">
-                </a>
-            </div>
-            <div class="carrusel__elemento">
-                <a href="">
-                    <img src="{{asset('/img/aliados/b1pro.png')}}" alt="">
-                </a>
-            </div>
-
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" class="dots"></div>
         </div>
     </div>
     {{--
