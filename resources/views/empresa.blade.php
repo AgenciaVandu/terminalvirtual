@@ -42,79 +42,110 @@
 </section>-->
 <section id="clientes">
     <div class="container text-center">
-        <div class="carousel">
-            <div class="carousel__contenedor mb-5">
-                <button aria-label="anterior" class="carousel__anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="carousel__lista2">
-                    <!--1-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+        <div class="glider-contain">
+            <div class="glider">
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                    <!--2-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/explosivos.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                               <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                    <!--3-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/hertz.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                    <!--4-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/squirt.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                    <!--5-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/flosol.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                    <!--6-->
-                    <div class="carousel__elemento">
-                        <div class="row">
-                            <a href="">
-                                <div class="col">
-                                    <img src="{{asset('/img/clientes/technip.png')}}" class="img-fluid">
-                                </div>
-                            </a>
-                        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
                     </div>
-                </div>
-    
-                <button aria-label="siguiente" class="carousel__siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                               <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="px-2 text-center">
+                        <a href="">
+                            <div class="col aliado-elemento">
+                                <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                            </div>
+                        </a>
+                    </div>
+          </div>
+          <button aria-label="Previous" class="glider-prev">«</button>
+          <button aria-label="Next" class="glider-next">»</button>
+          <div role="tablist" class="dots"></div>
     </div>
     <div class="container pt-4 pb-4 bord">
         <div class="row p-3">
