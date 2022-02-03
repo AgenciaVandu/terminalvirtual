@@ -33,7 +33,7 @@
                     <div class="glider">
                         @foreach ($aliados->images as $aliado)
                             <div class="px-2 text-center">
-                                <a href="">
+                                <a href="{{ $aliado->link }}">
                                     <div class="col aliado-elemento">
                                         <img src="{{ Storage::url($aliado->url) }}" class="img-fluid">
                                     </div>

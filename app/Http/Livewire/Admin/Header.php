@@ -12,10 +12,11 @@ class Header extends Component
 {
     use WithFileUploads;
 
-    public $photo,$header;
+    public $photo,$header,$link;
 
     public function mount(){
         $this->header = Section::where('name','header')->where('page','index')->first();
+        $this->link = $this->header->image->link;
     }
 
     public function updatedPhoto()
@@ -33,6 +34,7 @@ class Header extends Component
         $url = $this->photo->store('sections');
         $this->header->images()->create([
             'url' => $url,
+            'link' => $this->link
         ]);
 
         $this->emit('saved');

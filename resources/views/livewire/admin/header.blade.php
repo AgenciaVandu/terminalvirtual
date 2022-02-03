@@ -20,7 +20,10 @@
             </div>
 
         @endif
-
+        <div class="mb-2">
+            <x-jet-label value="Link" />
+            <x-jet-input type="text" class="w-full" wire:model="link" />
+        </div>
         <div
             class="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center hover:cursor-pointer">
             <div class="absolute">
