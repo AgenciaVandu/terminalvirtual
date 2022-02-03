@@ -73,7 +73,112 @@
   <section id="clientes">
     <div class="bg-sap">
       <div class="container pt-4 pb-4">
-        <div class="carousel">
+        <div class="glider-contain">
+          <div class="glider">
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                            <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                             <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                             <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+                  <div class="px-2 text-center">
+                      <a href="">
+                          <div class="col aliado-elemento">
+                              <img src="{{asset('/img/clientes/coca.png')}}" class="img-fluid">
+                          </div>
+                      </a>
+                  </div>
+        </div>
+          <button aria-label="Previous" class="glider-prev">«</button>
+          <button aria-label="Next" class="glider-next">»</button>
+          <div role="tablist" class="dots"></div>
+      </div>
+       {{--  <div class="carousel">
             <div class="carousel__contenedor mb-5">
                 <button aria-label="anterior" class="carousel__anterior">
                     <i class="fas fa-chevron-left"></i>
@@ -145,7 +250,7 @@
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-        </div>
+        </div> --}}
         <div class="row pt-5">
           <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
             <h4 class="source-light">M Ó D U L O S</h4>

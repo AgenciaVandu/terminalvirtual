@@ -89,178 +89,110 @@
             </div>
         </div>
         <div class="d-block d-sm-block d-md-none d-lg-none mt-4">
-            <div class="carousel">
-                <div class="carousel__contenedor mb-5">
-                    <button aria-label="anterior" class="carousel__anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="carousel__lista1">
-                        <!--1-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col aliado-elemento">
-                                        <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+            <div class="glider-contain">
+                <div class="glider">
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--2-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--3-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/beelog.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--4-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/corponet.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--5-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/dintec.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--6-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/evolve.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--7-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/ework.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--8-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/ijam.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--9-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/INFORUM.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--10-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/interlatin.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--11-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/intic.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--12-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/kaitzen.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--13-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/PRIZMA-SOFTWARE.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/algory.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--14-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/sap.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="px-2 text-center">
+                            <a href="">
+                                <div class="col aliado-elemento">
+                                    <img src="{{asset('/img/aliados/b1pro.png')}}" class="img-fluid">
+                                </div>
+                            </a>
                         </div>
-                        <!--15-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/sineti.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!--15-->
-                        <div class="carousel__elemento">
-                            <div class="row">
-                                <a href="">
-                                    <div class="col">
-                                        <img src="{{asset('/img/aliados/sixma.png')}}" class="img-fluid">
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button aria-label="siguiente" class="carousel__siguiente">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
                 </div>
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
             </div>
         </div>
     </div>

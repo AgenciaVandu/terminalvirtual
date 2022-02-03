@@ -363,6 +363,15 @@ footer {
     }
 }
 
+@media (max-width:500px) {
+    .glider-prev {
+        display: none;
+    }
+    .glider-next {
+        display: none;
+    }
+}
+
 /*
 
 .carousel__contenedor {
