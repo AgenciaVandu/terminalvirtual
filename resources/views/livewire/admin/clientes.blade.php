@@ -27,7 +27,7 @@
             </div>
             <input type="file" class="h-full w-full opacity-0" wire:model="file">
         </div>
-        @error('photo') <span class="error">{{ $message }}</span> @enderror
+        @error('file') <span class="error">{{ $message }}</span> @enderror
 
         <div class="flex items-center mt-4 mb-4 space-x-4">
             @if ($clientes->images)
@@ -39,7 +39,8 @@
                         <img class="w-32 text-center" src="{{ Storage::url($image->url) }}"><br>
                         <div class="flex justify-between items-center py-2 mx-2">
                             <i class="far fa-image ml-2"></i>
-                            <i wire:click="edit({{ $image }})" class="fas fa-pencil-alt cursor-pointer text-gray-800 hover:text-blue-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"></i>
+                            <i wire:click="edit({{ $image }})"
+                                class="fas fa-pencil-alt cursor-pointer text-gray-800 hover:text-blue-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"></i>
                             <i wire:click="delete({{ $image }})"
                                 class="fas fa-trash cursor-pointer text-gray-800 hover:text-red-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                                 alt="Eliminar"></i>
@@ -52,23 +53,23 @@
             <x-jet-action-message class="mr-3" on="saved">
                 Agregado
             </x-jet-action-message>
-            <x-jet-button type="submit" wire:loading.attr="disabled">Agregar
-            </x-jet-button>
+            @if ($file)
+                <x-jet-button type="submit" wire:loading.attr="disabled">Agregar
+                </x-jet-button>
+            @endif
         </div>
     </form>
 
-     <x-jet-dialog-modal wire:model="editForm.open">
+    <x-jet-dialog-modal wire:model="editForm.open">
         <x-slot name="title">Editar cliente</x-slot>
         <x-slot name="content">
             <div class="space-y-3">
                 <div class="flex mx-2">
                     <div class="w-full">
                         @if ($editImage)
-                            <img src="{{ $editImage->temporaryUrl() }}"
-                                class="w-32 object-cover object-center">
+                            <img src="{{ $editImage->temporaryUrl() }}" class="w-32 object-cover object-center">
                         @else
-                            <img src="{{ Storage::url($editForm['url']) }}"
-                                class="w-32 object-cover object-center">
+                            <img src="{{ Storage::url($editForm['url']) }}" class="w-32 object-cover object-center">
                         @endif
                     </div>
 

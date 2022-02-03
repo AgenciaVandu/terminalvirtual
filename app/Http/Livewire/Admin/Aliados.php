@@ -11,11 +11,12 @@ use Livewire\WithFileUploads;
 class Aliados extends Component
 {
     use WithFileUploads;
-    public $aliados,$file,$name,$open=false,$rand,$image;
+    public $aliados,$file,$name,$open=false,$rand,$image,$link;
     public $editImage;
     public $editForm = [
         'open' => false,
         'name' => null,
+        'link' => null,
         'url' => null,
     ];
 
@@ -29,7 +30,8 @@ class Aliados extends Component
         $url = $this->file->store('aliados');
         $this->aliados->images()->create([
             'url'=> $url,
-            'name' => $this->name
+            'name' => $this->name,
+            'link' => $this->link
         ]);
 
         $this->reset('name','file');
@@ -41,6 +43,7 @@ class Aliados extends Component
         $this->image = $image;
         $this->editForm['open'] = true;
         $this->editForm['name'] = $image->name;
+        $this->editForm['link'] = $image->link;
         $this->editForm['url'] = $image->url;
     }
 

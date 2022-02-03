@@ -14,6 +14,10 @@
             <x-jet-label value="Name" />
             <x-jet-input type="text" class="w-full" wire:model="name" />
         </div>
+        <div class="mb-2">
+            <x-jet-label value="Link" />
+            <x-jet-input type="text" class="w-full" wire:model="link" />
+        </div>
         <div
             class="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center cursor-pointer">
             <div class="absolute">
@@ -27,7 +31,7 @@
             </div>
             <input type="file" class="h-full w-full opacity-0" wire:model="file">
         </div>
-        @error('photo') <span class="error">{{ $message }}</span> @enderror
+        @error('file') <span class="error">{{ $message }}</span> @enderror
 
         <div class="flex items-center mt-4 mb-4 space-x-4">
             @if ($aliados->images)
@@ -39,7 +43,8 @@
                         <img class="w-32 text-center" src="{{ Storage::url($image->url) }}"><br>
                         <div class="flex justify-between items-center py-2 mx-2">
                             <i class="far fa-image ml-2"></i>
-                            <i wire:click="edit({{ $image }})" class="fas fa-pencil-alt cursor-pointer text-gray-800 hover:text-blue-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"></i>
+                            <i wire:click="edit({{ $image }})"
+                                class="fas fa-pencil-alt cursor-pointer text-gray-800 hover:text-blue-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"></i>
                             <i wire:click="delete({{ $image }})"
                                 class="fas fa-trash cursor-pointer text-gray-800 hover:text-red-600 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                                 alt="Eliminar"></i>
@@ -52,23 +57,23 @@
             <x-jet-action-message class="mr-3" on="saved">
                 Agregado
             </x-jet-action-message>
-            <x-jet-button type="submit" wire:loading.attr="disabled">Agregar
-            </x-jet-button>
+            @if ($file)
+                <x-jet-button type="submit" wire:loading.attr="disabled">Agregar
+                </x-jet-button>
+            @endif
         </div>
     </form>
 
-     <x-jet-dialog-modal wire:model="editForm.open">
+    <x-jet-dialog-modal wire:model="editForm.open">
         <x-slot name="title">Editar aliado</x-slot>
         <x-slot name="content">
             <div class="space-y-3">
                 <div class="flex mx-2">
                     <div class="w-full">
                         @if ($editImage)
-                            <img src="{{ $editImage->temporaryUrl() }}"
-                                class="w-32 object-cover object-center">
+                            <img src="{{ $editImage->temporaryUrl() }}" class="w-32 object-cover object-center">
                         @else
-                            <img src="{{ Storage::url($editForm['url']) }}"
-                                class="w-32 object-cover object-center">
+                            <img src="{{ Storage::url($editForm['url']) }}" class="w-32 object-cover object-center">
                         @endif
                     </div>
 
@@ -77,7 +82,10 @@
                     <x-jet-label value="Nombre" />
                     <x-jet-input wire:model="editForm.name" type="text" placeholder="Nombre de aliado"
                         class="w-full" />
-                    <x-jet-input-error for="editForm.name" />
+                    <x-jet-input-error for="editForm.link" />
+                    <x-jet-label value="Link" />
+                    <x-jet-input wire:model="editForm.link" type="text" placeholder="link" class="w-full" />
+                    <x-jet-input-error for="editForm.link" />
                 </div>
                 <div>
                     <x-jet-label value="Imagen" />

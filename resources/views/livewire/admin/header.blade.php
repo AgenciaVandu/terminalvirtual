@@ -33,8 +33,10 @@
             <x-jet-action-message class="mr-3" on="saved">
                 Actualizado
             </x-jet-action-message>
-            <x-jet-button wire:click="save" wire:loading.attr="disabled">Actualizar
-            </x-jet-button>
+            @if ($photo)
+                <x-jet-button wire:click="save" wire:loading.attr="disabled">Actualizar
+                </x-jet-button>
+            @endif
         </div>
     </form>
 </div>
