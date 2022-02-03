@@ -63,9 +63,9 @@ Route::get('/preguntas-frecuentes', function () {
 Route::get('/sap', function () {
     return view('sap');
 });
-Route::get('/login', function () {
+/* Route::get('/login', function () {
     return view('terminal.login');
-});
+}); */
 Route::get('/checkout', function () {
     return view('terminal.checkout');
 });
