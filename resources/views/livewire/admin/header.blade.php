@@ -1,4 +1,4 @@
-<div x-data="{open:false}">
+<div x-data="{open:open}">
     <div class="bg-gray-200 py-1 px-2 cursor-pointer" x-on:click="open=!open">
         <h2 class="text-xl text-gray-800 font-semibold">Header-Index</h2>
     </div>
