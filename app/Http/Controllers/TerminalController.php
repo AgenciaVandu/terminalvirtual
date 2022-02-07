@@ -33,7 +33,7 @@ class TerminalController extends Controller
             'method' => 'card',
             'source_id' => $request->token_id,
             'amount' =>  $reference->amount,
-            'currency' => 'MXN',
+            'currency' => 'USD',
             /* 'confirm' => false, */
             'description' => $reference->description,
             'order_id' => $reference->id,
