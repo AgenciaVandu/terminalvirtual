@@ -69,7 +69,7 @@
                                                     TOTAL:
                                                 </div>
                                                 <div class="col-6 text-right">
-                                                    ${{ number_format($reference->amount, 2) }} <span>MXN</span>
+                                                    ${{ number_format($reference->amount, 2) }} <span>USD</span>
                                                 </div>
                                             </div>
                                         </li>
