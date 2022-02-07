@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('bussiness_name')->nullable();
             $table->string('RFC')->nullable();
             $table->string('legal_representative_name')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

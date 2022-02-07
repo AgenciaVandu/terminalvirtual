@@ -28,7 +28,7 @@
         <img src="{{('/img/check-true.svg')}}" width="180" alt="">
         <h1 class="source-bold">¡Buenas noticias!</h1>
         <p class="source-regular">Su pago ha sido procesado con éxito</p>
-        <a href="" class="btn btn-outline-dark source-bold">Ir a mis cuentas</a>
+        <a href="{{ route('terminal.index') }}" class="btn btn-outline-dark source-bold">Ir a mis cuentas</a>
     </div>
  </header>
 

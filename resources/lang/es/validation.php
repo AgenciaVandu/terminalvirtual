@@ -157,6 +157,16 @@ return [
         'editForm.icon' => 'icono',
         'editForm.brands' => 'marcas',
         'editForm.image' => 'imagen',
+        'editForm.company_name' => 'nombre de la empresa',
+        'editForm.bussiness_name' => 'razón social',
+        'editForm.RFC' => 'RFC',
+        'legal_representative_name' => 'representante legal',
+        'company_name' => 'nombre de la empresa',
+        'bussiness_name' => 'razón social',
+        'RFC' => 'RFC',
+        'legal_representative_name' => 'representante legal',
+        'password' => 'contraseña'
     ],
+
 
 ];

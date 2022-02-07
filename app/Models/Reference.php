@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Reference extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['reference','amount','description','user_id','status','id_openpay'];
+    const PENDIENTE = 1, PAGADO = 2 , CANCELADA = 3;
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'documentable');
+    }
+
+    public function document()
+    {
+        return $this->morphOne(Document::class, 'documentable');
+    }
+}

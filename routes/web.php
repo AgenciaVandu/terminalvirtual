@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TerminalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,15 +62,14 @@ Route::get('/preguntas-frecuentes', function () {
 /* Route::get('/login', function () {
     return view('terminal.login');
 }); */
-Route::get('/checkout', function () {
-    return view('terminal.checkout');
-});
-Route::get('/bill', function () {
-    return view('terminal.bill');
-});
+Route::middleware('auth')->get('/checkout/{reference}', [TerminalController::class,'checkout'])->name('terminal.checkout');
+Route::middleware('auth')->get('/bill',[TerminalController::class,'index'])->name('terminal.index');
+Route::middleware('auth')->post('/payment/{reference}',[TerminalController::class,'payment'])->name('terminal.payment');
+Route::get('checkout/directChargeOpenpay/responsepayment/', [TerminalController::class, 'validateChargeOpenPay']);
+
 Route::get('/gracias-por-tu-pago', function () {
     return view('terminal.bill-pagada');
-});
+})->name('terminal.aproved');
 
 
 Route::post('/sendmail','KananfleetController@email')->name('email');
