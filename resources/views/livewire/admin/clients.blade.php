@@ -223,7 +223,7 @@
                                 Lista de referencias asignadas al cliente
                             </x-slot>
                             <x-slot name="content">
-                                <table class="min-w-full divide-y divide-gray-200">
+                                <table class="w-full divide-y divide-gray-200">
                                     <thead class="border-b border-gray-500">
                                         <tr>
                                             <th
@@ -243,11 +243,11 @@
                                     <tbody class="divide-y divide-gray-200">
                                         @foreach ($references as $reference)
                                             <tr>
-                                                <td class="px-6 py-4 whitespace-nowrap">{{ $reference->reference }}
+                                                <td class="px-6 py-4">{{ $reference->reference }}
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">{{ $reference->description }}
+                                                <td class="py-4">{{ $reference->description }}
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="px-6 py-4">
                                                     @switch($reference->status)
                                                         @case(1)
                                                             <span
@@ -263,7 +263,7 @@
 
                                                     @endswitch
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="px-6 py-4">
                                                     <span class=" text-indigo-600 hover:text-indigo-900 cursor-pointer"
                                                         wire:click="editReference({{ $reference }})">{{ __('Edit') }}</span>
                                                     <span class="ml-2 text-red-600 hover:text-red-900 cursor-pointer"
