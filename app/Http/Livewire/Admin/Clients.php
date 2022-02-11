@@ -37,13 +37,13 @@ class Clients extends Component
             'email' => null,
             'legal_representative_name' => null
     ];
-    public $editReference = [
+   /*  public $editReference = [
             'open'=> false,
             'reference' =>null,
             'amount' => null,
             'description' => null,
             'contract' => null
-    ];
+    ]; */
     public $search = '';
 
     public function updatingSearch(){
@@ -72,6 +72,36 @@ class Clients extends Component
         $this->reset('table','show','addClient');
     }
 
+    public function show(User $user){
+        $this->table = false;
+        $this->show = true;
+        $this->client = $user;
+        /* $this->references = $user->references; */
+        $this->editForm['company_name'] = $user->company_name;
+        $this->editForm['bussiness_name'] = $user->bussiness_name;
+        $this->editForm['RFC'] = $user->RFC;
+        $this->editForm['email'] = $user->email;
+        $this->editForm['legal_representative_name'] = $user->legal_representative_name;
+    }
+
+    public function update(){
+        $rules = [
+            'editForm.company_name' => 'required',
+            'editForm.bussiness_name' => 'required',
+            'editForm.RFC' => 'required',
+            'editForm.legal_representative_name' => 'required',
+
+        ];
+
+        $this->validate($rules);
+        $this->client->update($this->editForm);
+        $this->emit('updated');
+    }
+
+    public function delete(User $user){
+        $user->delete();
+    }
+/*
     public function storeReference(){
         $rules = [
             'reference' => 'required',
@@ -112,18 +142,6 @@ class Clients extends Component
         }
     }
 
-    public function show(User $user){
-        $this->table = false;
-        $this->show = true;
-        $this->client = $user;
-        $this->references = $user->references;
-        $this->editForm['company_name'] = $user->company_name;
-        $this->editForm['bussiness_name'] = $user->bussiness_name;
-        $this->editForm['RFC'] = $user->RFC;
-        $this->editForm['email'] = $user->email;
-        $this->editForm['legal_representative_name'] = $user->legal_representative_name;
-    }
-
     public function updateReference(){
         $rules = [
             'editReference.reference' => 'required',
@@ -151,28 +169,10 @@ class Clients extends Component
         $this->editReference['open'] = false;
     }
 
-    public function update(){
-        $rules = [
-            'editForm.company_name' => 'required',
-            'editForm.bussiness_name' => 'required',
-            'editForm.RFC' => 'required',
-            'editForm.legal_representative_name' => 'required',
-
-        ];
-
-        $this->validate($rules);
-        $this->client->update($this->editForm);
-        $this->emit('updated');
-    }
-
-    public function delete(User $user){
-        $user->delete();
-    }
-
     public function deleteReference(Reference $reference){
         $reference->delete();
         $this->references = Reference::where('user_id', $this->client->id)->get();
-    }
+    } */
 
     public function render()
     {

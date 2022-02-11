@@ -210,7 +210,7 @@
                             </x-slot>
                         </x-jet-form-section>
                     </div>
-                    <div class="p-6 bg-gray-100">
+                    {{-- <div class="p-6 bg-gray-100">
                         <div class="flex justify-end items-center mb-4">
                             <x-jet-danger-button wire:click="$set('addReference','true')">{{ __('Add reference') }}
                             </x-jet-danger-button>
@@ -275,10 +275,10 @@
                                 </table>
                             </x-slot>
                         </x-jet-action-section>
-                    </div>
+                    </div> --}}
 
                     {{-- Modal para crear referencias --}}
-                    <x-jet-dialog-modal wire:model="addReference">
+                    {{-- <x-jet-dialog-modal wire:model="addReference">
                         <x-slot name="title">{{ __('Add client') }}</x-slot>
                         <x-slot name="content">
                             <div class="space-y-4">
@@ -294,7 +294,6 @@
                                         wire:model="amount" />
                                     <x-jet-input-error for="amount" />
                                 </div>
-
                                 <div class="mt-4">
                                     <x-jet-label for="description" value="{{ __('Description') }}" />
                                     <x-jet-input id="description" class="block mt-1 w-full" type="text"
@@ -306,7 +305,6 @@
                                         value="{{ __('Contract') }} ({{ __('Optional') }})" />
                                     <x-jet-input id="contract" class="block mt-1 w-full" type="file"
                                         wire:model="contract" />
-                                    {{-- <input type="file" wire:model="contract" id=""> --}}
                                     <x-jet-input-error for="contract" />
                                 </div>
                             </div>
@@ -315,10 +313,10 @@
                             <x-jet-button wire:click="storeReference">{{ __('Add') }}
                             </x-jet-button>
                         </x-slot>
-                    </x-jet-dialog-modal>
+                    </x-jet-dialog-modal> --}}
 
                     {{-- Modal para actualizar referencias --}}
-                    <x-jet-dialog-modal wire:model="editReference.open">
+                    {{-- <x-jet-dialog-modal wire:model="editReference.open">
                         <x-slot name="title">{{ __('Edit client') }}</x-slot>
                         <x-slot name="content">
                             <div class="space-y-4">
@@ -358,7 +356,6 @@
                                         value="{{ __('Contract') }} ({{ __('Optional') }})" />
                                     <x-jet-input id="contract" class="block mt-1 w-full" type="file"
                                         wire:model="editContract" id="{{ $rand }}" />
-                                    {{-- <input type="file" wire:model="contract" id=""> --}}
                                     <x-jet-input-error for="editReferencecontract" />
                                 </div>
                             </div>
@@ -367,7 +364,7 @@
                             <x-jet-button wire:click="updateReference">{{ __('Update') }}
                             </x-jet-button>
                         </x-slot>
-                    </x-jet-dialog-modal>
+                    </x-jet-dialog-modal> --}}
                 @endif
             </div>
         </div>
