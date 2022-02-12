@@ -354,6 +354,10 @@ footer {
     margin: auto;
     animation: gracias ease 1s;
 }
+
+.boton-pagar {
+    text-align: right;
+}
 @keyframes gracias {
     0% {
         opacity: 0;
@@ -371,6 +375,8 @@ footer {
         display: none;
     }
 }
+
+
 
 /*
 
