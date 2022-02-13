@@ -12,8 +12,8 @@ class Reference extends Model
     protected $fillable = ['reference','amount','description','user_id','status','id_openpay'];
     const PENDIENTE = 1, PAGADO = 2 , CANCELADA = 3;
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function order(){
+        return $this->belongsTo(Order::class);
     }
 
     public function documents()

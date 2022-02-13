@@ -730,6 +730,11 @@
     "Description":"Descripción",
     "Number":"Numero",
     "Contract":"Contrato",
-    "Optional":"Opcional"
-
+    "Optional":"Opcional",
+    "Purchase Orders":"Ordenes de Compra",
+    "Clients":"Clientes",
+    "Pages":"Paginas",
+    "Add order":"Agregar Orden",
+    "Splits":"Partidas",
+    "Add Split":"Agregar partida"
 }

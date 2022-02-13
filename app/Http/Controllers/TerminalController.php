@@ -9,9 +9,10 @@ use Openpay\Data\Openpay;
 class TerminalController extends Controller
 {
     public function index(){
-        $references_pend = Reference::where('user_id', auth()->user()->id)->where('status', 1)->get();
-        $references_pay = Reference::where('user_id', auth()->user()->id)->where('status', 2)->get();
-        return view('terminal.bill',compact('references_pend','references_pay'));
+        $references_pend = Reference::where('status', 1)->get();
+        $references_pay = Reference::where('status', 2)->get();
+        return view('terminal.dashboard');
+        /* return view('terminal.bill',compact('references_pend','references_pay')); */
     }
 
     public function checkout(Reference $reference){

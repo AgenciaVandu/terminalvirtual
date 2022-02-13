@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Order;
 use App\Models\Reference;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,8 @@ class Clients extends Component
     use WithPagination;
     use WithFileUploads;
 
-    public $table=true,$show=false,$addClient=false,$addReference=false,$client,$references=[];
+    public $table=true,$show=false,$addClient=false,$addReference=false,$client,$references=[],$orders=[],$splits=[];
+    public $order,$addOrder=false,$contractDescription;
     public $name,$email,$password,$company_name,$bussiness_name,$RFC,$legal_representative_name;
     public $reference,$amount,$description,$contract,$ref;
     public $listeners=['render'];
@@ -37,6 +39,11 @@ class Clients extends Component
             'email' => null,
             'legal_representative_name' => null
     ];
+     public $editOrder = [
+            'open'=> false,
+            'contract' => null
+    ];
+
    /*  public $editReference = [
             'open'=> false,
             'reference' =>null,
@@ -57,7 +64,7 @@ class Clients extends Component
     public function mount(){
         $this->rand = rand();
     }
-
+    //Funciones para agregar clientes
     public function store(){
         $this->validate();
         User::create([
@@ -76,6 +83,7 @@ class Clients extends Component
         $this->table = false;
         $this->show = true;
         $this->client = $user;
+        $this->orders = $user->orders;
         /* $this->references = $user->references; */
         $this->editForm['company_name'] = $user->company_name;
         $this->editForm['bussiness_name'] = $user->bussiness_name;
@@ -100,6 +108,37 @@ class Clients extends Component
 
     public function delete(User $user){
         $user->delete();
+    }
+
+    //Funciones para agregar Ordenes de compras
+
+    public function storeOrder(){
+        $rules=[
+            'contractDescription' => 'required',
+        ];
+        $this->validate($rules);
+
+        Order::create([
+            'contract' => $this->contractDescription,
+            'user_id'=> $this->client->id,
+        ]);
+
+        $this->orders = Order::where('user_id',$this->client->id)->get();
+        $this->reset('addOrder','contractDescription');
+    }
+
+    public function editOrder(Order $order){
+        $this->order = $order;
+        $this->editOrder['open'] = true;
+        $this->editOrder['contractDescription'] = $order->contract;
+    }
+
+    public function updateOrder(){
+        $this->order->update([
+            'contract' => $this->editOrder['contractDescription'],
+        ]);
+        $this->orders = Order::where('user_id',$this->client->id)->get();
+        $this->reset('editOrder');
     }
 /*
     public function storeReference(){

@@ -4,8 +4,8 @@
             {{ __('Clients') }}
         </h2>
     </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-4">
+        <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @if ($show)
                     <div class="p-4">
@@ -209,6 +209,107 @@
                                 <x-jet-button>{{ __('Update') }}</x-jet-button>
                             </x-slot>
                         </x-jet-form-section>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                            {{ __('Purchase Orders') }}
+                        </h2>
+                        <div class="p-6">
+                            <div class="flex justify-end">
+                                <x-jet-danger-button wire:click="$set('addOrder','true')">{{ __('Add order') }}
+                                </x-jet-danger-button>
+                            </div>
+                            <div class="mt-4 p-4 bg-gray-100 rounded-lg shadow-lg">
+                                <div class="flex flex-col">
+                                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                                <table class="min-w-full divide-y divide-gray-200">
+                                                    <thead class="bg-gray-50">
+                                                        <tr>
+                                                            <th scope="col"
+                                                                class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                                {{ __('Description') }}</th>
+                                                            <th scope="col"
+                                                                class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                                {{ __('Splits') }}</th>
+                                                            <th scope="col" class="relative px-6 py-3">
+                                                                <span class="sr-only">Edit</span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="bg-white divide-y divide-gray-200">
+                                                        @foreach ($orders as $order)
+                                                            <tr>
+                                                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                                                    <div class="text-sm text-gray-900">
+                                                                        {{ $order->contract }}
+                                                                        <a wire:click="editOrder({{ $order }})"
+                                                                            class="text-indigo-600 hover:text-indigo-900 cursor-pointer mx-1">
+                                                                            <i class="fas fa-pen"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                                                    <div class="text-sm text-gray-900">
+                                                                        {{ $order->references->count() }}
+                                                                    </div>
+                                                                </td>
+                                                                <td
+                                                                    class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                                    <a
+                                                                        class="text-gray-600 hover:text-gray-900 cursor-pointer mx-1">
+                                                                        <i class="fas fa-cogs"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+
+                                                        <!-- More people... -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <x-jet-dialog-modal wire:model="addOrder">
+                                <x-slot name="title">{{ __('Add order') }}</x-slot>
+                                <x-slot name="content">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <x-jet-label for="contractDescription" value="{{ __('Contract') }}" />
+                                            <x-jet-input wire:keydown.enter="storeOrder" id="contractDescription" class="block mt-1 w-full" type="text"
+                                                wire:model="contractDescription" />
+                                            <x-jet-input-error for="contractDescription" />
+                                        </div>
+                                    </div>
+                                </x-slot>
+                                <x-slot name="footer">
+                                    <x-jet-button wire:click="storeOrder" >{{ __('Add') }}
+                                    </x-jet-button>
+                                </x-slot>
+                            </x-jet-dialog-modal>
+
+                            <x-jet-dialog-modal wire:model="editOrder.open">
+                                <x-slot name="title">{{ __('Update order') }}</x-slot>
+                                <x-slot name="content">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <x-jet-label for="contractDescription" value="{{ __('Contract') }}" />
+                                            <x-jet-input id="editOrder.contractDescription" class="block mt-1 w-full"
+                                                type="text" wire:model="editOrder.contractDescription" />
+                                            <x-jet-input-error for="editOrder.contractDescription" />
+                                        </div>
+                                    </div>
+                                </x-slot>
+                                <x-slot name="footer">
+                                    <x-jet-button wire:click="updateOrder">{{ __('Update') }}
+                                    </x-jet-button>
+                                </x-slot>
+                            </x-jet-dialog-modal>
+                        </div>
                     </div>
                     {{-- <div class="p-6 bg-gray-100">
                         <div class="flex justify-end items-center mb-4">

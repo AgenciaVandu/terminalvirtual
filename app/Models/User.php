@@ -68,7 +68,9 @@ class User extends Authenticatable
     ];
 
 
-    public function references(){
-        return $this->hasMany(Reference::class);
+
+
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }
