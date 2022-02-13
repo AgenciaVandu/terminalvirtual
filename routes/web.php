@@ -58,6 +58,9 @@ Route::get('/contacto', function () {
 Route::get('/preguntas-frecuentes', function () {
     return view('faq');
 });
+Route::get('/ordenes', function () {
+    return view('terminal.dashboard');
+});
 
 /* Route::get('/login', function () {
     return view('terminal.login');
