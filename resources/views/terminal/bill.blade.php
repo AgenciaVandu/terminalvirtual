@@ -58,70 +58,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td class="source-regular">Primer pago del motor de sincronización; licenciamiento vitalicio;
-                                sevicio de implementación y póliza de mantenimiento anual.</td>
-                            <td class="source-regular text-center">
-                                $8,108.61 <br> <small class="source-regular" style="font-size: .65rem;">Importe en
-                                    USD</small>
-                            </td>
-                            <td class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="pagar">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td class="source-regular">Segundo pago del motor de sincronización; licenciamiento vitalicio;
-                                sevicio de implementación y póliza de mantenimiento anual.</td>
-                            <td class="source-regular text-center">
-                                $3,179.66 <br> <small class="source-regular" style="font-size: .65rem;">Importe en
-                                    USD</small>
-                            </td>
-                            <td class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="pagar">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td class="source-regular">Tercer pago del motor de sincronización; licenciamiento vitalicio;
-                                sevicio de implementación y póliza de mantenimiento anual.</td>
-                            <td class="source-regular text-center">
-                                $3,020.74 <br> <small class="source-regular" style="font-size: .65rem;">Importe en
-                                    USD</small>
-                            </td>
-                            <td class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="pagar">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td class="source-regular">Póliza de mantenimiento anual 2022</td>
-                            <td class="source-regular text-center">
-                                $1,947.41 <br> <small class="source-regular" style="font-size: .65rem;">Importe en
-                                    USD</small>
-                            </td>
-                            <td class="text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="pagar">
-                                </div>
-                            </td>
-                        </tr>
+                        <form action="{{ route('terminal.checkout') }}" method="POST">
+                            @csrf
+                            @foreach ($splits as $split)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td class="source-regular">{{ $split->description }}</td>
+                                    <td class="source-regular text-center">
+                                        ${{ $split->amount }} <br> <small class="source-regular"
+                                            style="font-size: .65rem;">Importe en
+                                            USD</small>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="{{ $split->id }}"
+                                                name="splits[]">
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="container">
             <div class="boton-pagar">
-                <a href="/checkout{{-- {{ route('terminal.checkout', $reference) }} --}}" class="btn btn-primary btn-block">Pagar conceptos</a>
+                {{-- <a href="{{ route('terminal.checkout', $reference) }}" class="btn btn-primary btn-block">Pagar conceptos</a> --}}
+                <input type="hidden" name="order" value="{{ $order }}">
+                <button type="submit" class="btn btn-primary btn-block">Pagar conceptos</button>
             </div>
         </div>
+        </form>
     </section>
     {{-- <section class="info-bill">
         <div class="container">
@@ -228,5 +195,4 @@
             </p>
         </div>
     </secion>
-
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Reference;
 use Illuminate\Http\Request;
 use Openpay\Data\Openpay;
@@ -9,20 +10,32 @@ use Openpay\Data\Openpay;
 class TerminalController extends Controller
 {
     public function index(){
-        $references_pend = Reference::where('status', 1)->get();
-        $references_pay = Reference::where('status', 2)->get();
-        return view('terminal.dashboard');
-        /* return view('terminal.bill',compact('references_pend','references_pay')); */
+        $orders = Order::where('user_id',auth()->user()->id)->get();
+        return view('terminal.dashboard',compact('orders'));
     }
 
-    public function checkout(Reference $reference){
-        return view('terminal.checkout',compact('reference'));
+    public function order(Order $order){
+        $splits = $order->references;
+        return view('terminal.bill',compact('splits','order'));
     }
 
-    public function payment(Request $request,Reference $reference){
+    public function checkout(Request $request){
+        $total = 0;
+        $order= json_decode($request->order);
+        $splits = $request->splits;
+        $references = [];
+        foreach ($request->splits as $split) {
+            $reference = Reference::find($split);
+            array_push($references,$reference);
+            $total = $reference->amount+$total;
+        }
+        return view('terminal.checkout',compact('total','splits','references','order'));
+    }
+
+    public function payment(Request $request,$references){
         /* return $request->all(); */
         $openpay = Openpay::getInstance(config('openpay.merchant_id'), config('openpay.private_key'), config('openpay.country_code'));
-
+        return $references;
         $customer = [
             'name' => $request->name,
             //'last_name' => $user->last_name,
@@ -33,7 +46,7 @@ class TerminalController extends Controller
         $chargeData = [
             'method' => 'card',
             'source_id' => $request->token_id,
-            'amount' =>  $reference->amount,
+            'amount' =>  $request->amount,
             'currency' => 'USD',
             /* 'confirm' => false, */
             'description' => $reference->description,

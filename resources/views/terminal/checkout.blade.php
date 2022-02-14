@@ -53,48 +53,51 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Referencia</h6>
-                            <small class="text-muted">{{ $reference->reference }}</small>
+                            <small class="text-muted">{{ $order->contract }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Empresa</h6>
-                            <small class="text-muted">{{ $reference->user->company_name }}</small>
+                            <small class="text-muted">{{ auth()->user()->company_name }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Razón social</h6>
-                            <small class="text-muted">{{ $reference->user->bussiness_name }}</small>
+                            <small class="text-muted">{{ auth()->user()->bussiness_name }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Representante Legal</h6>
-                            <small class="text-muted">{{ $reference->user->legal_representative_name }}</small>
+                            <small class="text-muted">{{ auth()->user()->legal_representative_name }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">Email</h6>
-                            <small class="text-muted">{{ $reference->user->email }}</small>
+                            <small class="text-muted">{{ auth()->user()->email }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <div class="text-success">
-                            <h6 class="my-0">{{ $reference->description }}</h6>
+                            <h6 class="my-0">
+                                @foreach ($references as $reference)
+                                    {{ $reference->description }}<br>
+                                @endforeach
+                            </h6>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                        <strong>${{ number_format($reference->amount) }}</strong>
+                        <strong>${{ number_format($total) }}</strong>
                     </li>
                 </ul>
             </div>
 
             <div class="col-md-8 order-md-1">
-                <form class="needs-validation" action="{{ route('terminal.payment', $reference) }}" method="POST"
-                    id="payment-form">
+                <form class="needs-validation" action="{{ route('terminal.payment',$references) }}" method="POST" id="payment-form">
                     @csrf
                     <div class="row">
                         <div class="col-6">
@@ -113,6 +116,7 @@
                         </div>
                         <input type="hidden" name="token_id" id="token_id">
                         <input type="hidden" name="use_card_points" id="use_card_points" value="false">
+                        <input type="hidden" name="amount" value="{{ $total }}">
                         <div class="col-md-6 mb-3">
                             <label for="cc-name">Nombre</label>
                             <input type="text" class="form-control" type="text" placeholder="Como aparece en la tarjeta"
@@ -199,7 +203,6 @@
                 </form>
             </div>
         </div>
-
     @endsection
 
     @push('scripts')

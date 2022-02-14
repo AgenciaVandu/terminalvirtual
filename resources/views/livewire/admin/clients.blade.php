@@ -224,7 +224,7 @@
                                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                                <table class="min-w-full divide-y divide-gray-200">
+                                                <table class="min-w-full divide-y divide-gray-200 table-auto">
                                                     <thead class="bg-gray-50">
                                                         <tr>
                                                             <th scope="col"
@@ -241,7 +241,7 @@
                                                     <tbody class="bg-white divide-y divide-gray-200">
                                                         @foreach ($orders as $order)
                                                             <tr>
-                                                                <td class="px-6 py-4 whitespace-nowrap text-center">
+                                                                <td class="px-6 py-4 whitespace-normal text-center">
                                                                     <div class="text-sm text-gray-900">
                                                                         {{ $order->contract }}
                                                                         <a wire:click="editOrder({{ $order }})"
@@ -251,21 +251,62 @@
                                                                     </div>
                                                                 </td>
                                                                 <td class="px-6 py-4 whitespace-nowrap text-center">
-                                                                    <div class="text-sm text-gray-900">
+                                                                    <div x-data="{open:false}"
+                                                                        class="text-sm text-gray-900">
                                                                         {{ $order->references->count() }}
+                                                                        <i class="fas fa-eye cursor-pointer hover:text-gray-400"
+                                                                            x-on:click="open=!open"></i>
+                                                                        <div x-show="open">
+                                                                            <div
+                                                                                class="grid grid-cols-6 text-xs items-center">
+                                                                                @foreach ($order->references as $reference)
+                                                                                    <div class="text-right mr-2">
+                                                                                        {{ $loop->iteration }}
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="col-span-3 text-center border-2">
+                                                                                        <p class="truncate">
+                                                                                            {{ $reference->description }}
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div class="text-center border-2">
+                                                                                        USD
+                                                                                        {{ number_format($reference->amount, 2) }}
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="flex justify-around border-2">
+                                                                                        @switch($reference->status)
+                                                                                            @case(1)
+                                                                                                <i
+                                                                                                    class="far fa-clock text-orange-300"></i>
+                                                                                                <a wire:click="editReference({{ $reference }})"
+                                                                                                    class="text-indigo-600 hover:text-indigo-900 cursor-pointer mx-1">
+                                                                                                    <i
+                                                                                                        class="fas fa-pen"></i>
+                                                                                                </a>
+                                                                                            @break
+                                                                                            @case(2)
+                                                                                                <i
+                                                                                                    class="far fa-check-circle text-green-500"></i>
+                                                                                            @break
+                                                                                            @default
+                                                                                        @endswitch
+
+                                                                                    </div>
+                                                                                @endforeach
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </td>
                                                                 <td
-                                                                    class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                                    <a
-                                                                        class="text-gray-600 hover:text-gray-900 cursor-pointer mx-1">
-                                                                        <i class="fas fa-cogs"></i>
+                                                                    class="px-6 py-4 whitespace-nowrap text-right text-xs font-medium">
+                                                                    <a wire:click="formAddReferences({{ $order }})"
+                                                                        class="bg-green-600 hover:bg-green-900 text-white px-2 py-1 rounded-md cursor-pointer mx-1">
+                                                                        {{ __('Add Split') }}
                                                                     </a>
                                                                 </td>
                                                             </tr>
                                                         @endforeach
-
-                                                        <!-- More people... -->
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -280,14 +321,15 @@
                                     <div class="space-y-4">
                                         <div>
                                             <x-jet-label for="contractDescription" value="{{ __('Contract') }}" />
-                                            <x-jet-input wire:keydown.enter="storeOrder" id="contractDescription" class="block mt-1 w-full" type="text"
+                                            <x-jet-input wire:keydown.enter="storeOrder" id="contractDescription"
+                                                class="block mt-1 w-full" type="text"
                                                 wire:model="contractDescription" />
                                             <x-jet-input-error for="contractDescription" />
                                         </div>
                                     </div>
                                 </x-slot>
                                 <x-slot name="footer">
-                                    <x-jet-button wire:click="storeOrder" >{{ __('Add') }}
+                                    <x-jet-button wire:click="storeOrder">{{ __('Add') }}
                                     </x-jet-button>
                                 </x-slot>
                             </x-jet-dialog-modal>
@@ -298,7 +340,8 @@
                                     <div class="space-y-4">
                                         <div>
                                             <x-jet-label for="contractDescription" value="{{ __('Contract') }}" />
-                                            <x-jet-input id="editOrder.contractDescription" class="block mt-1 w-full"
+                                            <x-jet-input wire:keydown.enter="updateOrder"
+                                                id="editOrder.contractDescription" class="block mt-1 w-full"
                                                 type="text" wire:model="editOrder.contractDescription" />
                                             <x-jet-input-error for="editOrder.contractDescription" />
                                         </div>
@@ -311,82 +354,15 @@
                             </x-jet-dialog-modal>
                         </div>
                     </div>
-                    {{-- <div class="p-6 bg-gray-100">
-                        <div class="flex justify-end items-center mb-4">
-                            <x-jet-danger-button wire:click="$set('addReference','true')">{{ __('Add reference') }}
-                            </x-jet-danger-button>
-                        </div>
-                        <x-jet-action-section>
-                            <x-slot name="title">
-                                Lista de referencias
-                            </x-slot>
-                            <x-slot name="description">
-                                Lista de referencias asignadas al cliente
-                            </x-slot>
-                            <x-slot name="content">
-                                <table class="w-full divide-y divide-gray-200">
-                                    <thead class="border-b border-gray-500">
-                                        <tr>
-                                            <th
-                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                {{ __('Number') }}</th>
-                                            <th
-                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                {{ __('Description') }}</th>
-                                            <th
-                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                {{ __('Status') }}</th>
-                                            <th
-                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                {{ __('Action') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-200">
-                                        @foreach ($references as $reference)
-                                            <tr>
-                                                <td class="px-6 py-4">{{ $reference->reference }}
-                                                </td>
-                                                <td class="py-4">{{ $reference->description }}
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    @switch($reference->status)
-                                                        @case(1)
-                                                            <span
-                                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">
-                                                                Pendiente </span>
-                                                        @break
-                                                        @case(2)
-                                                            <span
-                                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                                Pagada </span>
-                                                        @break
-                                                        @default
-
-                                                    @endswitch
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    <span class=" text-indigo-600 hover:text-indigo-900 cursor-pointer"
-                                                        wire:click="editReference({{ $reference }})">{{ __('Edit') }}</span>
-                                                    <span class="ml-2 text-red-600 hover:text-red-900 cursor-pointer"
-                                                        wire:click="deleteReference({{ $reference }})">{{ __('Delete') }}</span>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </x-slot>
-                        </x-jet-action-section>
-                    </div> --}}
-
                     {{-- Modal para crear referencias --}}
-                    {{-- <x-jet-dialog-modal wire:model="addReference">
-                        <x-slot name="title">{{ __('Add client') }}</x-slot>
+                    <x-jet-dialog-modal wire:model="addReference" class="w-full">
+                        <x-slot name="title">{{ __('Add Split') }}</x-slot>
                         <x-slot name="content">
                             <div class="space-y-4">
                                 <div>
-                                    <x-jet-label for="reference" value="{{ __('Reference') }}" />
-                                    <x-jet-input id="reference" class="block mt-1 w-full" type="text"
-                                        wire:model="reference" />
+                                    <x-jet-label for="description" value="{{ __('Description') }}" />
+                                    <x-jet-input id="description" class="block mt-1 w-full" type="text"
+                                        wire:model="description" />
                                     <x-jet-input-error for="reference" />
                                 </div>
                                 <div>
@@ -395,37 +371,24 @@
                                         wire:model="amount" />
                                     <x-jet-input-error for="amount" />
                                 </div>
-                                <div class="mt-4">
-                                    <x-jet-label for="description" value="{{ __('Description') }}" />
-                                    <x-jet-input id="description" class="block mt-1 w-full" type="text"
-                                        wire:model="description" />
-                                    <x-jet-input-error for="description" />
-                                </div>
-                                <div class="mt-4">
-                                    <x-jet-label for="contract"
-                                        value="{{ __('Contract') }} ({{ __('Optional') }})" />
-                                    <x-jet-input id="contract" class="block mt-1 w-full" type="file"
-                                        wire:model="contract" />
-                                    <x-jet-input-error for="contract" />
-                                </div>
                             </div>
                         </x-slot>
                         <x-slot name="footer">
                             <x-jet-button wire:click="storeReference">{{ __('Add') }}
                             </x-jet-button>
                         </x-slot>
-                    </x-jet-dialog-modal> --}}
+                    </x-jet-dialog-modal>
 
                     {{-- Modal para actualizar referencias --}}
-                    {{-- <x-jet-dialog-modal wire:model="editReference.open">
-                        <x-slot name="title">{{ __('Edit client') }}</x-slot>
+                    <x-jet-dialog-modal wire:model="editReference.open">
+                        <x-slot name="title">{{ __('Edit Split') }}</x-slot>
                         <x-slot name="content">
                             <div class="space-y-4">
-                                <div>
-                                    <x-jet-label for="reference" value="{{ __('Reference') }}" />
-                                    <x-jet-input id="reference" class="block mt-1 w-full" type="text"
-                                        wire:model="editReference.reference" />
-                                    <x-jet-input-error for="editReference.reference" />
+                                <div class="mt-4">
+                                    <x-jet-label for="description" value="{{ __('Description') }}" />
+                                    <x-jet-input id="description" class="block mt-1 w-full" type="text"
+                                        wire:model="editReference.description" />
+                                    <x-jet-input-error for="editReference.description" />
                                 </div>
                                 <div>
                                     <x-jet-label for="amount" value="{{ __('Amount') }}" />
@@ -433,14 +396,7 @@
                                         wire:model="editReference.amount" />
                                     <x-jet-input-error for="editReference.amount" />
                                 </div>
-
-                                <div class="mt-4">
-                                    <x-jet-label for="description" value="{{ __('Description') }}" />
-                                    <x-jet-input id="description" class="block mt-1 w-full" type="text"
-                                        wire:model="editReference.description" />
-                                    <x-jet-input-error for="editReference.description" />
-                                </div>
-                                <div class="mt-4">
+                                {{-- <div class="mt-4">
                                     @if ($editReference['contract'])
                                         <div class="flex items-center space-y-2 mb-4">
                                             <div>
@@ -458,14 +414,14 @@
                                     <x-jet-input id="contract" class="block mt-1 w-full" type="file"
                                         wire:model="editContract" id="{{ $rand }}" />
                                     <x-jet-input-error for="editReferencecontract" />
-                                </div>
+                                </div> --}}
                             </div>
                         </x-slot>
                         <x-slot name="footer">
                             <x-jet-button wire:click="updateReference">{{ __('Update') }}
                             </x-jet-button>
                         </x-slot>
-                    </x-jet-dialog-modal> --}}
+                    </x-jet-dialog-modal>
                 @endif
             </div>
         </div>

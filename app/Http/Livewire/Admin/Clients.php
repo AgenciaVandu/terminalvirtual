@@ -19,7 +19,7 @@ class Clients extends Component
     public $table=true,$show=false,$addClient=false,$addReference=false,$client,$references=[],$orders=[],$splits=[];
     public $order,$addOrder=false,$contractDescription;
     public $name,$email,$password,$company_name,$bussiness_name,$RFC,$legal_representative_name;
-    public $reference,$amount,$description,$contract,$ref;
+    public $amount,$description,$ref;
     public $listeners=['render'];
     public $editContract,$rand;
 
@@ -44,13 +44,13 @@ class Clients extends Component
             'contract' => null
     ];
 
-   /*  public $editReference = [
+    public $editReference = [
             'open'=> false,
             'reference' =>null,
             'amount' => null,
             'description' => null,
             'contract' => null
-    ]; */
+    ];
     public $search = '';
 
     public function updatingSearch(){
@@ -140,78 +140,79 @@ class Clients extends Component
         $this->orders = Order::where('user_id',$this->client->id)->get();
         $this->reset('editOrder');
     }
-/*
+
+
+    // Funciones para las partidas(Referencias)
+
+    public function formAddReferences(Order $order){
+        $this->addReference = true;
+        $this->order = $order;
+        $this->splits = $order->references;
+    }
+
     public function storeReference(){
         $rules = [
-            'reference' => 'required',
             'amount' => 'required',
             'description' => 'required',
         ];
         $this->validate($rules);
 
-
-        $reference = Reference::create([
-            'reference'=> $this->reference,
+        $this->order->references()->create([
             'amount' => $this->amount,
             'description' => $this->description,
-            'user_id'=> $this->client->id
         ]);
-
-
-        if ($this->contract) {
+        $this->orders = Order::where('user_id',$this->client->id)->get();
+        /* if ($this->contract) {
             $url = $this->contract->store('contracts');
             $reference->document()->create([
             'url' => $url
             ]);
-        }
-        $this->references = Reference::where('user_id', $this->client->id)->get();
+        } */
+        /* $this->references = Reference::where('user_id', $this->client->id)->get(); */
         $this->addReference=false;
-        $this->reset('description','amount','reference','contract');
+        $this->reset('description','amount');
     }
 
     public function editReference(Reference $reference){
         $this->ref = $reference;
         $this->reset('editReference');
         $this->editReference['open'] = true;
-        $this->editReference['reference'] = $reference->reference;
         $this->editReference['amount'] = $reference->amount;
         $this->editReference['description'] = $reference->description;
-        if ($reference->document) {
+/*         if ($reference->document) {
             $this->editReference['contract'] = $reference->document->url;
-        }
+        } */
     }
 
     public function updateReference(){
         $rules = [
-            'editReference.reference' => 'required',
             'editReference.amount' => 'required',
             'editReference.description' => 'required',
         ];
         $this->validate($rules);
 
         $this->ref->update([
-            'reference'=> $this->editReference['reference'],
             'amount' => $this->editReference['amount'],
             'description' => $this->editReference['description'],
         ]);
 
-        if ($this->editContract) {
+        /* if ($this->editContract) {
             Storage::delete($this->editReference['contract']);
             $url = $this->editContract->store('contracts');
             $this->ref->document()->update([
                 'url' => $url
             ]);
         }
-        $this->reset('editReference');
-        $this->references = Reference::where('user_id', $this->client->id)->get();
+        $this->reset('editReference'); */
+        $this->orders = Order::where('user_id',$this->client->id)->get();
         $this->rand = rand();
         $this->editReference['open'] = false;
     }
 
     public function deleteReference(Reference $reference){
         $reference->delete();
-        $this->references = Reference::where('user_id', $this->client->id)->get();
-    } */
+        $this->orders = Order::where('user_id',$this->client->id)->get();
+    }
 
     public function render()
     {
