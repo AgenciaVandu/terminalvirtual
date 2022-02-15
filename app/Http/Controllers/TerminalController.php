@@ -89,7 +89,6 @@ class TerminalController extends Controller
                 $reference->update([
                     'status' => 2
                 ]);
-                $reference->save();
             }
             $voucher->id_openpay =  $idOrderOpenPay;
             $voucher->update();
