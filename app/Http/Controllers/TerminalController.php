@@ -86,9 +86,8 @@ class TerminalController extends Controller
 
         if ($validationCharge == 'completed') {
             foreach (session()->get('references') as $reference) {
-                $reference->update([
-                    'status' => 2
-                ]);
+                $reference->status = 2;
+                $reference->update();
             }
             $voucher->id_openpay =  $idOrderOpenPay;
             $voucher->update();
