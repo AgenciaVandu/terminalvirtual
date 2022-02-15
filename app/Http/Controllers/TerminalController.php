@@ -16,7 +16,7 @@ class TerminalController extends Controller
     }
 
     public function order(Order $order){
-        $splits = $order->references;
+        $splits = $order->references->where('status',1);
         return view('terminal.bill',compact('splits','order'));
     }
 
@@ -32,14 +32,14 @@ class TerminalController extends Controller
             $total = $reference->amount+$total;
         }
         foreach ($references as $reference){
-            $reference->description.=$description;
+            $reference->description="".$description;
         }
+
         session([
-            'description' => $description,
+            'description' => $order->contract,
             'references'=> $references,
             'total' => $total
         ]);
-        /* return session()->get('references'); */
         return view('terminal.checkout',compact('total','splits','references','order'));
     }
 
@@ -93,6 +93,7 @@ class TerminalController extends Controller
             }
             $voucher->id_openpay =  $idOrderOpenPay;
             $voucher->update();
+
             return redirect()->route('terminal.aproved');
         }
 
