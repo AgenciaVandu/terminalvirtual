@@ -72,7 +72,7 @@
                         <a href="/bill" class="btn btn-primary source-bold">Ver detalle</a>
                     </div>
                 </div> --}}
-            </div> --}}
+            </div>
         </div>
     </section>
 
