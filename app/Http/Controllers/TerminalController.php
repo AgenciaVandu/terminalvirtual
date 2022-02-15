@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Reference;
+use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Openpay\Data\Openpay;
 
@@ -21,6 +22,7 @@ class TerminalController extends Controller
 
     public function checkout(Request $request){
         $total = 0;
+        $description="";
         $order= json_decode($request->order);
         $splits = $request->splits;
         $references = [];
@@ -29,13 +31,22 @@ class TerminalController extends Controller
             array_push($references,$reference);
             $total = $reference->amount+$total;
         }
+        foreach ($references as $reference){
+            $reference->description.=$description;
+        }
+        session([
+            'description' => $description,
+            'references'=> $references,
+            'total' => $total
+        ]);
+        /* return session()->get('references'); */
         return view('terminal.checkout',compact('total','splits','references','order'));
     }
 
-    public function payment(Request $request,$references){
+    public function payment(Request $request){
         /* return $request->all(); */
         $openpay = Openpay::getInstance(config('openpay.merchant_id'), config('openpay.private_key'), config('openpay.country_code'));
-        return $references;
+        $voucher = Voucher::create();
         $customer = [
             'name' => $request->name,
             //'last_name' => $user->last_name,
@@ -46,11 +57,11 @@ class TerminalController extends Controller
         $chargeData = [
             'method' => 'card',
             'source_id' => $request->token_id,
-            'amount' =>  $request->amount,
+            'amount' =>  session()->get('total'),
             'currency' => 'USD',
             /* 'confirm' => false, */
-            'description' => $reference->description,
-            'order_id' => $reference->id,
+            'description' => session()->get('description'),
+            'order_id' => $voucher->id,
             'device_session_id' => $request->deviceIdHiddenFieldName,
             'redirect_url' => config('app.url') . '/checkout/directChargeOpenpay/responsepayment',
             'use_3d_secure' => 'true',
@@ -71,12 +82,17 @@ class TerminalController extends Controller
         $validationCharge = $charge->status;
         /* return $validationCharge; */
 
-        $reference = Reference::find($idOrder);
+        $voucher = Voucher::find($idOrder);
 
         if ($validationCharge == 'completed') {
-            $reference->status = 2;
-            $reference->id_openpay =  $idOrderOpenPay;
-            $reference->update();
+            foreach (session()->get('references') as $reference) {
+                $reference->update([
+                    'status' => 2
+                ]);
+                $reference->save();
+            }
+            $voucher->id_openpay =  $idOrderOpenPay;
+            $voucher->update();
             return redirect()->route('terminal.aproved');
         }
 

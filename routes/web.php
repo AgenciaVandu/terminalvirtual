@@ -65,7 +65,7 @@ Route::get('/preguntas-frecuentes', function () {
 Route::middleware('auth')->get('/orders',[TerminalController::class,'index'])->name('terminal.index');
 Route::middleware('auth')->get('/bill/{order}',[TerminalController::class,'order'])->name('terminal.order');
 Route::middleware('auth')->post('/checkout', [TerminalController::class,'checkout'])->name('terminal.checkout');
-Route::middleware('auth')->post('/payment/{references}',[TerminalController::class,'payment'])->name('terminal.payment');
+Route::middleware('auth')->post('/payment',[TerminalController::class,'payment'])->name('terminal.payment');
 Route::get('checkout/directChargeOpenpay/responsepayment/', [TerminalController::class, 'validateChargeOpenPay']);
 
 Route::get('/gracias-por-tu-pago', function () {

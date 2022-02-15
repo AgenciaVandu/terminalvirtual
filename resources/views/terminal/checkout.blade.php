@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-md-8 order-md-1">
-                <form class="needs-validation" action="{{ route('terminal.payment',$references) }}" method="POST" id="payment-form">
+                <form class="needs-validation" action="{{ route('terminal.payment') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="row">
                         <div class="col-6">
