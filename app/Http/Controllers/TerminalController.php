@@ -86,6 +86,7 @@ class TerminalController extends Controller
 
         if ($validationCharge == 'completed') {
             foreach (session()->get('references') as $reference) {
+                $reference = Reference::find($reference->id);
                 $reference->status = 2;
                 $reference->update();
             }
