@@ -20,7 +20,7 @@ class CreateReferencesTable extends Migration
             $table->string('description');
             $table->enum('status', [Reference::PENDIENTE, Reference::PAGADO])->default(Reference::PENDIENTE);
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('users');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }

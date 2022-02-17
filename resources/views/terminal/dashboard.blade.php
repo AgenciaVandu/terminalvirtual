@@ -42,6 +42,9 @@
                 <li class="source-semibold">
                     RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
                 </li>
+                <li class="source-regular" style="color: green">
+                    <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra
+                </li>
             </div>
         </div>
     </header>
@@ -62,7 +65,7 @@
                 </div>
             @endforeach
 {{--             <div class="card mb-3"> {{-- titulo de orden de compra --}}
-                <div class="row pt-3 pb-4">
+                {{-- <div class="row pt-3 pb-4">
                     <div class="col-lg-8 m-auto">
                         <h5 class="source-semibold text-center">
                             OC: <span style="color: gray">OC-ADDONKF-ALIANZAMEX-TRANSPORTES YOYO-21012022</span>
@@ -71,8 +74,8 @@
                     <div class="col-lg-4 text-center source-bold">
                         <a href="/bill" class="btn btn-primary source-bold">Ver detalle</a>
                     </div>
-                </div>
-            </div> --}}
+                </div> --}}
+            </div>
         </div>
     </section>
 
