@@ -75,7 +75,7 @@ class TerminalController extends Controller
         $url3D = $charge->serializableData["payment_method"]->url;
         return redirect($url3D); */
 
-        $stripe = new StripeClient('sk_test_51KVkNdKlr6VY84OEZZJPegQufssd2KBCfoT6BhqhLgLZQshXo7R3bxKwcjS56Scf7hIDI1SmelrWrcMYK5B2mstm00NRiIcYLr');
+        $stripe = new StripeClient(config('stripe.stripe_secret'));
         $token = $stripe->tokens->create([
             'card' => [
                 'number' => $request->card,
