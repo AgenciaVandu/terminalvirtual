@@ -97,6 +97,7 @@
         })
     </script>
     <script src="/js/carrusel.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     @stack('scripts')
 

@@ -127,7 +127,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="cc-number">Número de la tarjeta</label>
-                            <input type="text" class="form-control" autocomplete="off" data-openpay-card="card_number"
+                            <input type="text" class="form-control" autocomplete="off" data-openpay-card="card_number" name="card"
                                 required>
                             <div class="invalid-feedback">
                                 Credit card number is required
@@ -137,7 +137,7 @@
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label for="cc-expiration">Mes de vigencia</label>
-                            <select class="form-control" data-openpay-card="expiration_month">
+                            <select class="form-control" data-openpay-card="expiration_month" name="expiration_month">
                                 <option value="01">1</option>
                                 <option value="02">2</option>
                                 <option value="03">3</option>
@@ -157,7 +157,7 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="cc-expiration">año expiración</label>
-                            <select class="form-control" data-openpay-card="expiration_year">
+                            <select class="form-control" data-openpay-card="expiration_year" name="expiration_year">
                                 <option value="22">2022</option>
                                 <option value="23">2023</option>
                                 <option value="24">2024</option>
@@ -171,7 +171,7 @@
                         <div class="col-md-3 mb-3">
                             <label for="cc-expiration">Código de seguridad</label>
                             <input type="text" class="form-control" type="text" placeholder="3 dígitos" autocomplete="off"
-                                data-openpay-card="cvv2" required>
+                                data-openpay-card="cvv2" name="cvv" required>
                             <div class="invalid-feedback">
                                 Security code required
                             </div>

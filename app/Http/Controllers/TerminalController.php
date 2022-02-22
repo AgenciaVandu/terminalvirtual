@@ -7,6 +7,7 @@ use App\Models\Reference;
 use App\Models\Voucher;
 use Illuminate\Http\Request;
 use Openpay\Data\Openpay;
+use Stripe\StripeClient;
 
 class TerminalController extends Controller
 {
@@ -44,13 +45,15 @@ class TerminalController extends Controller
     }
 
     public function payment(Request $request){
+
         /* return $request->all(); */
+        /* return $request->all();
         $openpay = Openpay::getInstance(config('openpay.merchant_id'), config('openpay.private_key'), config('openpay.country_code'));
         $voucher = Voucher::create();
         $customer = [
             'name' => $request->name,
-            //'last_name' => $user->last_name,
-            /* 'phone_number' => auth()->user()->phone, */
+            'last_name' => $user->last_name,
+            'phone_number' => auth()->user()->phone,
             'email' => auth()->user()->email,
             'requires_account' => false,
         ];
@@ -59,7 +62,7 @@ class TerminalController extends Controller
             'source_id' => $request->token_id,
             'amount' =>  session()->get('total'),
             'currency' => 'USD',
-            /* 'confirm' => false, */
+            'confirm' => false,
             'description' => session()->get('description'),
             'order_id' => $voucher->id,
             'device_session_id' => $request->deviceIdHiddenFieldName,
@@ -70,7 +73,36 @@ class TerminalController extends Controller
 
         $charge = $openpay->charges->create($chargeData);
         $url3D = $charge->serializableData["payment_method"]->url;
-        return redirect($url3D);
+        return redirect($url3D); */
+
+        $stripe = new StripeClient('sk_test_51KVkNdKlr6VY84OEZZJPegQufssd2KBCfoT6BhqhLgLZQshXo7R3bxKwcjS56Scf7hIDI1SmelrWrcMYK5B2mstm00NRiIcYLr');
+        $token = $stripe->tokens->create([
+            'card' => [
+                'number' => $request->card,
+                'exp_month' => $request->expiration_month,
+                'exp_year' => $request->expiration_year,
+                'cvc' => $request->cvv,
+            ],
+        ]);
+
+        $charge = $stripe->charges->create([
+            'amount' => session()->get('total')*100,
+            'currency' => 'usd',
+            'source' => $token->id,
+            'description' => session()->get('description'),
+        ]);
+
+
+        if ($charge->captured) {
+            foreach (session()->get('references') as $reference) {
+                $reference = Reference::find($reference->id);
+                $reference->status = 2;
+                $reference->update();
+            }
+            return redirect()->route('terminal.aproved');
+        }else{
+            return redirect()->route('terminal.index');
+        }
     }
 
     public function validateChargeOpenPay()
