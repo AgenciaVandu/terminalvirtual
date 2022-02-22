@@ -206,7 +206,7 @@
     @endsection
 
     @push('scripts')
-        <script type="text/javascript">
+      {{--   <script type="text/javascript">
             $(document).ready(function() {
                 OpenPay.setId('m14onoajhzhe0as1ot5v');
                 OpenPay.setApiKey('pk_2769fbba1b22423ca49e9280111c9ce9');
@@ -231,5 +231,5 @@
                     $("#pay-button").prop("disabled", false);
                 };
             });
-        </script>
+        </script> --}}
     @endpush
