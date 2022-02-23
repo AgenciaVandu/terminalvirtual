@@ -32,9 +32,6 @@ class TerminalController extends Controller
             array_push($references,$reference);
             $total = $reference->amount+$total;
         }
-        foreach ($references as $reference){
-            $reference->description="".$description;
-        }
 
         session([
             'description' => $order->contract,
@@ -87,7 +84,7 @@ class TerminalController extends Controller
 
         $charge = $stripe->charges->create([
             'amount' => session()->get('total')*100,
-            'currency' => 'usd',
+            'currency' => 'mxn',
             'source' => $token->id,
             'description' => session()->get('description'),
         ]);
