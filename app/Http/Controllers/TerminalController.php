@@ -84,7 +84,7 @@ class TerminalController extends Controller
 
         $charge = $stripe->charges->create([
             'amount' => session()->get('total')*100,
-            'currency' => 'mxn',
+            'currency' => 'usd',
             'source' => $token->id,
             'description' => session()->get('description'),
         ]);
