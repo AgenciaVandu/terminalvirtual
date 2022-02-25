@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
 use App\Models\Order;
 use App\Models\Reference;
 use App\Models\Voucher;
@@ -42,7 +43,7 @@ class TerminalController extends Controller
     }
 
     public function payment(Request $request){
-
+        $currency_base = Currency::find(1);
         /* return $request->all(); */
         /* return $request->all();
         $openpay = Openpay::getInstance(config('openpay.merchant_id'), config('openpay.private_key'), config('openpay.country_code'));
@@ -83,7 +84,7 @@ class TerminalController extends Controller
         ]);
 
         $charge = $stripe->charges->create([
-            'amount' => (session()->get('total')*100)*21.50,
+            'amount' => (session()->get('total')*100)*$currency_base->mxn,
             'currency' => 'mxn',
             'source' => $token->id,
             'description' => session()->get('description'),
