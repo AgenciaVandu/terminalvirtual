@@ -76,8 +76,9 @@
                 <div class="card-body">
                     <h3 class="source-bold">¿Por qué es importante?</h3>
                         <p class="source-regular">
-                            La industria del transporte y la logística es la columna vertebral de cualquier economía y la fuerza impulsora de todos los sectores, ya sea la agricultura, la manufactura o los servicios.
-                            Como toda industria se enfrenta a retos muy importantes, entre ellos:
+                            {{-- La industria del transporte y la logística es la columna vertebral de cualquier economía y la fuerza impulsora de todos los sectores, ya sea la agricultura, la manufactura o los servicios.
+                            Como toda industria se enfrenta a retos muy importantes, entre ellos: --}}
+                            La industria del transporte y la logística es la columna vertebral de cualquier economía y la fuerza impulsora de todos los sectores, ya sea la agricultura, la manufactura o los servicios. Como toda industria se enfrenta a retos muy importantes. Kananfleet le puede ayudar a enfrentarlos de mejor manera:
                         </p>
                         <div class="text-center">
                             <img src="/img/banners/importante.svg" alt="" class="img-fluid">
@@ -116,7 +117,7 @@
                         Cualquiera que sea su giro y tipo de activo, requiere de una adecuada administración para no perder el control del costo asociado y mantener su rentabilidad.
                       </p>
                       <div class="text-center">
-                        <img src="/img/activos.png" alt="" class="img-fluid">
+                        <img src="/img/Imagen-5-activos.jpg" class="img-fluid">
                       </div>
                   </div>
                 </div>
@@ -132,7 +133,9 @@
                 <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample">
                   <div class="card-body">
                     <p class="source-regular">
-                        Kananfleet cuenta con una versión certificada por SAP a nivel internacional e integrada al ERP SAP B1.
+                      Kananfleet cuenta con una versión certificada e integrada al ERP SAP B1; adicionalmente puede integrarse a softwares de otros fabricantes (ejemplo. Otros ERPs, sistemas de Rastreo Satelital, sistema de Facturación,
+                      <br>
+                      de otros fabricantes (ejemplo. Otros ERPs, sistemas de Rastreo Satelital, sistema de Facturación, Básculas, etc.), siempre y cuando sus arquitecturas permitan la integración e intercambio de datos (WS). Dado el caso, es necesario dimensionar el alcance de dicha integración, con la finalidad de que todas las partes (SISTEMA DE TERCERO / KANANFLEET® / CLIENTE) estén de acuerdo sobre los datos que se van a interfacear
                       </p>
                   </div>
                 </div>

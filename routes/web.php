@@ -59,6 +59,7 @@ Route::get('/preguntas-frecuentes', function () {
     return view('faq');
 });
 
+
 /* Route::get('/login', function () {
     return view('terminal.login');
 }); */

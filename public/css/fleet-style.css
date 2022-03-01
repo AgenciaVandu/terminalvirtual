@@ -83,7 +83,7 @@
 #bg-top {
     background-image: url(/img/pleca-1.svg);
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top left;
     min-height: 600px;
 }
 .bg-azul {
@@ -303,12 +303,12 @@ footer {
     margin-top: 8em;
 }
 
-#clientes {
+/* #clientes {
     background-image: url(/img/fondo.png);
     background-repeat: no-repeat;
     background-position: center;
     
-}
+} */
 
 .pagado {
     text-align: center;

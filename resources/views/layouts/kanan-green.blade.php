@@ -56,7 +56,7 @@
                 <a class="nav-link" href="/preguntas-frecuentes">FAQ</a>
             </li>
             <li class="nav-item">
-                <a class="navbar-brand">
+                <a href="/sap" class="navbar-brand">
                     <img src="/img/icons/sap-gris.svg" width="80" alt="">
                 </a>
             </li>
@@ -66,7 +66,7 @@
             <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:gray; font-size: 1.3em">
                 <i class="fab fa-facebook pr-3" ></i>
             </a>
-            <a href="/sap" class="btn btn-secondary btn-sm source-semibold">SOLICITAR DEMO</a>
+            <a href="/contacto" class="btn btn-secondary btn-sm source-semibold">SOLICITAR DEMO</a>
           </div>
         </div>
         </div>
