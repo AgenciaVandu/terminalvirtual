@@ -33,14 +33,14 @@
                 Módulos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/mantenimiento">Mantenimiento</a>
-                <a class="dropdown-item" href="/llantas">Llantas</a>
-                <a class="dropdown-item" href="/operadores">Operadores</a>
-                <a class="dropdown-item" href="/disponibilidad">Disponibilidad</a>
-                <a class="dropdown-item" href="/carta-porte">Carta porte</a>
-                <a class="dropdown-item" href="/combustible">Combustible</a>
-                <a class="dropdown-item" href="/estadisticas">Estadísticas</a>
-                
+                <a class="dropdown-item source-regular" href="/mantenimiento">Mantenimiento</a>
+                <a class="dropdown-item source-regular" href="/llantas">Llantas</a>
+                <a class="dropdown-item source-regular" href="/operadores">Operadores</a>
+                <a class="dropdown-item source-regular" href="/disponibilidad">Panel de Disponibilidad</a>
+                <a class="dropdown-item source-regular" href="/carta-porte">Complemento Carta porte</a>
+                <a class="dropdown-item source-regular" href="/combustible">Combustible</a>
+                <a class="dropdown-item source-regular" href="/estadisticas">Estadísticas</a>
+                <a class="dropdown-item source-regular" href="/kananfleet-mobile">Kananfleet Mobile®</a>
               </div>
             </li>
             <li class="nav-item">
@@ -63,7 +63,7 @@
             
           </ul>
           <div class="form-inline my-2 my-lg-0">
-            <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:gray; font-size: 1.3em">
+            <a href="https://www.facebook.com/kananfleet" target="blank_" style="color:gray; font-size: 1.3em">
                 <i class="fab fa-facebook pr-3" ></i>
             </a>
             <a href="/contacto" class="btn btn-secondary btn-sm source-semibold">SOLICITAR DEMO</a>
@@ -185,30 +185,30 @@
                     <div class="row">
                         <div class="col-6 pt-3">
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Inicio</a>
+                                <a href="/" style="color: #fff; text-decoration: none;">Inicio</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Mantenimiento</a>
+                                <a href="/mantenimiento" style="color: #fff; text-decoration: none;">Mantenimiento</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Llantas</a>
+                                <a href="/llantas" style="color: #fff; text-decoration: none;">Llantas</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Operadores</a>
+                                <a href="/operadores" style="color: #fff; text-decoration: none;">Operadores</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Disponibilidad</a>
+                                <a href="/disponibilidad" style="color: #fff; text-decoration: none;">Disponibilidad</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Combustible</a>
+                                <a href="/combustible" style="color: #fff; text-decoration: none;">Combustible</a>
                             </li>
                         </div>
                         <div class="col-6 pt-3">
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Estadísticas</a>
+                                <a href="/estadisticas" style="color: #fff; text-decoration: none;">Estadísticas</a>
                             </li>
                             <li class="source-regular" style="font-size: 1em;">
-                                <a href="" style="color: #fff; text-decoration: none;">Contacto</a>
+                                <a href="/contacto" style="color: #fff; text-decoration: none;">Contacto</a>
                             </li>
                         </div>
                     </div>

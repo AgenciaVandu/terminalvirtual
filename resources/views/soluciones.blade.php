@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-                <a href="">
+                <a>
                  <img src="/img/icons/saving.svg" width="50">
                  <h5 class="source-bold pt-3">Mantenimiento y órdenes <br class="d-none d-sm-none d-md-none d-lg-block"> de servicio</h5>
                   <p class="source-regular">
@@ -25,7 +25,7 @@
                 </a>
              </div>
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-                <a href="">
+                <a>
                     <img src="/img/icons/drop.svg" width="50">
                 <h5  class="source-bold pt-3">Recargas y despacho<br class="d-none d-sm-none d-md-none d-lg-block"> de combustible</h5>
                 <p class="source-regular">
@@ -34,7 +34,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-                <a href="">
+                <a>
                     <img src="/img/icons/tire.svg" width="50">
                 <h5  class="source-bold pt-3">Llantas, neumáticos <br class="d-none d-sm-none d-md-none d-lg-block">y baterías</h5>
                 <p class="source-regular">
@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-                <a href="">
+                <a>
                     <img src="/img/icons/truck.svg"  width="50">
                 <h5  class="source-bold pt-3">Viajes, estatus de viaje y liquidaciones</h5>
                 <p class="source-regular">
@@ -52,7 +52,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-                <a href="">
+                <a>
                     <img src="/img/icons/chofer.svg" width="50">
                 <h5  class="source-bold pt-3">Choferes <br class="d-none d-sm-none d-md-none d-lg-block"> y operadores</h5>
                 <p class="source-regular">
@@ -62,7 +62,7 @@
             </div>
 
             <div class="col-lg-4 col-md-12 soluciones col-sm-12 text-center pad">
-               <a href="">
+               <a>
                 <img src="/img/icons/metrics.svg" width="50">
                 <h5 class="source-bold pt-3">Reportes e Indicadores de desempeño</h5>
                  <p class="source-regular">
@@ -82,7 +82,7 @@
 
             <div class="col-lg-4 col-md-12 col-sm-12 text-center pad m-auto">
                 <h2 class="source-bold">¿Quieres saber cómo funciona?</h4>
-                <a class="btn btn-primary" href="/sap">SOLICITAR DEMO</a> <br>
+                <a class="btn btn-primary" href="/contacto">SOLICITAR DEMO</a> <br>
                 <small class="source-light" style="color: gray;">Explore las soluciones que tenemos para usted.</small>
             </div>
         </div>
@@ -101,7 +101,7 @@
             <p class="source-semibold pt-3" style="color: #fff;">
                 Comience a optimizar los recursos y gastos de su empresa, reduzca costos,<br class="d-none d-sm-none d-md-none d-lg-block"> aumente la productividad de su organización.
             </p>
-            <a href="/sap" class="btn btn-secondary btn-lg source-black mb-5">
+            <a href="/contacto" class="btn btn-secondary btn-lg source-black mb-5">
                 SOLICITAR DEMO
             </a>
         </div>

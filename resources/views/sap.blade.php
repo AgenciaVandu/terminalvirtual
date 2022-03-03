@@ -249,7 +249,8 @@
                     es un software de
                     contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
                 </p>
-                <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+                <a data-toggle="modal"
+                data-target="#lead-kananfleet" class="btn btn-primary">SOLICITAR DEMO</a> <br>
                 <small class="source-light">Pónganse en contacto con nosotros</small>
             </div>
         </div>
@@ -257,7 +258,7 @@
     <section id="mapa-aliados" class="pt-4 mb-5">
         <div class="container text-center">
             <h2 class="source-bold text-center">Kananfleet® está presente en</h2>
-            <img src="/img/mapa-aliados.png" alt="" class="img-fluid">
+            <img src="/img/mapa-kanan.png" alt="" class="img-fluid">
         </div>
     </section>
 @endsection

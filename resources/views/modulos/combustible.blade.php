@@ -6,16 +6,16 @@
 <header>
     <div class="bg-mantenimiento">
      <div class="container">
-         <div class="cabecera-titular-2">
+         <div class="cabecera-titular-1">
           <div class="row">
               <div class="col-lg-5 col-md-12 col-sm-12 m-auto">
                   <h1 class="source-bold">
                      Combustible
                   </h2>
                   <p class="source-regular">
-                     Gestione eficientemente el consumo y rendimiento del combustible
+                    Administre eficientemente el consumo del combustible
                   </p>
-                  <a href="" class="imagen btn btn-outline-light source-black">
+                  <a href="/contacto" class="imagen btn btn-outline-light source-black">
                       SOLICITAR DEMO
                   </a>
               </div>
@@ -30,74 +30,98 @@
  <section id="kanan-mobile">
      <div class="container-fluid">
          <div class="row pt-5">
-             <div class="col-lg-7 col-md-12 col-sm-12 orden text-center">
+             <div class="col-lg-7 col-md-12 col-sm-12 orden text-center m-auto">
                  <img src="/img/banners/5-llantas/2-gestionesusneumaticos.png" class="img-fluid" alt="">
              </div>
              <div class="col-lg-5 col-md-12 col-sm-12 right m-auto">
                  <h4 class="source-bold pb-3">Funciones que provee el módulo de combustible <br> <span class="source-regular" style="color: gray; font-size: .7em;">Este módulo permite registrar las cargas de combustible, generar cálculos de rendimiento y consumo, así como proveer reportes estadísticos.</span></h4>
                  <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">Módulo compatible con KANANFLEET MOBILE® (Android).</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">INFORMACIÓN DETALLADA sobre el registro <br> y consumo de combustible.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">Registro de FOTOGRAFÍAS y GEOPOSICIÓN del <br> lugar donde se realizó la recarga.</p>
+                    </div>
+                </li>
+                 <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Cálculo de consumo de combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Cálculo de rendimiento de combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Registro de recargas de combustible.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Módulo compatible con <a href="" style="color: #91A435;">KANANFLEET MOBILE®</a> (Android).</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Información a detalle del consumo de combustible.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Registro de fotografías y geoposición del lugar donde <br> se realizó la recarga.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
-                             Entre otros.</p>
+                             Entre otras bondades.</p>
                      </div>
                  </li>
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
          </div>
@@ -109,52 +133,70 @@
              <div class="col-lg-6 col-md-12 col-sm-12 left m-auto">
                  <h4 class="source-bold pb-3">Reportes, la forma más práctica de tener la información más importante de sus activos <br> <span class="source-regular" style="color: gray; font-size: .7em;">En el módulo de combustible es posible generar reportes de todo tipo, así como la información de mayor importancia para la toma de decisiones.</span></h4>
                  <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                        <p class="source-semibold">
+                            Reportes informativos y estadísticos.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                        <p class="source-semibold">
+                            Reportes vía EMAIL y en plataforma.</p>
+                    </div>
+                </li>
+                 <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Reporte de recargas de combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Reporte de consumo de combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Reporte de redimiento y costo de combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Reporte con estadísticas sobre las recargas.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
-                             Entre otros.</p>
+                             Entre otras bondades.</p>
                      </div>
                  </li>
 
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
              <div class="col-lg-6 col-md-12 col-sm-12 text-right p-0">
@@ -179,7 +221,7 @@
              <p class="source-regular" style="color: gray;">Kananfleet ® se adapta a cualquier entorno, no importa si es un software de
                  contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
              </p>
-             <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+             <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
              <small class="source-light">Pónganse en contacto con nosotros</small>
          </div>
      </div>

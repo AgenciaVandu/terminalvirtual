@@ -24,7 +24,7 @@
                     <h1 class="source-bold">
                         Administre sus activos <br class="d-none d-sm-none d-md-none d-lg-block"> en un sólo lugar
                     </h1>
-                    <a href="" class="btn btn-outline-light source-black">
+                    <a href="/contacto" class="btn btn-outline-light source-black">
                         SOLICITAR DEMO
                     </a>
                 </div>
@@ -178,7 +178,7 @@
                     garantizar el flujo de información. Si es usuario del ERP SAP B1, contamos con una versión certificada e
                     integrada a este ERP.
                 </p>
-                <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+                <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
                 <small class="source-light">Pónganse en contacto con nosotros</small>
             </div>
         </div>
@@ -232,7 +232,7 @@
                         Comience a optimizar los recursos y gastos de su empresa, reduzca costos,<br
                             class="d-none d-sm-none d-md-none d-lg-block"> aumente la productividad de su organización.
                     </p>
-                    <a href="" class="btn btn-secondary btn-lg source-black mb-5">
+                    <a href="/contacto" class="btn btn-secondary btn-lg source-black mb-5">
                         SOLICITAR DEMO
                     </a>
             </div>
@@ -331,7 +331,7 @@
                     es un software de
                     contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
                 </p>
-                <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+                <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
                 <small class="source-light">Pónganse en contacto con nosotros</small>
             </div>
         </div>

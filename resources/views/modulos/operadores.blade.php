@@ -6,16 +6,17 @@
 <header>
     <div class="bg-operadores">
      <div class="container">
-         <div class="cabecera-titular-2">
-          <div class="row">
+         <div class="cabecera-titular-1">
+          <div class="row centro">
               <div class="col-lg-5 col-md-12 col-sm-12 m-auto">
                   <h1 class="source-bold">
-                      Mantenimiento
+                      OPERADORES
                   </h2>
                   <p class="source-regular">
-                      Gestione de manera eficiente los servicios de mantenimiento preventivo y correctivo
+                    Gestione de manera fácil la información de los
+                    operadores
                   </p>
-                  <a href="" class="btn btn-outline-light source-black">
+                  <a href="/contacto" class="btn btn-outline-light source-black">
                       SOLICITAR DEMO
                   </a>
               </div>
@@ -38,68 +39,68 @@
                      actividades de su personal</h4>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Catálogo de operadores.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Alertas por vencimientos de licencias de manejo.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Registro de cursos / actividades del operador.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Gestión de la documentación del operador.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Asignación de vehículos.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Programación de mensajes por email.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
-                             Entre otros.</p>
+                             Entre otras bondades.</p>
                      </div>
                  </li>
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
          </div>
@@ -112,42 +113,42 @@
                  <h4 class="source-bold pb-3">Reportes, la forma más práctica de tener la información más importante de sus activos <br> <span class="source-regular" style="color: gray; font-size: .7em;">En el módulo de operadores es posible generar reportes de todo tipo, así como la información de mayor importancia para la toma de decisiones.</span></h4>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Historial de vehículos asignados por operador.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Reporte del Kardex del operador.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Reporte de vencimientos de licencias de manejo.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Entre otros.</p>
                      </div>
                  </li>
 
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
              <div class="col-lg-6 col-md-12 col-sm-12 text-right p-0">
@@ -163,7 +164,7 @@
              <p class="source-regular" style="color: gray;">Kananfleet ® se adapta a cualquier entorno, no importa si es un software de
                  contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
              </p>
-             <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+             <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
              <small class="source-light">Pónganse en contacto con nosotros</small>
          </div>
      </div>

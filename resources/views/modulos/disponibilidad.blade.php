@@ -7,15 +7,15 @@
     <div class="bg-disponibilidad">
      <div class="container">
          <div class="cabecera-titular-3">
-          <div class="row">
+          <div class="row centro">
               <div class="col-lg-5 col-md-12 col-sm-12 m-auto">
-                  <h1 class="source-bold">
-                     Panel de Disponibilidad
+                  <h2 class="source-bold panel-de">
+                    PANEL DE DISPONIBILIDAD
                   </h2>
                   <p class="source-regular">
                      Consulte y agende el mantenimiento de todos sus activos
                   </p>
-                  <a href="" class="btn btn-outline-light source-black">
+                  <a href="/contacto" class="btn btn-outline-light source-black">
                       SOLICITAR DEMO
                   </a>
               </div>
@@ -34,36 +34,95 @@
                  <img src="/img/banners/7-disponibilidad/2-conozcalacantidad.png" class="img-fluid" alt="">
              </div>
              <div class="col-lg-5 col-md-12 col-sm-12 right m-auto">
-                 <h4 class="source-bold pb-3">Calendario disponible para la visualización de los vehículos que están asignados a mantenimiento.</h4>
+                 <h4 class="source-bold pb-3">Toda su información a un solo “CLICK”.</h4>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
-                         <p class="source-semibold">
-                             Visualización de órdenes de servicio programadas y en mantenimiento.</p>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
+                        <p class="source-semibold">
+                            ADMINISTRE sus unidades de transporte / activos <br> desde una sola pantalla.</p>
+                        {{-- <p class="source-semibold">
+                            Visualización de órdenes de servicio programadas y en mantenimiento.</p> --}}
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
-                         <p class="source-semibold">
-                             Vehículos en estado de incidencia.</p>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
+                        <p class="source-semibold">
+                            EXPEDIENTE FOTOGRÁFICO de cada vehículo / activo.</p>
+                        {{-- <p class="source-semibold">
+                            Vehículos en estado de incidencia.</p> --}}
                      </div>
                  </li>
+                 <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        GESTORÍA de documentos por cada vehículo / activo.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        SEMÁFORO DE COLORES para identificar la disponibilidad <br> de la flotilla / activos.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        ACCESOS DIRECTOS para gestionar información <br> de manera más dinámica.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        EXPORTACIÓN de información en varios formatos (PDF, Excel, CSV).</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        REPORTES informativos y estadísticos.</p>
+                    </div>
+                </li>
+                <li class=" source-semibold">
+                    <div class="row m-auto">
+                       <div class="check pr-2">
+                           <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                       </div>
+                       <p class="source-semibold">
+                        Alertas vía EMAIL y en plataforma.</p>
+                    </div>
+                </li>
+                
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
-                             Entre otros.</p>
+                             Entre otras bondades.</p>
                      </div>
                  </li>
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
          </div>
@@ -76,7 +135,7 @@
              <p class="source-regular" style="color: gray;">Kananfleet ® se adapta a cualquier entorno, no importa si es un software de
                  contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
              </p>
-             <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+             <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
              <small class="source-light">Pónganse en contacto con nosotros</small>
          </div>
      </div>

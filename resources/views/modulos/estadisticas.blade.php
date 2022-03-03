@@ -9,13 +9,13 @@
          <div class="cabecera-titular-3">
           <div class="row">
               <div class="col-lg-5 col-md-12 col-sm-12 m-auto">
-                  <h1 class="source-bold">
+                  <h1 class="source-bold" style="color: #fff">
                      Datos Estadísticos
-                  </h2>
+                  </h1>
                   <p class="source-regular">
                      Consulte información en TIEMPO REAL sobre el presupuesto ejercido en Mantenimiento y Combustible
                   </p>
-                  <a href="" class="btn btn-outline-light source-black">
+                  <a href="/contacto" class="btn btn-outline-light source-black">
                       SOLICITAR DEMO
                   </a>
               </div>
@@ -37,49 +37,49 @@
                  <h4 class="source-bold pb">Visualice su información EN TIEMPO REAL.</h4>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Gestione el presupuesto anual asignado a <br class="d-none d-sm-none d-md-none d-lg-block"> Mantenimiento y Combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Consulte presupuestos ejercidos en los rubros<br class="d-none d-sm-none d-md-none d-lg-block"> de Mantenimiento y Combustible.</p>
                      </div>
                  </li>
                  <li class=" source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
                              Consulte información por año, mes, semana y día.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">Exporte las gráficas a varios formatos.</p>
                      </div>
                  </li>
                  <li class="source-semibold">
                      <div class="row m-auto">
-                         <div class="check pr-2">
-                             <span class="icon-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                         </div>
+                        <div class="check pr-2">
+                            <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
+                        </div>
                          <p class="source-semibold">
-                             Entre otros.</p>
+                             Entre otras bondades.</p>
                      </div>
                  </li>
                  <li>
-                     <a href="" class="btn btn-primary">SOLICITAR DEMO</a>
+                     <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a>
                  </li>
              </div>
          </div>
@@ -130,7 +130,7 @@
              <p class="source-regular" style="color: gray;">Kananfleet ® se adapta a cualquier entorno, no importa si es un software de
                  contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
              </p>
-             <a href="" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+             <a href="/contacto" class="btn btn-primary">SOLICITAR DEMO</a> <br>
              <small class="source-light">Pónganse en contacto con nosotros</small>
          </div>
      </div>

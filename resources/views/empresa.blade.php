@@ -71,7 +71,7 @@
                             Esta certificación nos ha permitido ofrecer a clientes de Business One en toda América Latina,
                             nuestro producto para así ofrecerles un valor agregado.
                         </p>
-                        <a href="/sap" class="btn btn-primary mt-3">SOLICITAR DEMO</a>
+                        <a href="/contacto" class="btn btn-primary mt-3">SOLICITAR DEMO</a>
                     </div>
                     <!--Logotipo de clientes-->
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto text-center">
