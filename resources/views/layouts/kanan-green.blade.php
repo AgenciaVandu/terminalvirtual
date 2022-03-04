@@ -63,6 +63,9 @@
             
           </ul>
           <div class="form-inline my-2 my-lg-0">
+            <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_" style="color:gray; font-size: 1.3em">
+                <i class="fab fa-linkedin"></i>
+            </a>
             <a href="https://www.facebook.com/kananfleet" target="blank_" style="color:gray; font-size: 1.3em">
                 <i class="fab fa-facebook pr-3" ></i>
             </a>
@@ -210,6 +213,9 @@
                             <li class="source-regular" style="font-size: 1em;">
                                 <a href="/contacto" style="color: #fff; text-decoration: none;">Contacto</a>
                             </li>
+                        </div>
+                        <div class="col-12 pt-3 ">
+                            <a href="/orders" class="btn btn-primary">Portal de pagos</a>
                         </div>
                     </div>
                 </div>

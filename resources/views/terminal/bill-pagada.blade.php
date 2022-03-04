@@ -27,7 +27,7 @@
     <div class="agradecimiento text-center ">
         <img src="{{('/img/check-true.svg')}}" width="180" alt="">
         <h1 class="source-bold">¡Buenas noticias!</h1>
-        <p class="source-regular">Su pago ha sido procesado con éxito</p>
+        <p class="source-regular">Su pago ha sido procesado con éxito <br> su comprobante será enviado al correo registrado en el portal</p>
         <a href="{{ route('terminal.index') }}" class="btn btn-outline-dark source-bold">Ir a mis cuentas</a>
     </div>
  </header>

@@ -26,7 +26,7 @@
     <div class="text-center">
         <img class=" mb-4" src="{{asset('/img/kanan-green.svg')}}" width="220" alt="">
     </div>
-    <h4 class="text-center mb-3 source-bold">Bienvenido a Kananfleet®</h1>
+    <h4 class="text-center mb-3 source-bold">Bienvenido a portal de pagos Kananfleet®</h1>
     <label for="inputEmail" class="sr-only">Referencia</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Escriba su referencia" required autofocus>
     <label for="inputPassword" class="sr-only">Contraseña</label>
@@ -37,6 +37,6 @@
       </label>
     </div>
     <button href="/bill" class="btn btn-lg source-bold btn-primary btn-block" type="submit">Comenzar</button>
-    <p class="text-center source-light mt-5 mb-3 text-muted">Todos los derechos reservados <br> Kananfleet® &copy;2021</p>
+    <p class="text-center source-light mt-5 mb-3 text-muted">Todos los derechos reservados <br> Kananfleet® &copy;2022</p>
   </form>
 @endsection
