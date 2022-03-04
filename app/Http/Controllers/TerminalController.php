@@ -92,7 +92,7 @@ class TerminalController extends Controller
                 'source' => $token->id,
                 'description' => session()->get('description'),
             ]);
-            foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','alianzas@etecno.com.mx',auth()->user()->email,'dev@agenciavandu.com'] as $emails) {
+            foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','alianzas@etecno.com.mx',auth()->user()->email] as $emails) {
                 Mail::to($emails)->send(new OrderShipped(session()->get('references')));
             }
 
