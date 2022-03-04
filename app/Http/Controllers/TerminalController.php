@@ -83,28 +83,29 @@ class TerminalController extends Controller
             ],
         ]);
 
-        $charge = $stripe->charges->create([
-            'amount' => (session()->get('total')*100)*$currency_base->mxn,
-            'currency' => 'mxn',
-            'source' => $token->id,
-            'description' => session()->get('description'),
-        ]);
+        try {
+            $charge = $stripe->charges->create([
+                'amount' => (session()->get('total')*100)*$currency_base->mxn,
+                'currency' => 'mxn',
+                'source' => $token->id,
+                'description' => session()->get('description'),
+            ]);
+        } catch (\Throwable $th) {
+            return redirect()->route('terminal.reject');
+        }
+
 
 
         if ($charge->captured) {
-            try {
-                foreach (session()->get('references') as $reference) {
-                    $reference = Reference::find($reference->id);
-                    $reference->status = 2;
-                    $reference->update();
-                }
-                return redirect()->route('terminal.aproved');
-            } catch (\Throwable $th) {
-                return redirect()->route('terminal.reject');
+            foreach (session()->get('references') as $reference) {
+                $reference = Reference::find($reference->id);
+                $reference->status = 2;
+                $reference->update();
             }
-        }/* else{
-
-        } */
+            return redirect()->route('terminal.aproved');
+        }else{
+            return redirect()->route('terminal.reject');
+        }
     }
 
     public function validateChargeOpenPay()
