@@ -15,10 +15,12 @@ class OrderShipped extends Mailable
      * Create a new message instance.
      *
      * @return void
+     *
      */
-    public function __construct()
+    protected $references;
+    public function __construct($references = [])
     {
-        //
+        $this->references = $references;
     }
 
     /**
@@ -28,6 +30,9 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.orders.shipped');
+        return $this->from('no-reply@administraflotilla.com')
+        ->markdown('emails.orders.shipped',[
+            'references' => $this->references
+        ]);
     }
 }
