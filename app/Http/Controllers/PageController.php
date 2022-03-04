@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewClient;
 use App\Models\Section;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -26,5 +28,10 @@ class PageController extends Controller
     public function sap(){
         $clientes = Section::where('name','clientes')->where('page','index')->first();
         return view('sap',compact('clientes'));
+    }
+
+    public function sendmail(Request $request){
+        /* return $request->all(); */
+        Mail::to('dev@agenciavandu.com')->send(new NewClient($request));
     }
 }
