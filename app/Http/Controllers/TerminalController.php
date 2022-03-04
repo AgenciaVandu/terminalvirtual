@@ -92,15 +92,19 @@ class TerminalController extends Controller
 
 
         if ($charge->captured) {
-            foreach (session()->get('references') as $reference) {
-                $reference = Reference::find($reference->id);
-                $reference->status = 2;
-                $reference->update();
+            try {
+                foreach (session()->get('references') as $reference) {
+                    $reference = Reference::find($reference->id);
+                    $reference->status = 2;
+                    $reference->update();
+                }
+                return redirect()->route('terminal.aproved');
+            } catch (\Throwable $th) {
+                return redirect()->route('terminal.reject');
             }
-            return redirect()->route('terminal.aproved');
-        }else{
-            return redirect()->route('terminal.reject');
-        }
+        }/* else{
+
+        } */
     }
 
     public function validateChargeOpenPay()
