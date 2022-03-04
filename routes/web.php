@@ -76,6 +76,8 @@ Route::get('checkout/directChargeOpenpay/responsepayment/', [TerminalController:
 Route::get('/gracias-por-tu-pago', function () {
     return view('terminal.bill-pagada');
 })->name('terminal.aproved');
-
+Route::get('/error-de-pago', function () {
+    return view('terminal.error-de-pago');
+});
 
 
