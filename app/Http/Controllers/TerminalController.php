@@ -99,7 +99,7 @@ class TerminalController extends Controller
             }
             return redirect()->route('terminal.aproved');
         }else{
-            return redirect()->route('terminal.index');
+            return redirect()->route('terminal.reject');
         }
     }
 
