@@ -37,7 +37,7 @@
             <p class="source-regular">Recuerde comprobar que todos los datos incluidos son correctos, en caso contrario
                 comuniquese al
                 <span class="source-regular" style="color: gray;">
-                    <a href="tel:5219999306745" style="color: gray;">+52 1 999 930 6745</a>
+                    <a href="https://api.whatsapp.com/send/?phone=529999306745" style="color: gray;">+52 1 999 930 6745</a>
                 </span> <br> o por correo electrónico a <span class="source-regular" style="color: gray; ">
                     <a href="mailto:info@administraflotilla.com" style="color: gray;">info@administraflotilla.com</a>
                 </span> para solicitar ajustes.
