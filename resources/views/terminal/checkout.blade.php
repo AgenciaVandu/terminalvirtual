@@ -156,7 +156,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="cc-expiration">año expiración</label>
+                            <label for="cc-expiration">año de expiración</label>
                             <select class="form-control" data-openpay-card="expiration_year" name="expiration_year">
                                 <option value="22">2022</option>
                                 <option value="23">2023</option>
