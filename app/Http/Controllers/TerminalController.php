@@ -92,16 +92,15 @@ class TerminalController extends Controller
                 'source' => $token->id,
                 'description' => session()->get('description'),
             ]);
-            foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','alianzas@etecno.com.mx',auth()->user()->email] as $emails) {
-                Mail::to($emails)->send(new OrderShipped(session()->get('references')));
-            }
 
         } catch (\Throwable $th) {
             return redirect()->route('terminal.reject');
         }
 
         /* return session()->get('references'); */
-
+        foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','alianzas@etecno.com.mx',auth()->user()->email] as $emails) {
+            Mail::to($emails)->send(new OrderShipped(session()->get('references')));
+        }
         if ($charge->captured) {
             foreach (session()->get('references') as $reference) {
                 $reference = Reference::find($reference->id);
