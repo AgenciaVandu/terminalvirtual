@@ -127,7 +127,7 @@
          </div>
      </div>
  </section>
- <section id="hightlights-1">
+{{--  <section id="hightlights-1">
      <div class="container-fluid pt-5">
          <div class="row">
              <div class="col-lg-6 col-md-12 col-sm-12 left m-auto">
@@ -213,7 +213,7 @@
              </div>
          </div>
      </div>
- </section>
+ </section> --}}
  <section id="CTA" class="m-5">
      <div class="container text-center">
          <div class="pad-1">
