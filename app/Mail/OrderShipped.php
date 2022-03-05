@@ -30,7 +30,7 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@administraflotilla.com')
+        return $this->from('ab@agenciavandu.com')
         ->markdown('emails.orders.shipped',[
             'references' => $this->references
         ]);
