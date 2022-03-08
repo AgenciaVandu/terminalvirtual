@@ -24,6 +24,7 @@ class Clients extends Component
     public $amount,$description,$ref;
     public $listeners=['render'];
     public $editContract,$rand;
+    public $showPass=false;
 
     protected $rules = [
             'name' => 'required',

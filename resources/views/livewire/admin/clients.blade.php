@@ -126,8 +126,15 @@
 
                             <div class="mt-4">
                                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                                <x-jet-input id="password" class="block mt-1 w-full" type="password"
-                                    wire:model="password" />
+                                <div class="flex items-center ">
+                                    <x-jet-input id="password" class="block mt-1 w-full" type="{{ $showPass ? 'text' : 'password' ; }}"
+                                        wire:model="password" />
+                                    @if ($showPass)
+                                        <i class="fas fa-eye-slash ml-2 cursor-pointer" wire:click="$set('showPass', false)"></i>
+                                    @else
+                                        <i class="fas fa-eye ml-2 cursor-pointer" wire:click="$set('showPass', true)"></i>
+                                    @endif
+                                </div>
                                 <x-jet-input-error for="password" />
                             </div>
 
@@ -285,7 +292,8 @@
                                                                                                     <i
                                                                                                         class="fas fa-pen"></i>
                                                                                                 </a>
-                                                                                                <i class="fas fa-trash cursor-pointer hover:text-red-600" wire:click="deleteReference({{ $reference }})"></i>
+                                                                                                <i class="fas fa-trash cursor-pointer hover:text-red-600"
+                                                                                                    wire:click="deleteReference({{ $reference }})"></i>
                                                                                             @break
 
                                                                                             @case(2)
