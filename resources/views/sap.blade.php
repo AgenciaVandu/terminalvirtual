@@ -32,16 +32,18 @@
                             Integre y estandarice sus procesos de negocio en SAP Business ONE.
                         </h1>
                         <p class="source-regular ">
-                            Ayudamos a administrar y gestionar la flota vehicular o activos en general, mantener controlados los costos operativos y monitorear los indicadores de desempeño de la misma. Kananfleet cuenta con una versión certificada por SAP a nivel internacional e integrada al ERP SAP B1.
+                            Ayudamos a administrar y gestionar la flota vehicular o activos en general, mantener controlados
+                            los costos operativos y monitorear los indicadores de desempeño de la misma. Kananfleet cuenta
+                            con una versión certificada por SAP a nivel internacional e integrada al ERP SAP B1.
                         </p>
                         <button class="btn btn-secondary btn-sm source-semibold" data-toggle="modal"
                             data-target="#lead-kananfleet">SOLICITAR DEMO</button>
                     </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
-                            <div class="d-none d-sm-none d-md-none d-lg-block">
-                                <img src="{{asset('./img/stock.png')}}" alt="" class="img-fluid">
-                            </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+                        <div class="d-none d-sm-none d-md-none d-lg-block">
+                            <img src="{{ asset('./img/stock.png') }}" alt="" class="img-fluid">
                         </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-7 col-md-12 col-sm-12">
@@ -52,7 +54,10 @@
                             Kananfleet es para usted sin importar la vertical de su empresa.
                         </h2>
                         <p class="source-regular text-justify">
-                            El ADDON Kananfleet para SAP Business ONE, es una solución que le ayuda a incorporar herramientas para Administrar y Gestionar sus Vehículos y Activos en general, ya sean tractocamiones, vehículos automotores, vehículos utilitarios, montacargas, grúas, cajas secas, dollys, plataformas, pipas, etc.
+                            El ADDON Kananfleet para SAP Business ONE, es una solución que le ayuda a incorporar
+                            herramientas para Administrar y Gestionar sus Vehículos y Activos en general, ya sean
+                            tractocamiones, vehículos automotores, vehículos utilitarios, montacargas, grúas, cajas secas,
+                            dollys, plataformas, pipas, etc.
                         </p>
                     </div>
                 </div>
@@ -66,15 +71,17 @@
                     <div class="glider">
                         @foreach ($clientes->images as $cliente)
                             <div class="px-2 text-center">
-                                <div class="col aliado-elemento">
-                                    <img src="{{ Storage::url($cliente->url) }}" class="img-fluid">
-                                </div>
+                                <a href="">
+                                    <div class="col aliado-elemento">
+                                        <img src="{{ Storage::url($cliente->url) }}" class="img-fluid">
+                                    </div>
+                                </a>
                             </div>
                         @endforeach
-                        <button aria-label="Previous" class="glider-prev">«</button>
-                        <button aria-label="Next" class="glider-next">»</button>
-                        <div role="tablist" class="dots"></div>
                     </div>
+                    <button aria-label="Previous" class="glider-prev">«</button>
+                    <button aria-label="Next" class="glider-next">»</button>
+                    <div role="tablist" class="dots"></div>
                 </div>
                 {{-- <div class="row pt-5">
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
@@ -109,17 +116,20 @@
                 <div class="row pt-5">
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
                         <figure>
-                            <img src="{{asset('./img/img-4.png')}}" class="img-fluid" alt="Picture Kananfleet">
+                            <img src="{{ asset('./img/img-4.png') }}" class="img-fluid" alt="Picture Kananfleet">
                         </figure>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 m-auto">
-                        <h4 class="source-bold pb-3" style="font-size: 2rem">KANANFLEET le ofrece una plataforma completa para:</h4>
+                        <h4 class="source-bold pb-3" style="font-size: 2rem">KANANFLEET le ofrece una plataforma completa
+                            para:</h4>
                         <li class=" source-semibold">
                             <div class="row m-auto">
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Administrar la disponibilidad y<br class="d-none d-sm-none d-md-none d-lg-block"> estatus de sus vehículos, activos, mantenibles.</p>
+                                <p class="source-semibold">Administrar la disponibilidad y<br
+                                        class="d-none d-sm-none d-md-none d-lg-block"> estatus de sus vehículos, activos,
+                                    mantenibles.</p>
                             </div>
                         </li>
                         <li class=" source-semibold">
@@ -127,7 +137,8 @@
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Administrar el mantenimiento preventivo,<br class="d-none d-sm-none d-md-none d-lg-block"> correctivo y órdenes de servicio.</p>
+                                <p class="source-semibold">Administrar el mantenimiento preventivo,<br
+                                        class="d-none d-sm-none d-md-none d-lg-block"> correctivo y órdenes de servicio.</p>
                             </div>
                         </li>
                         <li class=" source-semibold">
@@ -152,7 +163,8 @@
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Administrar la asignación e historial de choferes y operadores.</p>
+                                <p class="source-semibold">Administrar la asignación e historial de choferes y operadores.
+                                </p>
                             </div>
                         </li>
                         <li class="source-semibold">
@@ -160,7 +172,8 @@
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Administrar viajes, liquidaciones de viaje, carta porte<br> y complemento de carta porte</p>
+                                <p class="source-semibold">Administrar viajes, liquidaciones de viaje, carta porte<br> y
+                                    complemento de carta porte</p>
                             </div>
                         </li>
                         <li class="source-semibold">
@@ -168,7 +181,8 @@
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Reportes programables sobre cada aspecto de la flota,<br> vehículo, activo o mantenible.</p>
+                                <p class="source-semibold">Reportes programables sobre cada aspecto de la flota,<br>
+                                    vehículo, activo o mantenible.</p>
                             </div>
                         </li>
                         <li class="source-semibold">
@@ -176,7 +190,8 @@
                                 <div class="check pr-2">
                                     <img src="{{ asset('/img/icons/check.svg') }}" width="25" alt="">
                                 </div>
-                                <p class="source-semibold">Indicadores de desempeño de la operación y rentabilidad <br> de la flota, vehículo, activo o mantenible</p>
+                                <p class="source-semibold">Indicadores de desempeño de la operación y rentabilidad <br> de
+                                    la flota, vehículo, activo o mantenible</p>
                             </div>
                         </li>
                         <li class="source-semibold">
@@ -187,8 +202,9 @@
                                 <p class="source-semibold">ENTRE MUCHAS OTRAS FUNCIONALIDADES.</p>
                             </div>
                         </li>
-                        <small class="source-regular">* Para mayor información consulte el menú de Módulos de esta página o solicite una demo de nuestro producto.</small>
-                        
+                        <small class="source-regular">* Para mayor información consulte el menú de Módulos de esta página o
+                            solicite una demo de nuestro producto.</small>
+
                     </div>
                 </div>
             </div>
@@ -238,7 +254,7 @@
                 </div>
             </div> --}}
             <!--lista-->
-            
+
         </div>
     </section>
     <section id="CTA" class="m-5">
@@ -249,8 +265,7 @@
                     es un software de
                     contabilidad, CRM o ERP. Nosotros creamos las integraciones necesarias.
                 </p>
-                <a data-toggle="modal"
-                data-target="#lead-kananfleet" class="btn btn-primary">SOLICITAR DEMO</a> <br>
+                <a data-toggle="modal" data-target="#lead-kananfleet" class="btn btn-primary">SOLICITAR DEMO</a> <br>
                 <small class="source-light">Pónganse en contacto con nosotros</small>
             </div>
         </div>
