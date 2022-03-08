@@ -44,10 +44,13 @@
                             Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
                         </li>
                         <li class="source-semibold">
-                            TAX ID (RFC, RUC, RTN, NIT, etc.): <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                            TAX ID (RFC, RUC, RTN, NIT, etc.): <span
+                                class="source-regular">{{ auth()->user()->RFC }}</span>
                         </li>
                         <li class="source-regular" style="color: green">
-                            <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15" > Seleccione las partidas a pagar y presione el botón pagar conceptos. <br>  <small class="source-light"> Será redireccionado a la pantalla de pago. </small>
+                            <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15">
+                            Seleccione las partidas a pagar y presione el botón pagar conceptos. <br> <small
+                                class="source-light"> Será redireccionado a la pantalla de pago. </small>
                         </li>
 
                     </div>
@@ -92,6 +95,9 @@
             </div>
         </div>
         <div class="container">
+            @error('references')
+                <div class="alert alert-danger text-center">Seleccione una partida para continuar</div>
+            @enderror
             <div class="boton-pagar">
                 {{-- <a href="{{ route('terminal.checkout', $reference) }}" class="btn btn-primary btn-block">Pagar conceptos</a> --}}
                 <input type="hidden" name="order" value="{{ $order }}">
@@ -207,7 +213,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    this.closest('form').submit();">Cerrar sesión</a>
+                            this.closest('form').submit();">Cerrar sesión</a>
                 </form>
             </div>
         </div>

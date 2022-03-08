@@ -20,11 +20,15 @@ class TerminalController extends Controller
     }
 
     public function order(Order $order){
+        $this->authorize('show',$order);
         $splits = $order->references->where('status',1);
         return view('terminal.bill',compact('splits','order'));
     }
 
     public function checkout(Request $request){
+        $request->validate([
+            'references'=> 'required'
+        ]);
         $total = 0;
         $description="";
         $order= json_decode($request->order);
