@@ -9,6 +9,9 @@ class Curriencies extends Component
 {
     public $mxn,$usd;
     public function mount(){
+        if (!auth()->user()->hasRole('admin')) {
+            return redirect()->route('index');
+        }
         $this->mxn = Currency::find(1)->mxn;
         $this->usd = Currency::find(1)->usd;
     }

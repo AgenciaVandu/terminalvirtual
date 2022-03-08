@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Clients extends Component
 {
     use WithPagination;
     use WithFileUploads;
+    use AuthorizesRequests;
 
     public $table=true,$show=false,$addClient=false,$addReference=false,$client,$references=[],$orders=[],$splits=[];
     public $order,$addOrder=false,$contractDescription;
@@ -30,7 +32,7 @@ class Clients extends Component
             'company_name' => 'required',
             'bussiness_name' => 'required',
             'RFC' => 'required',
-            'legal_representative_name' => 'required',
+            //'legal_representative_name' => 'required',
     ];
     public $editForm = [
             'company_name' => null,
@@ -62,6 +64,9 @@ class Clients extends Component
     }
 
     public function mount(){
+        if (!auth()->user()->hasRole('admin')) {
+            return redirect()->route('index');
+        }
         $this->rand = rand();
     }
     //Funciones para agregar clientes
