@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="container">
-            @error('references')
+            @error('splits')
                 <div class="alert alert-danger text-center">Seleccione una partida para continuar</div>
             @enderror
             <div class="boton-pagar">

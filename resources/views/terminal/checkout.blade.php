@@ -72,7 +72,7 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Representante Legal</h6>
+                            <h6 class="my-0">Puesto</h6>
                             <small class="text-muted">{{ auth()->user()->legal_representative_name }}</small>
                         </div>
                     </li>

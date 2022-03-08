@@ -40,7 +40,7 @@
                     Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
                 </li>
                 <li class="source-semibold">
-                    RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                    TAX ID (RFC, RUC, RTN, NIT, etc.):  <span class="source-regular">{{ auth()->user()->RFC }}</span>
                 </li>
                 <li class="source-regular" style="color: green">
                     <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra

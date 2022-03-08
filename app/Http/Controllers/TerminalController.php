@@ -27,7 +27,7 @@ class TerminalController extends Controller
 
     public function checkout(Request $request){
         $request->validate([
-            'references'=> 'required'
+            'splits'=> 'required'
         ]);
         $total = 0;
         $description="";
