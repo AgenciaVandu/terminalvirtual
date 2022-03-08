@@ -724,7 +724,7 @@
     "Add reference":"Agregar referencia",
     "Add client":"Agregar cliente",
     "Company name":"Nombre de la empresa",
-    "Bussiness name":"Razón social",
+    "Bussiness name":"Puesto",
     "Legal representative name":"Representante legal",
     "Open":"Abrir",
     "Description":"Descripción",
@@ -737,5 +737,6 @@
     "Add order":"Agregar Orden",
     "Splits":"Partidas",
     "Add Split":"Agregar partida",
-    "Config currencies":"Configuración de divisa"
+    "Config currencies":"Configuración de divisa",
+    "RFC":"TAX ID (RFC, RUC, RTN, NIT ,ETC.)"
 }

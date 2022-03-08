@@ -111,6 +111,13 @@
                             </div>
 
                             <div class="mt-4">
+                                <x-jet-label for="name" value="{{ __('Bussiness name') }}" />
+                                <x-jet-input id="name" class="block mt-1 w-full" type="text"
+                                    wire:model="bussiness_name" />
+                                <x-jet-input-error for="bussiness_name" />
+                            </div>
+
+                            <div class="mt-4">
                                 <x-jet-label for="email" value="{{ __('Email') }}" />
                                 <x-jet-input id="email" class="block mt-1 w-full" type="email" wire:model="email" />
                                 <x-jet-input-error for="email" />
@@ -128,13 +135,6 @@
                                 <x-jet-input id="name" class="block mt-1 w-full" type="text"
                                     wire:model="company_name" />
                                 <x-jet-input-error for="company_name" />
-                            </div>
-
-                            <div class="mt-4">
-                                <x-jet-label for="name" value="{{ __('Bussiness name') }}" />
-                                <x-jet-input id="name" class="block mt-1 w-full" type="text"
-                                    wire:model="bussiness_name" />
-                                <x-jet-input-error for="bussiness_name" />
                             </div>
 
                             <div class="mt-4">
@@ -177,13 +177,13 @@
                                     <x-jet-input-error for="editForm.company_name" />
                                 </div>
                                 <div class="col-span-6 sm:col-span-4">
-                                    <x-jet-label value="Razón Social" />
+                                    <x-jet-label value="{{ __('Bussiness name') }}" />
                                     <x-jet-input type="text" wire:model="editForm.bussiness_name" class="w-full"
                                         placeholder="Razón Social" />
                                     <x-jet-input-error for="editForm.bussiness_name" />
                                 </div>
                                 <div class="col-span-6 sm:col-span-4">
-                                    <x-jet-label value="RFC" />
+                                    <x-jet-label value="{{ __('RFC') }}" />
                                     <x-jet-input type="text" wire:model="editForm.RFC" class="w-full"
                                         placeholder="RFC" />
                                     <x-jet-input-error for="editForm.RFC" />
@@ -284,11 +284,14 @@
                                                                                                     <i
                                                                                                         class="fas fa-pen"></i>
                                                                                                 </a>
+                                                                                                <i class="fas fa-trash cursor-pointer hover:text-red-600" wire:click="deleteReference({{ $reference }})"></i>
                                                                                             @break
+
                                                                                             @case(2)
                                                                                                 <i
                                                                                                     class="far fa-check-circle text-green-500"></i>
                                                                                             @break
+
                                                                                             @default
                                                                                         @endswitch
 
