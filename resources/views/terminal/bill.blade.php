@@ -49,7 +49,7 @@
                         <li class="source-regular" style="color: green">
                             <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15" > Seleccione las partidas a pagar y presione el botón pagar conceptos. <br>  <small class="source-light"> Será redireccionado a la pantalla de pago. </small>
                         </li>
-                       
+
                     </div>
                 </div>
             </div>
@@ -204,7 +204,11 @@
                 </span> para solicitar ajustes.
             </p>
             <div class="col m-auto text-center">
-                <a href="" class="btn btn-outline-dark">Cerrar sesión</a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    this.closest('form').submit();">Cerrar sesión</a>
+                </form>
             </div>
         </div>
     </secion>

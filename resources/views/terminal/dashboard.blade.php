@@ -77,6 +77,13 @@
                 </div> --}}
             </div>
         </div>
+        <div class="col m-auto text-center">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+                this.closest('form').submit();">Cerrar sesión</a>
+            </form>
+        </div>
     </section>
 
 @endsection
