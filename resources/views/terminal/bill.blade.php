@@ -29,23 +29,29 @@
     @endpush
     <header class="bill">
         <div class=" pt-5 pb-3 text-center">
-            <h2 class="source-bold">Terminal de pago Virtual</h2>
+            <h2 class="source-bold">Terminal de pago Virtual<br>
+                <small>Panel de usuario</small>
+            </h2>
         </div>
         <div class="container-fluid pl-4 pb-3">
-            <div class="datos">
-                <li class="source-semibold">
-                    Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
-                </li>
-                <li class="source-semibold">
-                    Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
-                </li>
-                <li class="source-semibold">
-                    Identificación tributaria: <span class="source-regular">{{ auth()->user()->RFC }}</span>
-                </li>
-                <li class="source-regular" style="color: green">
-                    <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15" > Seleccione las partidas a pagar y presione el botón pagar conceptos. <small class="source-light"> Será redireccionado a la pantalla de pago. </small>
-                </li>
-               
+            <div class="row">
+                <div class="col-12">
+                    <div class="datos">
+                        <li class="source-semibold">
+                            Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
+                        </li>
+                        <li class="source-semibold">
+                            Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
+                        </li>
+                        <li class="source-semibold">
+                            TAX ID (RFC, RUC, RTN, NIT, etc.): <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                        </li>
+                        <li class="source-regular" style="color: green">
+                            <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15" > Seleccione las partidas a pagar y presione el botón pagar conceptos. <br>  <small class="source-light"> Será redireccionado a la pantalla de pago. </small>
+                        </li>
+                       
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -191,12 +197,15 @@
             <p class="pt-4 source-regular text-center">Recuerde comprobar que todos los datos incluidos son correctos, en
                 caso contrario comuniquese al <br class="d-block d-sm-block d-md-none d-lg-none">
                 <span class="source-regular" style="color: gray;">
-                    <a href="tel:5219999306745" style="color: gray;">+52 1 999 930 6745</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999 200 5672</a>
                 </span> <br class="d-none d-sm-none d-md-block d-lg-block"> o por correo electrónico a <span
                     class="source-regular" style="color: gray; ">
                     <a href="mailto:info@administraflotilla.com" style="color: gray;">info@administraflotilla.com</a>
                 </span> para solicitar ajustes.
             </p>
+            <div class="col m-auto text-center">
+                <a href="" class="btn btn-outline-dark">Cerrar sesión</a>
+            </div>
         </div>
     </secion>
 @endsection
