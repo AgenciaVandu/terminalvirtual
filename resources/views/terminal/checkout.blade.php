@@ -33,11 +33,13 @@
     @endpush
     <div id="checkout-f" class="container mb-3">
         <div class="py-5 text-center">
-            <h2 class="source-bold">Terminal de pago Virtual</h2>
+            <h2 class="source-bold">Terminal de pago Virtual <br>
+            <small>Pánel de usuario</small>
+        </h2>
             <p class="source-regular">Recuerde comprobar que todos los datos incluidos son correctos, en caso contrario
                 comuniquese al
                 <span class="source-regular" style="color: gray;">
-                    <a href="https://api.whatsapp.com/send/?phone=529999306745" style="color: gray;">+52 1 999 930 6745</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999 200 5672</a>
                 </span> <br> o por correo electrónico a <span class="source-regular" style="color: gray; ">
                     <a href="mailto:info@administraflotilla.com" style="color: gray;">info@administraflotilla.com</a>
                 </span> para solicitar ajustes.
@@ -109,9 +111,10 @@
                         <div class="col-6 pb-3">
                             <li>
                                 Tarjetas de débito: <br>
-                                <img src="{{ asset('/img/cards2_1.png') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/img/cards_vm1.png') }}" class="img-fluid" alt="">
+                                {{-- <img src="{{ asset('/img/cards2_1.png') }}" class="img-fluid" alt="">
                                 <img src="{{ asset('/img/cards2_2.png') }}" class="img-fluid" alt="">
-                                <img src="{{ asset('/img/cards2_3.png') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('/img/cards2_3.png') }}" class="img-fluid" alt=""> --}}
                             </li>
                         </div>
                         <input type="hidden" name="token_id" id="token_id">
@@ -200,6 +203,9 @@
                         bits</small>
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" id="pay-button">Pagar</button>
+                    <div class="text-center mt-2">
+                        <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Volver Atrás</a>
+                    </div>
                 </form>
             </div>
         </div>

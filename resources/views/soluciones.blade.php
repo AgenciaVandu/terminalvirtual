@@ -88,9 +88,9 @@
         </div>
     </div>
 </section>
-<section id="mapa-conceptual">
+<section id="mapa-conceptual mt-5">
     <div class="container text-center pb-4">
-        <img src="/img/mapa.png" class="w-100" alt="">
+        <img src="/img/conceptual-kanan.jpg" class="img-fluid" alt="">
     </div>
 </section>
 <section id="video" class="mt-5">
