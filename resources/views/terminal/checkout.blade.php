@@ -34,7 +34,7 @@
     <div id="checkout-f" class="container mb-3">
         <div class="py-5 text-center">
             <h2 class="source-bold">Terminal de pago Virtual <br>
-            <span>Pánel de usuario</span>
+            <small>Pánel de usuario</small>
         </h2>
             <p class="source-regular">Recuerde comprobar que todos los datos incluidos son correctos, en caso contrario
                 comuniquese al
