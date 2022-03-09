@@ -204,7 +204,7 @@
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" id="pay-button">Pagar</button>
                     <div class="text-center mt-2">
-                        <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Volver Atrás</a>
+                        <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
                     </div>
                 </form>
             </div>

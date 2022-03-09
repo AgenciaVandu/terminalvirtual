@@ -49,9 +49,13 @@
                         <li class="source-regular" style="color: green">
                             <img src="{{ asset('/img/circle-info-solid.svg') }}" class="mr-2" width="15" > Seleccione las partidas a pagar y presione el botón pagar conceptos. <br>  <small class="source-light"> Será redireccionado a la pantalla de pago. </small>
                         </li>
-                       
                     </div>
                 </div>
+                {{-- <div class="col-6 text-right m-auto">
+                    <figure>
+                         <img src="{{asset('/img/logoetecno-3.png')}}" class="img-fluid" alt="">
+                    </figure>
+                 </div> --}}
             </div>
         </div>
     </header>
@@ -96,6 +100,9 @@
                 {{-- <a href="{{ route('terminal.checkout', $reference) }}" class="btn btn-primary btn-block">Pagar conceptos</a> --}}
                 <input type="hidden" name="order" value="{{ $order }}">
                 <button type="submit" class="btn btn-primary btn-block">Pagar conceptos</button>
+                <div class="text-center mt-2">
+                    <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
+                </div>
             </div>
         </div>
         </form>

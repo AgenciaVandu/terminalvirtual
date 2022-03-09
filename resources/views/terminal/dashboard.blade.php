@@ -27,24 +27,77 @@
 
         </style>
     @endpush
+    <!-- Button trigger modal -->
+{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+   --}}
+  <!-- Modal -->
+  <div class="modal fade" id="cambiar-password" tabindex="-1" aria-labelledby="cambiar-password" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cambiar-password-label">Actualizar contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p class="source-regular text-muted">
+                Asegúrese que su cuenta esté usando una contraseña larga y aleatoria para mantenerse seguro.
+            </p>
+            <form>
+                <div class="form-group">
+                  <label for="cambiar-pswd">Contraseña actual</label>
+                  <input type="password" class="form-control" id="cambiar-pswd">
+                  <small class="text-muted">Contraseña asignada por Kananfleet</small>
+                </div>
+                <div class="form-group">
+                    <label for="pswd-nuevo">Contraseña nueva</label>
+                    <input type="password" class="form-control" id="pswd-nuevo">
+                    <small class="text-muted">Sugerencia: Utilice caracteres especiales</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmar-pswd">Confirmar contraseña</label>
+                    <input type="password" class="form-control" id="confirmar-pswd">
+                </div>
+              </form>
+              <button type="submit" class="btn btn-primary mb-4">Cambiar contraseña</button>
+        </div>
+        {{-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> --}}
+      </div>
+    </div>
+  </div>
     <header class="bill">
         <div class=" pt-5 pb-3 text-center">
-            <h2 class="source-bold">Terminal de pago Virtual</h2>
+            <h2 class="source-bold">Terminal de pago Virtual <br>
+            <small>Panel de usuario</small></h2>
         </div>
         <div class="container pb-3">
-            <div class="datos">
-                <li class="source-semibold">
-                    Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
-                </li>
-                <li class="source-semibold">
-                    Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
-                </li>
-                <li class="source-semibold">
-                    RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
-                </li>
-                <li class="source-regular" style="color: green">
-                    <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra
-                </li>
+            <div class="row">
+                <div class="col-12 datos">
+                    <li class="source-semibold">
+                        Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
+                    </li>
+                    <li class="source-semibold">
+                        Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
+                    </li>
+                    <li class="source-semibold">
+                        RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                    </li>
+                    <li class="source-regular" style="color: green">
+                        <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra
+                    </li>
+                    <button type="button" class="btn btn-light btn-sm mt-2"  data-toggle="modal" data-target="#cambiar-password">Cambiar contraseña</button>
+                </div>
+                {{-- <div class="col-6 text-right m-auto">
+                   <figure>
+                        <img src="{{asset('/img/logoetecno-3.png')}}" class="img-fluid" alt="">
+                   </figure>
+                </div> --}}
             </div>
         </div>
     </header>
