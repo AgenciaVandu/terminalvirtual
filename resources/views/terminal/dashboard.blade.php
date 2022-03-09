@@ -77,6 +77,7 @@
             <small>Panel de usuario</small></h2>
         </div>
         <div class="container pb-3">
+<<<<<<< HEAD
             <div class="datos">
                 <li class="source-semibold">
                     Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
@@ -90,6 +91,29 @@
                 <li class="source-regular" style="color: green">
                     <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra
                 </li>
+=======
+            <div class="row">
+                <div class="col-12 datos">
+                    <li class="source-semibold">
+                        Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
+                    </li>
+                    <li class="source-semibold">
+                        Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
+                    </li>
+                    <li class="source-semibold">
+                        RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                    </li>
+                    <li class="source-regular" style="color: green">
+                        <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15" > seleccione su orden de compra
+                    </li>
+                    <button type="button" class="btn btn-light btn-sm mt-2"  data-toggle="modal" data-target="#cambiar-password">Cambiar contraseña</button>
+                </div>
+                {{-- <div class="col-6 text-right m-auto">
+                   <figure>
+                        <img src="{{asset('/img/logoetecno-3.png')}}" class="img-fluid" alt="">
+                   </figure>
+                </div> --}}
+>>>>>>> frontend
             </div>
         </div>
     </header>
