@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TerminalController;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,10 +88,6 @@ Route::get('/error-de-pago', function () {
 })->name('terminal.reject');
 
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-});
 
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
