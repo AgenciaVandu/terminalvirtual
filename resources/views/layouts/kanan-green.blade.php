@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-kanan fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/img/kanan-green.svg') }}" width="120" alt="">
+                <img src="{{ asset('/img/kanan-green.svg') }}" width="120" alt="Logotipo Kananfleet">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,14 +183,14 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-lg-3 col-sm-6 col-sm-12 m-auto">
-                    <img src="{{ asset('/img/logoetecno.png') }}" class="img-fluid">
+                    <img src="{{ asset('/img/logoetecno.png') }}" class="img-fluid" alt="Etecno SA de CV">
                 </div>
                 <div class="col-lg-3 col-sm-6 col-sm-12">
                     <h4 class="source-bold" style="color: #fff;">Contacto</h4>
                     <li class="source-semibold pt-3" style="color: #fff;">Dirección: <br>
                         <span class="source-regular" style="color: gray; font-size: .8em;">
                             Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra Papacal, Mérida
-                            Yucatán. CP. 97302
+                            Yucatán. CP. 97302 <img src="{{asset('/img/Mexico.png')}}" class="img-fluid" alt="Bandera de México">
                         </span>
                     </li>
                     <li class="source-semibold" style="color: #fff;">Teléfono: <br>
