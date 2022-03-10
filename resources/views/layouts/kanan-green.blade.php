@@ -13,6 +13,25 @@
     @stack('css')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <!-- Meta Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '309569444491923');
+            fbq('track', 'PageView');
+         </script>
+            <noscript>
+                <img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=309569444491923&ev=PageView&noscript=1"
+                />
+            </noscript>
+        <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -176,7 +195,7 @@
                     </li>
                     <li class="source-semibold" style="color: #fff;">Teléfono: <br>
                         <span class="source-regular" style="color: gray; font-size: .8em;">
-                            <a href="tel:5219999306745" style="color: gray;">+52 1 999 930 6745</a>
+                            <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999 200 5672</a>
                         </span>
                     </li>
                     <li class="source-semibold" style="color: #fff;">Email: <br>
