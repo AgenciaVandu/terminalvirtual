@@ -45,23 +45,24 @@
                     <p class="source-regular text-muted">
                         Asegúrese que su cuenta esté usando una contraseña larga y aleatoria para mantenerse seguro.
                     </p>
-                    <form>
+                    <form method="POST" action="{{ route('user.update.password') }}" class="text-left">
+                        @csrf
                         <div class="form-group">
                             <label for="cambiar-pswd">Contraseña actual</label>
-                            <input type="password" class="form-control" id="cambiar-pswd">
+                            <input type="password" class="form-control" id="cambiar-pswd" name="current_password">
                             <small class="text-muted">Contraseña asignada por Kananfleet</small>
                         </div>
                         <div class="form-group">
                             <label for="pswd-nuevo">Contraseña nueva</label>
-                            <input type="password" class="form-control" id="pswd-nuevo">
+                            <input type="password" class="form-control" id="pswd-nuevo" name="password">
                             <small class="text-muted">Sugerencia: Utilice caracteres especiales</small>
                         </div>
                         <div class="form-group">
                             <label for="confirmar-pswd">Confirmar contraseña</label>
-                            <input type="password" class="form-control" id="confirmar-pswd">
+                            <input type="password" class="form-control" id="confirmar-pswd" name="password_confirmation">
                         </div>
+                        <button type="submit" class="btn btn-primary mb-4">Cambiar contraseña</button>
                     </form>
-                    <button type="submit" class="btn btn-primary mb-4">Cambiar contraseña</button>
                 </div>
                 {{-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -86,7 +87,7 @@
                         Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
                     </li>
                     <li class="source-semibold">
-                        RFC: <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                        TAX ID (RFC, RUC, RTN, NIT, etc.): <span class="source-regular">{{ auth()->user()->RFC }}</span>
                     </li>
                     <li class="source-regular" style="color: green">
                         <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15"> seleccione su orden de compra
@@ -136,7 +137,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                this.closest('form').submit();">Cerrar sesión</a>
+                                                                    this.closest('form').submit();">Cerrar sesión</a>
             </form>
         </div>
     </section>

@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Openpay\Data\Openpay;
 use Stripe\StripeClient;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TerminalController extends Controller
 {
@@ -140,5 +144,19 @@ class TerminalController extends Controller
             return redirect()->route('terminal.aproved');
         }
 
+    }
+
+
+    public function updatePassword(Request $request)
+    {
+        $user = auth()->user();
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withToastError('Contraseña actual no coincide');
+        } else {
+            $user->forceFill([
+                'password' => Hash::make($request->password),
+            ])->save();
+            return back()->withToastSuccess('Contraseña actualizada con éxito');
+        }
     }
 }
