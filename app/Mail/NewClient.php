@@ -32,7 +32,7 @@ class NewClient extends Mailable
      */
     public function build()
     {
-        return $this->from('web@administraflotilla.com')->view('mails.new-client')
+        return $this->view('mails.new-client')
         ->with([
             'name' => $this->request->name,
             'lastname' => $this->request->lastname,
