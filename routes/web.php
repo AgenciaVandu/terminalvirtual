@@ -67,6 +67,13 @@ Route::get('/preguntas-frecuentes', function () {
 Route::get('/kananfleet-mobile', function () {
     return view('modulos.k-mobile');
 });
+Route::get('/kananfleet-mobile', function () {
+    return view('modulos.k-mobile');
+});
+
+Route::get('/politica-de-privacidad', function() {
+    return view('politica-de-privacidad');
+});
 
 
 /* Route::get('/login', function () {
