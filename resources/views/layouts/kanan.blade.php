@@ -179,6 +179,11 @@
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1860.7463088893987!2d-89.78005230301599!3d21.132785234797836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f567791c4d2d3b5%3A0x6f93f9dac2ae79bd!2sKananfleet!5e0!3m2!1ses-419!2smx!4v1640612399449!5m2!1ses-419!2smx"
                         width="auto" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
+                
+            </div> 
+            <div class="text-center pb-2">
+                <span class="source-regular" style="color: #8f8f8f" >Todos los derechos reservados Kananfleet® 2022<a href="/politica-de-privacidad" style="color: #8f8f8f" target="blank_"> Consulte nuestro aviso de privacidad.</a>
+                </span>
             </div>
         </div>
     </footer>

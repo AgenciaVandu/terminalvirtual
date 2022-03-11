@@ -5,9 +5,6 @@
         .bg-kanan {
             background-color: #004c98 ;
         }
-        li {
-            list-style:disc;
-        }
     </style>
 @endpush
     <header class="politica">
@@ -26,32 +23,32 @@
                 De acuerdo a lo Previsto en la "Ley Federal de Protección de Datos Personales", declara ETECNO SA DE CV, ser una empresa legalmente constituida de conformidad con las leyes mexicanas, con domicilio en Calle 27 No. 273 por 30 y 32 Fraccionamiento Montecarlo Norte, C.P. 97130 Mérida, Yucatán, México; y como responsable del tratamiento de sus datos personales, hace de su conocimiento que la información de nuestros clientes es tratada estrictamente confidencial por lo que al proporcionar sus datos personales, tales como:
             </p>
             <ul>
-                <li class="source-regular">Nombre Completo</li>
-                <li class="source-regular">Dirección</li>
-                <li class="source-regular">Registro Federal de Contribuyentes</li>
-                <li class="source-regular">Teléfonos de Hogar, Oficina y móviles</li>
-                <li class="source-regular">Correo Electrónico</li>
+                <li class="source-regular">* Nombre Completo</li>
+                <li class="source-regular">* Dirección</li>
+                <li class="source-regular">* Registro Federal de Contribuyentes</li>
+                <li class="source-regular">* Teléfonos de Hogar, Oficina y móviles</li>
+                <li class="source-regular">* Correo Electrónico</li>
             </ul>
             <span class="source-regular">Estos serán utilizados única y exclusivamente para los siguientes fines:</span>
             <ul>
-                <li class="source-regular">Facturación</li>
-                <li class="source-regular">Campañas de Publicidad</li>
-                <li class="source-regular">Campañas de Fidelidad</li>
-                <li class="source-regular">Información y Prestación de Servicios</li>
-                <li class="source-regular">Actualización de la Base de Datos</li>
-                <li class="source-regular">Cualquier finalidad análoga o compatible con las anteriores</li>
+                <li class="source-regular">* Facturación</li>
+                <li class="source-regular">* Campañas de Publicidad</li>
+                <li class="source-regular">* Campañas de Fidelidad</li>
+                <li class="source-regular">* Información y Prestación de Servicios</li>
+                <li class="source-regular">* Actualización de la Base de Datos</li>
+                <li class="source-regular">* Cualquier finalidad análoga o compatible con las anteriores</li>
             </ul>
             <span class="source-regular">En el caso de Datos sensibles, tales como:</span>
             <ul>
-                <li class="source-regular">Datos Financieros (Ingresos, Estados de Cuentas, y además relacionados)</li>
-                <li class="source-regular">Datos Patrimoniales (Bienes Materiales, Inmuebles, y demás relacionados)</li>
-                <li class="source-regular">Datos Personales (Cónyuge, Estado Civil, Nacionalidad, Educación, Hijos, y demás relacionados)</li>
-                <li class="source-regular">Referencias familiares y no familiares (Nombre, Dirección, teléfono, Relación, etc.)</li>
+                <li class="source-regular">* Datos Financieros (Ingresos, Estados de Cuentas, y además relacionados)</li>
+                <li class="source-regular">* Datos Patrimoniales (Bienes Materiales, Inmuebles, y demás relacionados)</li>
+                <li class="source-regular">* Datos Personales (Cónyuge, Estado Civil, Nacionalidad, Educación, Hijos, y demás relacionados)</li>
+                <li class="source-regular">* Referencias familiares y no familiares (Nombre, Dirección, teléfono, Relación, etc.)</li>
             </ul>
             <span class="source-regular">Estos serán utilizados única y exclusivamente para los siguientes fines:</span>
             <ul>
-                <li class="source-regular">Investigación y/o Obtención de Créditos ante las instituciones Financieras</li>
-                <li class="source-regular">Cualquier finalidad análoga o compatible con la anterior</li>
+                <li class="source-regular">* Investigación y/o Obtención de Créditos ante las instituciones Financieras</li>
+                <li class="source-regular">* Cualquier finalidad análoga o compatible con la anterior</li>
             </ul>
             <p class="source-regular">
                 Para prevenir el acceso no autorizado a sus datos personales y con el fin de asegurar que la información sea utilizada para los fines establecidos en este aviso de privacidad, hemos establecido diversos procedimientos con la finalidad de evitar el uso o divulgación no autorizados de sus datos, permitiéndonos tratarlos debidamente.

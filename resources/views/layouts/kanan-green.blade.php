@@ -265,6 +265,10 @@
                         width="auto" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
+            <div class="text-center pb-2">
+                <span class="source-regular" style="color: #8f8f8f" >Todos los derechos reservados Kananfleet® 2022<a href="/politica-de-privacidad" style="color: #8f8f8f" target="blank_"> Consulte nuestro aviso de privacidad.</a>
+                </span>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
