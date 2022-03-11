@@ -105,11 +105,12 @@ class TerminalController extends Controller
             return redirect()->route('terminal.reject');
         }
 
-        /* return session()->get('references'); */
+
+        if ($charge->captured) {
+            /* return session()->get('references'); */
         foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','jestefani@etecno.com.mx',auth()->user()->email] as $emails) {
             Mail::to($emails)->send(new OrderShipped(session()->get('references')));
         }
-        if ($charge->captured) {
             foreach (session()->get('references') as $reference) {
                 $reference = Reference::find($reference->id);
                 $reference->status = 2;
