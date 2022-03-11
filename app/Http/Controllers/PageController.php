@@ -36,5 +36,6 @@ class PageController extends Controller
         Mail::to('info@administraflotilla.com')->send(new NewClient($request));
         Mail::to('alianzas@etecno.com.mx')->send(new NewClient($request));
         Mail::to('jestefani@etecno.com.mx')->send(new NewClient($request));
+        return back();
     }
 }
