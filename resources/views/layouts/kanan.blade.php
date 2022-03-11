@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,25 +13,39 @@
     @stack('css')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-        <!-- Meta Pixel Code -->
-        <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '309569444491923');
-            fbq('track', 'PageView');
-         </script>
-            <noscript>
-                <img height="1" width="1" style="display:none"
-                src="https://www.facebook.com/tr?id=309569444491923&ev=PageView&noscript=1"
-                />
-            </noscript>
-        <!-- End Meta Pixel Code -->
+        fbq('init', '309569444491923');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=309569444491923&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    {!! htmlScriptTagJsApi([
+        'action' => 'homepage',
+        'callback_then' => 'callbackThen',
+        'callback_catch' => 'callbackCatch'
+    ]) !!}
 </head>
 
 <body>
@@ -87,7 +102,8 @@
 
                 </ul>
                 <div class="form-inline my-2 my-lg-0">
-                    <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_" style="color:#fff; font-size: 1.3em">
+                    <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_"
+                        style="color:#fff; font-size: 1.3em">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:#fff; font-size: 1.3em">
@@ -110,12 +126,14 @@
                     <li class="source-semibold pt-3" style="color: #fff;">Dirección: <br>
                         <span class="source-regular" style="color: gray; font-size: .8em;">
                             Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra Papacal, Mérida
-                            Yucatán. CP. 97302 <img src="{{asset('/img/Mexico.png')}}" class="img-fluid" alt="Bandera de México">
+                            Yucatán. CP. 97302 <img src="{{ asset('/img/Mexico.png') }}" class="img-fluid"
+                                alt="Bandera de México">
                         </span>
                     </li>
                     <li class="source-semibold" style="color: #fff;">Teléfono: <br>
                         <span class="source-regular" style="color: gray; font-size: .8em;">
-                            <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999 200 5672</a>
+                            <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999
+                                200 5672</a>
                         </span>
                     </li>
                     <li class="source-semibold" style="color: #fff;">Email: <br>
