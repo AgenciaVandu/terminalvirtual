@@ -32,10 +32,14 @@ class PageController extends Controller
 
     public function sendmail(Request $request){
         /* return $request->all(); */
+        $request->validate([
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
         Mail::to('recheverria@etecno.com.mx')->send(new NewClient($request));
         Mail::to('info@administraflotilla.com')->send(new NewClient($request));
         Mail::to('alianzas@etecno.com.mx')->send(new NewClient($request));
         Mail::to('jestefani@etecno.com.mx')->send(new NewClient($request));
+        /* Mail::to('ripmarenko@gmail.com')->send(new NewClient($request)); */
         return back();
     }
 }
