@@ -93,7 +93,8 @@
                             </div>
                             <div class="col-11 pl-5 m-auto">
                                 Dirección: Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra
-                                Papacal, Mérida Yucatán. CP. 97302.
+                                Papacal, Mérida Yucatán, México. <br> CP. 97302. <img src="{{ asset('/img/Mexico.png') }}" class="img-fluid"
+                                alt="Bandera de México">
                             </div>
                         </div>
                     </li>
