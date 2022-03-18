@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TerminalController;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +67,13 @@ Route::get('/preguntas-frecuentes', function () {
 Route::get('/kananfleet-mobile', function () {
     return view('modulos.k-mobile');
 });
+Route::get('/kananfleet-mobile', function () {
+    return view('modulos.k-mobile');
+});
+
+Route::get('/politica-de-privacidad', function() {
+    return view('politica-de-privacidad');
+});
 
 
 /* Route::get('/login', function () {
@@ -71,6 +83,7 @@ Route::middleware('auth')->get('/orders',[TerminalController::class,'index'])->n
 Route::middleware('auth')->get('/bill/{order}',[TerminalController::class,'order'])->name('terminal.order');
 Route::middleware('auth')->post('/checkout', [TerminalController::class,'checkout'])->name('terminal.checkout');
 Route::middleware('auth')->post('/payment',[TerminalController::class,'payment'])->name('terminal.payment');
+Route::middleware(['auth'])->post('/updatePassword', [TerminalController::class, 'updatePassword'])->name('user.update.password');
 Route::get('checkout/directChargeOpenpay/responsepayment/', [TerminalController::class, 'validateChargeOpenPay']);
 
 Route::get('/gracias-por-tu-pago', function () {
@@ -83,3 +96,49 @@ Route::get('/error-de-pago', function () {
 
 
 
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->middleware('guest')->name('password.request');
+
+
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+
+Route::get('/reset-password/{token}?email={email}', function (Request $request) {
+    return view('auth.reset-password', ['token' => $request->token,'email' => $request->email]);
+})->middleware('guest')->name('password.reset');
+
+Route::post('/reset-password', function (Request $request) {
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ]);
+
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) {
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ])->setRememberToken(Str::random(60));
+
+            $user->save();
+
+            event(new PasswordReset($user));
+        }
+    );
+
+    return $status === Password::PASSWORD_RESET
+                ? redirect()->route('login')->with('status', __($status))
+                : back()->withErrors(['email' => [__($status)]]);
+})->middleware('guest')->name('password.update');

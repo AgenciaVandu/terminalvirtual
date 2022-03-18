@@ -30,8 +30,7 @@
                             </div>
                             <div class="col source-bold">
                                 <label for="phone">Teléfono</label>
-                                <input type="tel" id="phone" class="form-control" name="phone"
-                                     required>
+                                <input type="tel" id="phone" class="form-control" name="phone" required>
                             </div>
                         </div>
                         <div class="pt-3 source-bold" id="f-emprendedor">
@@ -52,7 +51,8 @@
                         </div>
                         <div class="form-group source-bold pt-3">
                             <label for="inputCity">Ciudad*</label>
-                            <input type="text" class="form-control" id="inputCity" placeholder="México" required name="city">
+                            <input type="text" class="form-control" id="inputCity" placeholder="México" required
+                                name="city">
                         </div>
                         <div class="pt-1">
                             <label class="source-bold" for="formGroupExampleInput">¿En qué plan está interesado?*</label>
@@ -71,6 +71,8 @@
                                 </label>
                             </div>
                         </div>
+                        {{-- <div class="g-recaptcha" data-sitekey="6LdOUdIeAAAAAFLWIHfaLUg4VcsH4lVdOgBo-wd2"
+                            style="margin-bottom: 10px;"></div> --}}
                         <button type="submit" class="btn btn-primary mt-3">Enviar mensaje</button>
                     </form>
                 </div>
@@ -91,7 +93,8 @@
                             </div>
                             <div class="col-11 pl-5 m-auto">
                                 Dirección: Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra
-                                Papacal, Mérida Yucatán. CP. 97302.
+                                Papacal, Mérida Yucatán, México. <br> CP. 97302. <img src="{{ asset('/img/Mexico.png') }}" class="img-fluid"
+                                alt="Bandera de México">
                             </div>
                         </div>
                     </li>

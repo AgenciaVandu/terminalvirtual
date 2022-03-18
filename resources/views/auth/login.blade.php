@@ -78,17 +78,23 @@
             <img class=" mb-4" src="{{ asset('/img/kanan-green.svg') }}" width="220" alt="">
         </div>
         <h4 class="text-center mb-3 source-bold">Bienvenido al portal de pagos Kananfleet®</h4>
-            <label class="sr-only">Correo</label>
-            <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
-            <label class="sr-only">Contraseña</label>
-            <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Recordarme
-                </label>
-            </div>
-            <button href="/bill" class="btn btn-lg source-bold btn-primary btn-block" type="submit">Comenzar</button>
-            <p class="text-center source-light mt-5 mb-3 text-muted">Todos los derechos reservados <br> Kananfleet®
-                &copy;2022</p>
+        <label class="sr-only">Correo</label>
+        <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+        <label class="sr-only">Contraseña</label>
+        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Recordarme
+            </label>
+        </div>
+        <div class="text-center mb-3">
+            <a class="underline text-sm" href="{{ route('password.request') }}" style="color: gray; text-decoration: none;">
+                {{ __('¿Olvidó su contraseña?') }}
+            </a>
+        </div>
+        <button href="/bill" class="btn btn-lg source-bold btn-primary btn-block" type="submit">Comenzar</button>
+        <p class="text-center source-light mt-5 mb-3 text-muted">Todos los derechos reservados <br> Kananfleet®
+            &copy;2022</p>
     </form>
+
 @endsection

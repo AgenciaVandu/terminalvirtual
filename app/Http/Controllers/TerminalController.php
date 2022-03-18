@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Openpay\Data\Openpay;
 use Stripe\StripeClient;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TerminalController extends Controller
 {
@@ -101,11 +105,12 @@ class TerminalController extends Controller
             return redirect()->route('terminal.reject');
         }
 
-        /* return session()->get('references'); */
-        foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','alianzas@etecno.com.mx',auth()->user()->email,'dev@agenciavandu.com'] as $emails) {
+
+        if ($charge->captured) {
+            /* return session()->get('references'); */
+        foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','jestefani@etecno.com.mx',auth()->user()->email] as $emails) {
             Mail::to($emails)->send(new OrderShipped(session()->get('references')));
         }
-        if ($charge->captured) {
             foreach (session()->get('references') as $reference) {
                 $reference = Reference::find($reference->id);
                 $reference->status = 2;
@@ -140,5 +145,19 @@ class TerminalController extends Controller
             return redirect()->route('terminal.aproved');
         }
 
+    }
+
+
+    public function updatePassword(Request $request)
+    {
+        $user = auth()->user();
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withToastError('Contraseña actual no coincide');
+        } else {
+            $user->forceFill([
+                'password' => Hash::make($request->password),
+            ])->save();
+            return back()->withToastSuccess('Contraseña actualizada con éxito');
+        }
     }
 }

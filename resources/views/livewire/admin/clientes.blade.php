@@ -29,14 +29,14 @@
         </div>
         @error('file') <span class="error">{{ $message }}</span> @enderror
 
-        <div class="flex items-center mt-4 mb-4 space-x-4">
+        <div class="flex flex-wrap items-center mt-4 mb-4 space-x-4">
             @if ($clientes->images)
                 @foreach ($clientes->images as $image)
                     <div class="shadow-lg">
                         <div class="text-center text-sm font-semibold">
                             {{ $image->name }}
                         </div>
-                        <img class="w-32 text-center" src="{{ Storage::url($image->url) }}"><br>
+                        <img class="w-32 text-center mt-2" src="{{ Storage::url($image->url) }}"><br>
                         <div class="flex justify-between items-center py-2 mx-2">
                             <i class="far fa-image ml-2"></i>
                             <i wire:click="edit({{ $image }})"
