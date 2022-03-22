@@ -69,7 +69,7 @@ class Clients extends Component
             if (auth()->user()->hasRole('admin')) {
 
             }else{
-                return view('admin.pages.index');
+                return redirect()->route('pages.index');
             }
 
         }else{
