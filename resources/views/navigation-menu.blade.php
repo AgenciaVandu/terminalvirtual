@@ -24,6 +24,9 @@
                     <x-jet-nav-link href="{{ route('curriencies') }}" :active="request()->routeIs('curriencies')">
                         {{ __('Config currencies') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                        {{ __('Users') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
