@@ -13,7 +13,7 @@ class Curriencies extends Component
             if (auth()->user()->hasRole('admin')) {
 
             }else{
-                return back();
+                return view('admin.pages.index');
             }
         }else{
             return redirect()->route('index');
