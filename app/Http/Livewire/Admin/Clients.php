@@ -65,7 +65,9 @@ class Clients extends Component
     }
 
     public function mount(){
-        if (!auth()->user()->hasRole('admin')) {
+        if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('contenido')) {
+
+        }else{
             return redirect()->route('index');
         }
         $this->rand = rand();

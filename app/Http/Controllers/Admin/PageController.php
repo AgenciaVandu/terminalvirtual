@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        if (!auth()->user()->hasRole('admin')) {
+        if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('contenido')) {
+            return view('admin.pages.index');
+        }else{
             return redirect()->route('index');
         }
-        return view('admin.pages.index');
+
     }
 }
