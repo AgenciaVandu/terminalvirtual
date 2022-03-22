@@ -14,7 +14,7 @@ class Users extends Component
             if (auth()->user()->hasRole('admin')) {
 
             }else{
-                rreturn redirect()->route('pages.index');
+                return redirect()->route('pages.index');
             }
         }else{
             return redirect()->route('index');
