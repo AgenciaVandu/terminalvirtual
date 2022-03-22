@@ -11,7 +11,11 @@ class Users extends Component
     public $roles,$users;
     public function mount(){
         if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('contenido')) {
+            if (auth()->user()->hasRole('admin')) {
 
+            }else{
+                return back();
+            }
         }else{
             return redirect()->route('index');
         }
