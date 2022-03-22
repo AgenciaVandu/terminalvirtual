@@ -12,15 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @can('admin')
+                    @role('admin')
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-jet-nav-link>
-                    @endcan
+                    @endrole
                     <x-jet-nav-link href="{{ route('pages.index') }}" :active="request()->routeIs('pages.*')">
                         {{ __('Pages') }}
                     </x-jet-nav-link>
-                    @can('admin')
+                    @role('admin')
                         <x-jet-nav-link href="{{ route('clients') }}" :active="request()->routeIs('clients')">
                             {{ __('Clients') }}
                         </x-jet-nav-link>
@@ -30,7 +30,7 @@
                         <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
                             {{ __('Users') }}
                         </x-jet-nav-link>
-                    @endcan
+                    @endrole
                 </div>
             </div>
 
