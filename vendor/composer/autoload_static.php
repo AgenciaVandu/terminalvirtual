@@ -36,10 +36,10 @@ class ComposerStaticInit898daff7514937b02e636d4adbfc6c4d
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '5f2edeb18ca19ebd9ee6da72dc9f4292' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
-        '5f2edeb18ca19ebd9ee6da72dc9f4292' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -625,6 +625,7 @@ class ComposerStaticInit898daff7514937b02e636d4adbfc6c4d
         'App\\Http\\Livewire\\Admin\\Clients' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Clients.php',
         'App\\Http\\Livewire\\Admin\\Curriencies' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Curriencies.php',
         'App\\Http\\Livewire\\Admin\\Header' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Header.php',
+        'App\\Http\\Livewire\\Admin\\Users' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Users.php',
         'App\\Http\\Livewire\\TableSplit' => __DIR__ . '/../..' . '/app/Http/Livewire/TableSplit.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

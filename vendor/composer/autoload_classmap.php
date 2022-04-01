@@ -26,6 +26,7 @@ return array(
     'App\\Http\\Livewire\\Admin\\Clients' => $baseDir . '/app/Http/Livewire/Admin/Clients.php',
     'App\\Http\\Livewire\\Admin\\Curriencies' => $baseDir . '/app/Http/Livewire/Admin/Curriencies.php',
     'App\\Http\\Livewire\\Admin\\Header' => $baseDir . '/app/Http/Livewire/Admin/Header.php',
+    'App\\Http\\Livewire\\Admin\\Users' => $baseDir . '/app/Http/Livewire/Admin/Users.php',
     'App\\Http\\Livewire\\TableSplit' => $baseDir . '/app/Http/Livewire/TableSplit.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

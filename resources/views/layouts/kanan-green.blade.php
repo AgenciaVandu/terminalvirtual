@@ -41,8 +41,23 @@
             src="https://www.facebook.com/tr?id=309569444491923&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
+
+
+    <script type="text/javascript">
+        function callbackThen(response) {
+            // read HTTP status
+            console.log(response.status);
+            // read Promise object
+            response.json().then(function(data) {
+                console.log(data);
+            });
+        }
+
+        function callbackCatch(error) {
+            console.error('Error:', error)
+        }
+    </script>
     {!! htmlScriptTagJsApi([
-    'action' => 'homepage',
     'callback_then' => 'callbackThen',
     'callback_catch' => 'callbackCatch',
 ]) !!}
@@ -203,8 +218,9 @@
                     <h4 class="source-bold" style="color: #fff;">Contacto</h4>
                     <li class="source-semibold pt-3" style="color: #fff;">Dirección: <br>
                         <span class="source-regular" style="color: gray; font-size: .8em;">
-                            Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra Papacal, Mérida Yucatán, México. CP. 97302 <img src="{{ asset('/img/Mexico.png') }}" class="img-fluid"
-                                alt="Bandera de México">
+                            Parque Científico y Tecnológico, Centro Heuristic Km. 5.5 Carretera Sierra Papacal, Mérida
+                            Yucatán, México. CP. 97302 <img src="{{ asset('/img/Mexico.png') }}"
+                                class="img-fluid" alt="Bandera de México">
                         </span>
                     </li>
                     <li class="source-semibold" style="color: #fff;">Teléfono: <br>
