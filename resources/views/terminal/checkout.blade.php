@@ -31,11 +31,32 @@
 
         </style>
     @endpush
+    @php
+    // SDK de Mercado Pago
+    require base_path('/vendor/autoload.php');
+    // Agrega credenciales
+    MercadoPago\SDK::setAccessToken('TEST-2008544547709808-041119-299926c55255470b2155299980a19ed3-708073805');
+    // Crea un objeto de preferencia
+    $preference = new MercadoPago\Preference();
+
+    // Crea un ítem en la preferencia
+    $item = new MercadoPago\Item();
+    $item->title = session()->get('description');
+    $item->quantity = 1;
+    $item->unit_price = session()->get('total');
+    $preference->back_urls = [
+        'success' => route('terminal.aproved'),
+        'failure' => route('terminal.reject'),
+    ];
+    $preference->auto_return = 'approved';
+    $preference->items = [$item];
+    $preference->save();
+    @endphp
     <div id="checkout-f" class="container mb-3">
         <div class="py-5 text-center">
             <h2 class="source-bold">Terminal de pago Virtual <br>
-            <small>Pánel de usuario</small>
-        </h2>
+                <small>Pánel de usuario</small>
+            </h2>
             <p class="source-regular">Recuerde comprobar que todos los datos incluidos son correctos, en caso contrario
                 comuniquese al
                 <span class="source-regular" style="color: gray;">
@@ -92,14 +113,14 @@
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
+                        <span>Total (MXN)</span>
                         <strong>${{ number_format($total) }}</strong>
                     </li>
                 </ul>
             </div>
 
             <div class="col-md-8 order-md-1">
-                <form class="needs-validation" action="{{ route('terminal.payment') }}" method="POST" id="payment-form">
+                {{-- <form class="needs-validation" action="{{ route('terminal.payment') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="row">
                         <div class="col-6">
@@ -112,9 +133,6 @@
                             <li>
                                 Tarjetas de débito: <br>
                                 <img src="{{ asset('/img/cards_vm1.png') }}" class="img-fluid" alt="">
-                                {{-- <img src="{{ asset('/img/cards2_1.png') }}" class="img-fluid" alt="">
-                                <img src="{{ asset('/img/cards2_2.png') }}" class="img-fluid" alt="">
-                                <img src="{{ asset('/img/cards2_3.png') }}" class="img-fluid" alt=""> --}}
                             </li>
                         </div>
                         <input type="hidden" name="token_id" id="token_id">
@@ -186,19 +204,6 @@
                             <img src="{{ asset('/img/cvv_visaMastercard.png') }}" class="img-fluid" alt="">
                         </div>
                     </div>
-
-                    {{-- <h5 class="pt-3 mb-3 source-bold">Método de pago</h5>
-                    <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked
-                                required>
-                            <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="debit">Tarjeta de débito</label>
-                        </div>
-                    </div> --}}
                     <small class="text-success mt-3">Tus pagos se realizan de forma segura con encriptación de 256
                         bits</small>
                     <hr class="mb-4">
@@ -206,36 +211,31 @@
                     <div class="text-center mt-2">
                         <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
                     </div>
-                </form>
+                </form> --}}
+                <div class="cho-container">
+
+                </div>
             </div>
         </div>
     @endsection
 
     @push('scripts')
-      {{--   <script type="text/javascript">
-            $(document).ready(function() {
-                OpenPay.setId('m14onoajhzhe0as1ot5v');
-                OpenPay.setApiKey('pk_2769fbba1b22423ca49e9280111c9ce9');
-                OpenPay.setSandboxMode(true);
-                //Se genera el id de dispositivo
-                var deviceSessionId = OpenPay.deviceData.setup("payment-form", "deviceIdHiddenFieldName");
-                //console.log(deviceSessionId);
-                $('#pay-button').on('click', function(event) {
-                    event.preventDefault();
-                    $("#pay-button").prop("disabled", true);
-                    OpenPay.token.extractFormAndCreate('payment-form', sucess_callbak, error_callbak);
-                });
-                var sucess_callbak = function(response) {
-                    var token_id = response.data.id;
-                    $('#token_id').val(token_id);
-                    $('#payment-form').submit();
-                };
-                var error_callbak = function(response) {
-                    var desc = response.data.description != undefined ? response.data.description : response
-                        .message;
-                    alert("ERROR [" + response.status + "] " + desc);
-                    $("#pay-button").prop("disabled", false);
-                };
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <script>
+            // Agrega credenciales de SDK
+            const mp = new MercadoPago("TEST-e45fa672-0497-4c95-94aa-3871e0e086d1", {
+                locale: "es-MX",
             });
-        </script> --}}
+
+            // Inicializa el checkout
+            mp.checkout({
+                preference: {
+                    id: "{{ $preference->id }}",
+                },
+                render: {
+                    container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+                    label: "Pagar", // Cambia el texto del botón de pago (opcional)
+                },
+            });
+        </script>
     @endpush

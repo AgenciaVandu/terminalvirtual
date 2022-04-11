@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use RealRashid\SweetAlert\Facades\Alert;
+use MercadoPago;
 
 class TerminalController extends Controller
 {
@@ -53,7 +54,34 @@ class TerminalController extends Controller
     }
 
     public function payment(Request $request){
-        $currency_base = Currency::find(1);
+        /* $currency_base = Currency::find(1); */
+        MercadoPago\SDK::setAccessToken("TEST-2008544547709808-041119-299926c55255470b2155299980a19ed3-708073805");
+
+        $payment = new MercadoPago\Payment();
+        $payment->transaction_amount = (float)$_POST['transactionAmount'];
+        $payment->token = $_POST['token'];
+        $payment->description = $_POST['description'];
+        $payment->installments = (int)$_POST['installments'];
+        $payment->payment_method_id = $_POST['paymentMethodId'];
+        $payment->issuer_id = (int)$_POST['issuer'];
+
+        $payer = new MercadoPago\Payer();
+        $payer->email = $_POST['cardholderEmail'];
+        $payer->identification = array(
+            "number" => $_POST['identificationNumber']
+        );
+        $payer->first_name = $_POST['cardholderName'];
+        $payment->payer = $payer;
+
+        $payment->save();
+
+        $response = array(
+            'status' => $payment->status,
+            'status_detail' => $payment->status_detail,
+            'id' => $payment->id
+        );
+        echo json_encode($response);
+
         /* return $request->all(); */
         /* return $request->all();
         $openpay = Openpay::getInstance(config('openpay.merchant_id'), config('openpay.private_key'), config('openpay.country_code'));
@@ -83,7 +111,7 @@ class TerminalController extends Controller
         $url3D = $charge->serializableData["payment_method"]->url;
         return redirect($url3D); */
 
-        $stripe = new StripeClient(config('stripe.stripe_secret'));
+/*        $stripe = new StripeClient(config('stripe.stripe_secret'));
         $token = $stripe->tokens->create([
             'card' => [
                 'number' => $request->card,
@@ -107,7 +135,6 @@ class TerminalController extends Controller
 
 
         if ($charge->captured) {
-            /* return session()->get('references'); */
         foreach (['asistente@vectiumsureste.com','recheverria@etecno.com.mx','jestefani@etecno.com.mx',auth()->user()->email] as $emails) {
             Mail::to($emails)->send(new OrderShipped(session()->get('references')));
         }
@@ -119,7 +146,7 @@ class TerminalController extends Controller
             return redirect()->route('terminal.aproved');
         }else{
             return redirect()->route('terminal.reject');
-        }
+        } */
     }
 
     public function validateChargeOpenPay()

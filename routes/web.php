@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TerminalController;
+use App\Models\Reference;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -82,11 +83,16 @@ Route::get('/politica-de-privacidad', function() {
 Route::middleware('auth')->get('/orders',[TerminalController::class,'index'])->name('terminal.index');
 Route::middleware('auth')->get('/bill/{order}',[TerminalController::class,'order'])->name('terminal.order');
 Route::middleware('auth')->post('/checkout', [TerminalController::class,'checkout'])->name('terminal.checkout');
-Route::middleware('auth')->post('/payment',[TerminalController::class,'payment'])->name('terminal.payment');
+Route::middleware('auth')->any('/payment',[TerminalController::class,'payment'])->name('terminal.payment');
 Route::middleware(['auth'])->post('/updatePassword', [TerminalController::class, 'updatePassword'])->name('user.update.password');
 Route::get('checkout/directChargeOpenpay/responsepayment/', [TerminalController::class, 'validateChargeOpenPay']);
 
 Route::get('/gracias-por-tu-pago', function () {
+    foreach (session()->get('references') as $reference) {
+        $reference = Reference::find($reference->id);
+        $reference->status = 2;
+        $reference->update();
+    }
     return view('terminal.bill-pagada');
 })->name('terminal.aproved');
 

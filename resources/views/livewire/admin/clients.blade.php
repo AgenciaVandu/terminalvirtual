@@ -278,7 +278,7 @@
                                                                                         </p>
                                                                                     </div>
                                                                                     <div class="text-center border-2">
-                                                                                        USD
+                                                                                        MXN
                                                                                         {{ number_format($reference->amount, 2) }}
                                                                                     </div>
                                                                                     <div
