@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+/*Fonts*/
+.anek-100 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 100;
+}
+.anek-200 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 200;
+}
+.anek-300 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 300;
+}
+.anek-400 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 400;
+}
+.anek-500 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 500;
+}
+.anek-600 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 600;
+}
+.anek-700 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 700;
+}
+.anek-800 {
+    font-family: 'Anek Odia', sans-serif;
+    font-weight: 800;
+}
+/*end fonts*/
+.bg-splits {
+    background-color: #FAFBFF;
+}
+li {
+    list-style: none;
+}

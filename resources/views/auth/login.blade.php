@@ -46,14 +46,10 @@
         </form>
     </x-jet-authentication-card>
 </x-guest-layout> --}}
-@extends('layouts.kanan-login')
+@extends('layouts.splits-login')
 @section('contenido')
     @push('css')
         <style>
-            .bg-kanan {
-                background-color: #004c98;
-            }
-
             .bd-placeholder-img {
                 font-size: 1.125rem;
                 text-anchor: middle;
@@ -72,29 +68,33 @@
         </style>
         <link rel="stylesheet" href="{{ asset('/css/signin.css') }}">
     @endpush
-    <form class="form-signin" action="{{ route('login') }}" method="POST">
-        @csrf
-        <div class="text-center">
-            <img class=" mb-4" src="{{ asset('/img/kanan-green.svg') }}" width="220" alt="">
-        </div>
-        <h4 class="text-center mb-3 source-bold">Bienvenido al portal de pagos Kananfleet®</h4>
-        <label class="sr-only">Correo</label>
-        <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
-        <label class="sr-only">Contraseña</label>
-        <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Recordarme
-            </label>
-        </div>
-        <div class="text-center mb-3">
-            <a class="underline text-sm" href="{{ route('password.request') }}" style="color: gray; text-decoration: none;">
-                {{ __('¿Olvidó su contraseña?') }}
-            </a>
-        </div>
-        <button href="/bill" class="btn btn-lg source-bold btn-primary btn-block" type="submit">Comenzar</button>
-        <p class="text-center source-light mt-5 mb-3 text-muted">Todos los derechos reservados <br> Kananfleet®
+    <div class="card form-signin">
+        <form class="" action="{{ route('login') }}" method="POST">
+            @csrf
+            <div class="text-center">
+                <img class=" mb-4" src="{{ asset('/img/splits-logo.svg') }}" width="120" alt="">
+            </div>
+            <h4 class="mb-3 anek-500">Bienvenido a tu portal de pagos
+                <br><span class="anek-300" style="font-size: .8em; color: gray">Inicia sesión para ver tu cuenta</span>
+            </h4>
+            <label class="anek-400 ">Correo electrónico</label>
+            <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+            <label class="anek-400 pt-4">Contraseña</label>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+            <div class="checkbox mb-3">
+                <label>
+                    <input class="anek-400" type="checkbox" value="remember-me"> Recordarme
+                </label>
+            </div>
+            <button href="/bill" class="btn btn-lg anek-600 btn-dark btn-block" type="submit">Comenzar</button>
+            <div class="text-center mt-3 mb-2">
+                <a class="underline anek-300 text-sm" href="{{ route('password.request') }}" style="color: #003EDE; text-decoration: none;">
+                    {{ __('¿Olvidó su contraseña?') }}
+                </a>
+            </div>
+        </form>
+        <p class="text-center anek-300 mt-3 text-muted">Todos los derechos reservados splits®
             &copy;2022</p>
-    </form>
+    </div>
 
 @endsection

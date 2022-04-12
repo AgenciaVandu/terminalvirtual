@@ -1,9 +1,9 @@
-@extends('layouts.kanan-login')
+@extends('layouts.splits-user')
 @section('contenido')
     @push('css')
         <style>
-            .bg-kanan {
-                background-color: #004c98;
+            .bg-splits {
+                background-color: transparent;
             }
 
             #checkout-f {
@@ -72,12 +72,12 @@
         </div>
     </div>
     <header class="bill">
-        <div class=" pt-5 pb-3 text-center">
-            <h2 class="source-bold">Terminal de pago Virtual <br>
-                <small>Panel de usuario</small>
-            </h2>
-        </div>
         <div class="container pb-3">
+            <div class=" pt-5 pb-3 text-center">
+                <h2 class="anek-600">Terminal de pago Virtual <br>
+                    <small>Panel de usuario</small>
+                </h2>
+            </div>
             <div class="row">
                 <div class="col-12 datos">
                     <li class="source-semibold">
@@ -92,8 +92,6 @@
                     <li class="source-regular" style="color: green">
                         <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15"> seleccione su orden de compra
                     </li>
-                    <button type="button" class="btn btn-light btn-sm mt-2" data-toggle="modal"
-                        data-target="#cambiar-password">Cambiar contraseña</button>
                 </div>
                 {{-- <div class="col-6 text-right m-auto">
                    <figure>
@@ -139,6 +137,8 @@
                 <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     this.closest('form').submit();">Cerrar sesión</a>
             </form>
+            <button type="button" class="btn btn-light btn-sm mt-2" data-toggle="modal"
+                        data-target="#cambiar-password">Cambiar contraseña</button>
         </div>
     </section>
 @endsection

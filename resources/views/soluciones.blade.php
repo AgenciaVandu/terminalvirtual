@@ -5,7 +5,6 @@
             .bg-kanan {
                 background-color: #004c98;
             }
-
         </style>
     @endpush
     <section id="soluciones" class="pt-5">

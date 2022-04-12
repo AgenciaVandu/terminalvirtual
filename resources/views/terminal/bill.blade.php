@@ -1,4 +1,4 @@
-@extends('layouts.kanan-login')
+@extends('layouts.splits-user')
 @section('contenido')
     @push('css')
         <style>
