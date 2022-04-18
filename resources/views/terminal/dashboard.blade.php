@@ -2,8 +2,8 @@
 @section('contenido')
     @push('css')
         <style>
-            .bg-splits {
-                background-color: transparent;
+            .bg-kanan {
+                background-color: #004c98;
             }
 
             #checkout-f {

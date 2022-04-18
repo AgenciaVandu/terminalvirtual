@@ -1,4 +1,4 @@
-@extends('layouts.kanan-login')
+@extends('layouts.splits-user')
 @section('contenido')
     @push('css')
         <style>
@@ -28,7 +28,6 @@
             .card {
                 border-radius: 1em;
             }
-
         </style>
     @endpush
     @php
@@ -68,7 +67,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
+            <div class="col-md-12 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted">Información de pago</span>
                 </h4>
@@ -115,6 +114,11 @@
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (MXN)</span>
                         <strong>${{ number_format($total) }}</strong>
+                    </li>
+                    <li class="list-group-item text-center">
+                        <div class="cho-container">
+
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -212,9 +216,7 @@
                         <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
                     </div>
                 </form> --}}
-                <div class="cho-container">
-
-                </div>
+                
             </div>
         </div>
     @endsection
@@ -234,7 +236,7 @@
                 },
                 render: {
                     container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
-                    label: "Pagar", // Cambia el texto del botón de pago (opcional)
+                    label: "Pagar ahora", // Cambia el texto del botón de pago (opcional)
                 },
             });
         </script>

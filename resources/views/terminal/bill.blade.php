@@ -5,26 +5,21 @@
             .bg-kanan {
                 background-color: #004c98;
             }
-
             #checkout-f {
                 padding-top: 50px
             }
-
             .bill {
                 padding-top: 3em;
             }
-
             .card {
                 padding: 1em;
                 border-radius: .8em;
                 box-shadow: 0px 2px 5px 1px rgba(154, 154, 154, 0.2);
                 border: none;
             }
-
             .btn-outline-dark:hover {
                 color: #fff;
             }
-
         </style>
     @endpush
     <header class="bill">

@@ -23,27 +23,68 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-splits fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-kanan fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/img/splits-logo.svg') }}" width="120" alt="">
+                <img src="{{ asset('/img/logo-kanan-bco.svg') }}" width="120" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active anek-400">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item anek-400">
+                    <li class="nav-item">
                         <a class="nav-link" href="/soluciones">Soluciones</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Módulos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item source-regular" href="/mantenimiento">Mantenimiento</a>
+                            <a class="dropdown-item source-regular" href="/llantas">Llantas</a>
+                            <a class="dropdown-item source-regular" href="/operadores">Operadores</a>
+                            <a class="dropdown-item source-regular" href="/disponibilidad">Panel de Disponibilidad</a>
+                            <a class="dropdown-item source-regular" href="/carta-porte">Complemento Carta porte</a>
+                            <a class="dropdown-item source-regular" href="/combustible">Combustible</a>
+                            <a class="dropdown-item source-regular" href="/estadisticas">Estadísticas</a>
+                            <a class="dropdown-item source-regular" href="/kananfleet-mobile">Kananfleet Mobile®</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/aliados">Aliados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/empresa">Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/preguntas-frecuentes">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/sap" class="navbar-brand">
+                            <img src="/img/icons/sap.svg" width="80" alt="">
+                        </a>
+                    </li>
+
                 </ul>
-                {{-- <div class="form-inline my-2 my-lg-0">
+                <div class="form-inline my-2 my-lg-0">
+                    <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_"
+                        style="color:#fff; font-size: 1.3em">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:#fff; font-size: 1.3em">
+                        <i class="fab fa-facebook pr-3"></i>
+                    </a>
                     <a href="/contacto" class="btn btn-secondary btn-sm source-semibold">SOLICITAR DEMO</a>
-                </div> --}}
+                </div>
             </div>
         </div>
     </nav>
