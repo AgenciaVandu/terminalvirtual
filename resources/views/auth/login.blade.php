@@ -72,9 +72,9 @@
         <form class="" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="text-center">
-                <img class=" mb-4" src="{{ asset('/img/splits-logo.svg') }}" width="120" alt="">
+                <img class=" mb-4" src="{{ asset('/img/hapix-logo.svg') }}" width="120" alt="">
             </div>
-            <h4 class="mb-3 anek-500">Bienvenido a tu portal de pagos
+            <h4 class="mt-3 mb-3 anek-500">Bienvenido a tu portal de pagos
                 <br><span class="anek-300" style="font-size: .8em; color: gray">Inicia sesión para ver tu cuenta</span>
             </h4>
             <label class="anek-400 ">Correo electrónico</label>
@@ -86,14 +86,14 @@
                     <input class="anek-400" type="checkbox" value="remember-me"> Recordarme
                 </label>
             </div>
-            <button href="/bill" class="btn btn-lg anek-600 btn-dark btn-block" type="submit">Comenzar</button>
+            <button href="/bill" class="btn btn-lg  btn-dark btn-block" style="font-weight: 600;" type="submit">Comenzar</button>
             <div class="text-center mt-3 mb-2">
-                <a class="underline anek-300 text-sm" href="{{ route('password.request') }}" style="color: #003EDE; text-decoration: none;">
+                <a class="underline anek-300 text-sm" href="{{ route('password.request') }}" style="color: #59C9A8; text-decoration: none;">
                     {{ __('¿Olvidó su contraseña?') }}
                 </a>
             </div>
         </form>
-        <p class="text-center anek-300 mt-3 text-muted">Todos los derechos reservados splits®
+        <p class="text-center anek-300 mt-3 text-muted">Todos los derechos reservados Hapix®
             &copy;2022</p>
     </div>
 

@@ -10,7 +10,7 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #FAFBFF;
+  background-color: #011E13;
   
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .btn-dark {
-  background-color: #003EDE;
+  background-color: #011E13;
   border: none;
   box-shadow: 0px 1px 5px 5px rgba(184, 184, 184, 0.1);
 }
