@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;300;400;500;600;700;800;900&display=swap');
+/*Fonts*/
+.anek-100 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 100;
+}
+.anek-200 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 200;
+}
+.anek-300 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 300;
+}
+.anek-400 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 400;
+}
+.anek-500 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 500;
+}
+.anek-600 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 600;
+}
+.anek-700 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 700;
+}
+.anek-800 {
+    font-family: 'Saira', sans-serif;
+    font-weight: 800;
+}
+/*end fonts*/
+.bg-splits {
+    background-color: #FAFBFF;
+}
+li {
+    list-style: none;
+}
+.nav-item {
+    padding: 0 .5em 0 0;
+}
+.nav-link {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #fff !important;
+}
+.hapix-cuerpo {
+  padding-top: 3em;
+  background-image: url(/img/hapix-fondo.svg);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.hapix-fluid {
+  padding-top: 1.2em;
+  padding-left: 3em;
+  padding-right: 3em;
+} @media (max-width:600px) {
+  .hapix-fluid {
+    padding-left: 1em;
+    padding-right: 1em;
+  }  
+}
+.hapix-espacio {
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+}
+.hapix__datos {
+  color: #fff;
+}
+.btn-secondary {
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    border-radius: .4em;
+    background: #91A435;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+.btn-secondary:hover {
+    background: #738322;
+    color: #fff !important;
+}
+.btn-primary {
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    border-radius: .4em;
+    background: #59C9A8;
+    border: none;
+}
+.btn-primary:hover {
+    color: #fff ;
+    background: #011E13;
+}
+.btn-outline-dark {
+  color: #fff;
+}
+.hapix-bg {
+  background-color: #EEEEEE;
+  max-width: 82%;
+  padding-left: .5em;
+  color: #011E13;
+}@media(max-width:600px){
+  .hapix-bg {
+    max-width: 100%;
+  }
+}

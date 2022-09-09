@@ -1,19 +1,10 @@
-@extends('layouts.splits-user')
+@extends('layouts.hapix-user')
 @section('contenido')
     @push('css')
         <style>
-            .bg-kanan {
-                background-color: #004c98;
-            }
-
             #checkout-f {
                 padding-top: 50px
             }
-
-            .bill {
-                padding-top: 3em;
-            }
-
             .card {
                 padding: 1em;
                 border-radius: .8em;
@@ -71,37 +62,77 @@
             </div>
         </div>
     </div>
-    <header class="bill">
-        <div class="container pb-3">
-            <div class=" pt-5 pb-3 text-center">
-                <h2 class="anek-600">Terminal de pago Virtual <br>
-                    <small>Panel de usuario</small>
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-12 datos">
-                    <li class="source-semibold">
-                        Empresa: <span class="source-regular">{{ auth()->user()->company_name }}</span>
+    <header>
+        <div class="hapix-cuerpo">
+        <div class="container-fluid pb-3">
+            <div class="hapix-fluid">
+            <div class="row pt-5 pb-3 ">
+                <div class="col-lg-5 hapix__datos">
+                    <h2 class="anek-600 pb-3">Información del cliente</h2>
+                    <li class="anek-400">
+                        Nombre: <br>
+                        <p class="hapix-bg" >Alvar David Buenfil Vadillo</p>
                     </li>
-                    <li class="source-semibold">
-                        Razón social: <span class="source-regular">{{ auth()->user()->bussiness_name }}</span>
+                    <li class="anek-400">
+                        RFC: <br> <p class="hapix-bg">{{ auth()->user()->RFC }}</p>
                     </li>
-                    <li class="source-semibold">
-                        TAX ID (RFC, RUC, RTN, NIT, etc.): <span class="source-regular">{{ auth()->user()->RFC }}</span>
+                    <li class="anek-400">
+                        Teléfono: <br>
+                        <p class="hapix-bg" >999 389 3710</p>
                     </li>
-                    <li class="source-regular" style="color: green">
-                        <img src="{{ asset('/img/circle-info-solid.svg') }}" width="15"> seleccione su orden de compra
+                    <li class="anek-400">
+                        Dirección: <br>
+                        <p class="hapix-bg" >Calle 15h x 8 y 8a Vergel 3 CP 97173</p>
                     </li>
+                    <li class="anek-400">
+                        Email: <br>
+                        <p class="hapix-bg" >ab@agenciavandu.com</p>
+                    </li>
+                    <li class="anek-400">
+                        Empresa: <br>
+                        <p class="hapix-bg" >{{ auth()->user()->company_name }}</p>
+                    </li>
+                    <li class="anek-400">
+                        Razón social: <br> <p class="hapix-bg">{{ auth()->user()->bussiness_name }}</p>
+                    </li>
+                    <li class="anek-300">
+                    <small>Puede solicitar el cambio de sus datos de contacto al correo soporte@hapix.com</small>
+                    </li>
+                    <button type="button" class="btn btn-light btn-sm mt-2 mb-2" data-toggle="modal" data-target="#cambiar-password">Cambiar contraseña</button>
+                    <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="" class="btn btn-outline-dark btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
+                    </form>
                 </div>
-                {{-- <div class="col-6 text-right m-auto">
-                   <figure>
-                        <img src="{{asset('/img/logoetecno-3.png')}}" class="img-fluid" alt="">
-                   </figure>
-                </div> --}}
+                 <div class="col-lg-7 text-left ">
+                 <h2 class="anek-600 pb-3" style="color: #424242;">Órdenes de compra</h2>
+                 @foreach ($orders as $order)
+                    <div class="card mt-3"> {{-- titulo de orden de compra --}}
+                        <div class="row hapix-espacio">
+                            <div class="col-lg-8">
+                                <li><small style="color:gray;">08 de septiembre 2022</small></li>
+                                <li class="anek-500">{{ $order->contract }}</li>
+                                <li>Total: </li>
+                            </div>
+                            <div class="col-lg-4 anek-600 m-auto">
+                                <div class="text-center">
+                                <a href="{{ route('terminal.order', $order) }}" class="btn btn-primary btn-block anek-600">VER MÁS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                    <div class="col mt-3 text-center">
+                        
+                       
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
+        </div>
     </header>
-    <section id="ordenes">
+   <!--  <section id="ordenes">
         <div class="container">
             @foreach ($orders as $order)
                 <div class="card mb-3"> {{-- titulo de orden de compra --}}
@@ -118,8 +149,8 @@
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="card mb-3"> {{-- titulo de orden de compra --}}
-            {{-- <div class="row pt-3 pb-4">
+           <div class="card mb-3"> 
+            <div class="row pt-3 pb-4">
                     <div class="col-lg-8 m-auto">
                         <h5 class="source-semibold text-center">
                             OC: <span style="color: gray">OC-ADDONKF-ALIANZAMEX-TRANSPORTES YOYO-21012022</span>
@@ -128,7 +159,7 @@
                     <div class="col-lg-4 text-center source-bold">
                         <a href="/bill" class="btn btn-primary source-bold">Ver detalle</a>
                     </div>
-                </div> --}}
+                </div>
         </div>
         </div>
         <div class="col m-auto text-center">
@@ -140,5 +171,5 @@
             <button type="button" class="btn btn-light btn-sm mt-2" data-toggle="modal"
                         data-target="#cambiar-password">Cambiar contraseña</button>
         </div>
-    </section>
+    </section> -->
 @endsection
