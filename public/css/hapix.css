@@ -50,8 +50,21 @@ li {
 .hapix-cuerpo {
   padding-top: 3em;
   background-image: url(/img/hapix-fondo.svg);
+  background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+}@media(max-width:1130px) {
+  .hapix-cuerpo {
+    background-image: url(/img/hapix-fondo-150.svg);
+  }
+} @media(max-width:1000px) {
+  .hapix-cuerpo {
+    background-image: url(/img/hapix-fondo-110.svg);
+  }
+}@media(max-width:991px) {
+  .hapix-cuerpo {
+    background-image: url(/img/hapix-fondo-tablet.svg);
+  }
 }
 .hapix-fluid {
   padding-top: 1.2em;
@@ -102,8 +115,12 @@ li {
   max-width: 82%;
   padding-left: .5em;
   color: #011E13;
-}@media(max-width:600px){
+}@media(max-width:991px){
   .hapix-bg {
     max-width: 100%;
+  }
+  .h2-hapix {
+    padding-top: 1.5em;
+    color: #fff;
   }
 }

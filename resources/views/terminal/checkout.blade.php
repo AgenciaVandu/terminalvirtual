@@ -1,4 +1,4 @@
-@extends('layouts.splits-user')
+@extends('layouts.hapix-user')
 @section('contenido')
     @push('css')
         <style>
