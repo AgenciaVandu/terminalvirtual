@@ -78,8 +78,8 @@
                                 @foreach ($splits as $split)
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
-                                        <td class="source-regular">{{ $split->description }}</td>
-                                        <td class="source-regular text-center">
+                                        <td class="anek-400">{{ $split->description }}</td>
+                                        <td class="anek-400 text-center">
                                             ${{ $split->amount }}
                                         </td>
                                         <td class="text-center">
@@ -98,11 +98,11 @@
                     <div class="boton-pagar">
                         {{-- <a href="{{ route('terminal.checkout', $reference) }}" class="btn btn-primary btn-block">Pagar conceptos</a> --}}
                         <input type="hidden" name="order" value="{{ $order }}">
-                        <button type="submit" class="btn btn-primary btn-block">Pagar conceptos</button>
+                        <button type="submit" class="anek-500 btn btn-primary btn-block">Pagar conceptos</button>
                         <div class="text-center mt-2">
-                            <a class="source-semibold" style="color: #004c98; text-decoration:none;"
+                            <a class="anek-400" style="color: #011E13; text-decoration:none;"
                                 href="javascript:history.back()">Regresar</a>
-                    </div>
+                        </div>
             </div>
                 </div>
             </div>

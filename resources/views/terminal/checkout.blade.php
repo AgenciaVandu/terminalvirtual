@@ -2,14 +2,9 @@
 @section('contenido')
     @push('css')
         <style>
-            .bg-kanan {
-                background-color: #004c98;
-            }
-
             #checkout-f {
                 padding-top: 50px
             }
-
             .bd-placeholder-img {
                 font-size: 1.125rem;
                 text-anchor: middle;
@@ -18,13 +13,11 @@
                 -ms-user-select: none;
                 user-select: none;
             }
-
             @media (min-width: 768px) {
                 .bd-placeholder-img-lg {
                     font-size: 3.5rem;
                 }
             }
-
             .card {
                 border-radius: 1em;
             }
@@ -51,60 +44,70 @@
     $preference->items = [$item];
     $preference->save();
     @endphp
-    <div id="checkout-f" class="container mb-3">
-        <div class="py-5 text-center">
-            <h2 class="source-bold">Terminal de pago Virtual <br>
-                <small>Pánel de usuario</small>
-            </h2>
-            <p class="source-regular">Recuerde comprobar que todos los datos incluidos son correctos, en caso contrario
-                comuniquese al
-                <span class="source-regular" style="color: gray;">
-                    <a href="https://api.whatsapp.com/send/?phone=5219992005672" style="color: gray;">+52 1 999 200 5672</a>
-                </span> <br> o por correo electrónico a <span class="source-regular" style="color: gray; ">
-                    <a href="mailto:info@administraflotilla.com" style="color: gray;">info@administraflotilla.com</a>
-                </span> para solicitar ajustes.
-            </p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 order-md-2 mb-4">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Información de pago</span>
-                </h4>
-                <ul class="list-group mb-3">
+    <header>
+        <div class="hapix-cuerpo">
+        <div class="container-fluid pb-3">
+            <div class="hapix-fluid">
+            <div class="row pt-5 pb-3 ">
+                <div class="col-lg-5 hapix__datos">
+                    <h2 class="anek-600 pb-3">Información del cliente</h2>
+                    <li class="anek-400">
+                        Nombre: <br>
+                        <p class="hapix-bg" >Alvar David Buenfil Vadillo</p>
+                    </li>
+                    <li class="anek-400">
+                        Teléfono: <br>
+                        <p class="hapix-bg" >999 389 3710</p>
+                    </li>
+                    <li class="anek-400">
+                        Dirección: <br>
+                        <p class="hapix-bg" >Calle 15h x 8 y 8a Vergel 3 CP 97173</p>
+                    </li>
+                    <li class="anek-300">
+                    <small>Puede solicitar el cambio de sus datos de contacto al correo soporte@hapix.com</small>
+                    </li>
+                    <button type="button" class="btn btn-light btn-sm mt-2 mb-2" data-toggle="modal" data-target="#cambiar-password">Cambiar contraseña</button>
+                    <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="" class="btn btn-outline-dark btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
+                    </form>
+                </div>
+                 <div class="col-lg-7 text-left ">
+                 <h2 class="h2-hapix anek-600 pb-3">Información de pago</h2>
+                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Referencia</h6>
-                            <small class="text-muted">{{ $order->contract }}</small>
+                            <h6 class="anek-500 my-0">Ticket de compra</h6>
+                            <small class="anek-500 text-muted">{{ $order->contract }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Empresa</h6>
-                            <small class="text-muted">{{ auth()->user()->company_name }}</small>
+                            <h6 class="anek-500 my-0">Empresa</h6>
+                            <small class="anek-500 text-muted">{{ auth()->user()->company_name }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Razón social</h6>
-                            <small class="text-muted">{{ auth()->user()->bussiness_name }}</small>
+                            <h6 class="anek-500 my-0">RFC</h6>
+                            <small class="anek-500 text-muted">{{ auth()->user()->RFC }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Puesto</h6>
-                            <small class="text-muted">{{ auth()->user()->legal_representative_name }}</small>
+                            <h6 class="anek-500 my-0">Razón social</h6>
+                            <small class="anek-500 text-muted">{{ auth()->user()->bussiness_name }}</small>
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">Email</h6>
-                            <small class="text-muted">{{ auth()->user()->email }}</small>
+                            <h6 class="anek-500 my-0">Email</h6>
+                            <small class="anek-500 text-muted">{{ auth()->user()->email }}</small>
                         </div>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                        <div class="text-success">
-                            <h6 class="my-0">
+                    <li class="list-group-item d-flex bg-concepto justify-content-between">
+                        <div>
+                            <h6 class="anek-500 my-0">
                                 @foreach ($references as $reference)
                                     {{ $reference->description }}<br>
                                 @endforeach
@@ -112,8 +115,8 @@
                         </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (MXN)</span>
-                        <strong>${{ number_format($total) }}</strong>
+                        <span class="anek-500" >Total (MXN)</span>
+                        <strong class="anek-500" >${{ number_format($total) }}</strong>
                     </li>
                     <li class="list-group-item text-center">
                         <div class="cho-container">
@@ -121,10 +124,20 @@
                         </div>
                     </li>
                 </ul>
+                <div class="text-center mt-1">
+                            <a class="anek-400" style="color: #011E13; text-decoration:none;"
+                                href="javascript:history.back()">Regresar</a>
+                        </div>
+                </div>
             </div>
-
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- <div id="checkout-f" class="container mb-3">
+        <div class="row">
             <div class="col-md-8 order-md-1">
-                {{-- <form class="needs-validation" action="{{ route('terminal.payment') }}" method="POST" id="payment-form">
+                 <form class="needs-validation" action="{{ route('terminal.payment') }}" method="POST" id="payment-form">
                     @csrf
                     <div class="row">
                         <div class="col-6">
@@ -215,10 +228,10 @@
                     <div class="text-center mt-2">
                         <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
                     </div>
-                </form> --}}
+                </form> 
                 
             </div>
-        </div>
+    </div> -->
     @endsection
 
     @push('scripts')

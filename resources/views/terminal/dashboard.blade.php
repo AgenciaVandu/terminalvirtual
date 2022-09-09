@@ -105,7 +105,7 @@
                     </form>
                 </div>
                  <div class="col-lg-7 text-left ">
-                 <h2 class="h2-hapix anek-600 pb-3">Órdenes de compra</h2>
+                 <h2 class="h2-hapix anek-600 pb-3">Tickets de compra</h2>
                  @foreach ($orders as $order)
                     <div class="card mt-3"> {{-- titulo de orden de compra --}}
                         <div class="row hapix-espacio">
