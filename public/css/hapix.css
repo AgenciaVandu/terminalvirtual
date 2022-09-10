@@ -47,6 +47,9 @@ li {
     font-weight: 600;
     color: #fff !important;
 }
+.bg-hapix {
+  background-color: #00321f;
+}
 .hapix-cuerpo {
   padding-top: 3em;
   background-image: url(/img/hapix-fondo.svg);

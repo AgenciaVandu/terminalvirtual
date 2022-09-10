@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +22,33 @@
 </head>
 
 <body>
-    
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-hapix fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{ asset('/img/logo-kanan-bco.svg') }}" width="120" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                <div class="form-inline my-2 my-lg-0">
+                    <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_"
+                        style="color:#fff; font-size: 1.3em">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:#fff; font-size: 1.3em">
+                        <i class="fab fa-facebook pr-3"></i>
+                    </a>
+                    <a href="/login" class="btn btn-secondary btn-sm source-semibold">PAGO EN LINEA</a>
+                </div>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>  
     @yield('contenido')
-
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
