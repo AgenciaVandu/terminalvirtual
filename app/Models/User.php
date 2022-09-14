@@ -34,6 +34,8 @@ class User extends Authenticatable
         'company_name',
         'bussiness_name',
         'RFC',
+        'address',
+        'phone',
         'legal_representative_name',
     ];
 

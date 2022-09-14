@@ -18,9 +18,9 @@ class Clients extends Component
     use WithFileUploads;
     use AuthorizesRequests;
 
-    public $table=true,$show=false,$addClient=false,$addReference=false,$client,$references=[],$orders=[],$splits=[];
+    public $table=true,$show=false,$addClient=false,$addReference=false,$modalDelete=false,$client,$references=[],$orders=[],$splits=[];
     public $order,$addOrder=false,$contractDescription;
-    public $name,$email,$password,$company_name,$bussiness_name,$RFC,$legal_representative_name;
+    public $name,$email,$address,$phone,$password,$company_name,$bussiness_name,$RFC,$legal_representative_name;
     public $amount,$description,$ref;
     public $listeners=['render'];
     public $editContract,$rand;
@@ -33,6 +33,8 @@ class Clients extends Component
             'company_name' => 'required',
             'bussiness_name' => 'required',
             'RFC' => 'required',
+            'phone' => 'required',
+            'address' => 'required',
             //'legal_representative_name' => 'required',
     ];
     public $editForm = [
@@ -40,7 +42,9 @@ class Clients extends Component
             'bussiness_name' => null,
             'RFC' => null,
             'email' => null,
-            'legal_representative_name' => null
+            'legal_representative_name' => null,
+            'phone' => null,
+            'address' => null,
     ];
      public $editOrder = [
             'open'=> false,
@@ -87,6 +91,8 @@ class Clients extends Component
             'company_name' => $this->company_name,
             'bussiness_name' => $this->bussiness_name,
             'RFC' => $this->RFC,
+            'phone' => $this->phone,
+            'address' => $this->address,
             'legal_representative_name' => $this->legal_representative_name
         ]);
         $this->reset('table','show','addClient');
@@ -102,6 +108,8 @@ class Clients extends Component
         $this->editForm['bussiness_name'] = $user->bussiness_name;
         $this->editForm['RFC'] = $user->RFC;
         $this->editForm['email'] = $user->email;
+        $this->editForm['address'] = $user->address;
+        $this->editForm['phone'] = $user->phone;
         $this->editForm['legal_representative_name'] = $user->legal_representative_name;
     }
 
@@ -110,6 +118,8 @@ class Clients extends Component
             'editForm.company_name' => 'required',
             'editForm.bussiness_name' => 'required',
             'editForm.RFC' => 'required',
+            'editForm.phone' => 'required',
+            'editForm.address' => 'required',
             'editForm.legal_representative_name' => 'required',
 
         ];
@@ -227,10 +237,23 @@ class Clients extends Component
         $this->orders = Order::where('user_id',$this->client->id)->get();
     }
 
+    public function deleteOrder(Order $order){
+        if ($order->references->count()) {
+            session()->flash('notDelete', 'No puedes eliminar ordenes que contengan partidas');
+        }else{
+            $order->delete();
+            $this->orders = Order::where('user_id',$this->client->id)->get();
+            $this->modalDelete = false;
+        }
+
+    }
+
     public function render()
     {
         return view('livewire.admin.clients',[
             'clients' => User::doesntHave('roles')->latest()->paginate(10),
         ])->layout('layouts.app');
     }
+
+
 }

@@ -107,32 +107,48 @@
                         <div class="space-y-4">
                             <div>
                                 <x-jet-label for="name" value="{{ __('Name') }}" />
-                                <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model="name" />
+                                <x-jet-input id="name" class="block mt-1 w-full" type="text"
+                                    wire:model="name" />
                                 <x-jet-input-error for="name" />
                             </div>
 
-                            <div class="mt-4">
+                            {{-- <div class="mt-4">
                                 <x-jet-label for="name" value="{{ __('Bussiness name') }}" />
                                 <x-jet-input id="name" class="block mt-1 w-full" type="text"
                                     wire:model="bussiness_name" />
                                 <x-jet-input-error for="bussiness_name" />
+                            </div> --}}
+                            <div class="mt-4">
+                                <x-jet-label for="email" value="{{ __('Email') }}" />
+                                <x-jet-input id="email" class="block mt-1 w-full" type="email"
+                                    wire:model="email" />
+                                <x-jet-input-error for="email" />
                             </div>
 
                             <div class="mt-4">
-                                <x-jet-label for="email" value="{{ __('Email') }}" />
-                                <x-jet-input id="email" class="block mt-1 w-full" type="email" wire:model="email" />
-                                <x-jet-input-error for="email" />
+                                <x-jet-label for="email" value="{{ __('Phone') }}" />
+                                <x-jet-input id="email" class="block mt-1 w-full" type="text"
+                                    wire:model="phone" />
+                                <x-jet-input-error for="phone" />
+                            </div>
+                            <div class="mt-4">
+                                <x-jet-label for="email" value="{{ __('Address') }}" />
+                                <x-jet-input id="email" class="block mt-1 w-full" type="text"
+                                    wire:model="address" />
+                                <x-jet-input-error for="address" />
                             </div>
 
                             <div class="mt-4">
                                 <x-jet-label for="password" value="{{ __('Password') }}" />
                                 <div class="flex items-center ">
-                                    <x-jet-input id="password" class="block mt-1 w-full" type="{{ $showPass ? 'text' : 'password' ; }}"
-                                        wire:model="password" />
+                                    <x-jet-input id="password" class="block mt-1 w-full"
+                                        type="{{ $showPass ? 'text' : 'password' }}" wire:model="password" />
                                     @if ($showPass)
-                                        <i class="fas fa-eye-slash ml-2 cursor-pointer" wire:click="$set('showPass', false)"></i>
+                                        <i class="fas fa-eye-slash ml-2 cursor-pointer"
+                                            wire:click="$set('showPass', false)"></i>
                                     @else
-                                        <i class="fas fa-eye ml-2 cursor-pointer" wire:click="$set('showPass', true)"></i>
+                                        <i class="fas fa-eye ml-2 cursor-pointer"
+                                            wire:click="$set('showPass', true)"></i>
                                     @endif
                                 </div>
                                 <x-jet-input-error for="password" />
@@ -147,7 +163,8 @@
 
                             <div class="mt-4">
                                 <x-jet-label for="name" value="{{ __('RFC') }}" />
-                                <x-jet-input id="name" class="block mt-1 w-full" type="text" wire:model="RFC" />
+                                <x-jet-input id="name" class="block mt-1 w-full" type="text"
+                                    wire:model="RFC" />
                                 <x-jet-input-error for="RFC" />
                             </div>
 
@@ -185,10 +202,16 @@
                                     <x-jet-input-error for="editForm.company_name" />
                                 </div>
                                 <div class="col-span-6 sm:col-span-4">
-                                    <x-jet-label value="{{ __('Bussiness name') }}" />
-                                    <x-jet-input type="text" wire:model="editForm.bussiness_name" class="w-full"
-                                        placeholder="Razón Social" />
-                                    <x-jet-input-error for="editForm.bussiness_name" />
+                                    <x-jet-label value="{{ __('Phone') }}" />
+                                    <x-jet-input type="text" wire:model="editForm.phone" class="w-full"
+                                        placeholder="Telefono" />
+                                    <x-jet-input-error for="editForm.phone" />
+                                </div>
+                                <div class="col-span-6 sm:col-span-4">
+                                    <x-jet-label value="{{ __('Address') }}" />
+                                    <x-jet-input type="text" wire:model="editForm.address" class="w-full"
+                                        placeholder="Direccion" />
+                                    <x-jet-input-error for="editForm.address" />
                                 </div>
                                 <div class="col-span-6 sm:col-span-4">
                                     <x-jet-label value="{{ __('RFC') }}" />
@@ -256,10 +279,35 @@
                                                                             class="text-indigo-600 hover:text-indigo-900 cursor-pointer mx-1">
                                                                             <i class="fas fa-pen"></i>
                                                                         </a>
+                                                                        <i class="fas fa-trash cursor-pointer text-red-600"
+                                                                            wire:click="$set('modalDelete','true')"></i>
+                                                                        <x-jet-dialog-modal wire:model="modalDelete">
+                                                                            <x-slot name="title">
+                                                                                {{ __('Eliminar Orden') }}</x-slot>
+                                                                            <x-slot name="content">
+                                                                                <div class="space-y-4">
+                                                                                    @if (session()->has('notDelete'))
+                                                                                        <p
+                                                                                            class="bg-red-100 font-bold py-2">
+                                                                                            {{ session('notDelete') }}
+                                                                                        </p>
+                                                                                    @endif
+                                                                                    <h1>Deseas eliminar esta orden?</h1>
+                                                                                </div>
+                                                                            </x-slot>
+                                                                            <x-slot name="footer">
+                                                                                <x-jet-button
+                                                                                    wire:click="deleteOrder({{ $order }})">
+                                                                                    {{ __('Delete') }}
+                                                                                </x-jet-button>
+                                                                            </x-slot>
+
+                                                                        </x-jet-dialog-modal>
+
                                                                     </div>
                                                                 </td>
                                                                 <td class="px-6 py-4 whitespace-nowrap text-center">
-                                                                    <div x-data="{open:false}"
+                                                                    <div x-data="{ open: false }"
                                                                         class="text-sm text-gray-900">
                                                                         {{ $order->references->count() }}
                                                                         <i class="fas fa-eye cursor-pointer hover:text-gray-400"
@@ -289,8 +337,7 @@
                                                                                                     class="far fa-clock text-orange-300"></i>
                                                                                                 <a wire:click="editReference({{ $reference }})"
                                                                                                     class="text-indigo-600 hover:text-indigo-900 cursor-pointer mx-1">
-                                                                                                    <i
-                                                                                                        class="fas fa-pen"></i>
+                                                                                                    <i class="fas fa-pen"></i>
                                                                                                 </a>
                                                                                                 <i class="fas fa-trash cursor-pointer hover:text-red-600"
                                                                                                     wire:click="deleteReference({{ $reference }})"></i>
