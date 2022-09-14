@@ -228,8 +228,8 @@
                     <div class="text-center mt-2">
                         <a  class="source-semibold" style="color: #004c98; text-decoration:none;" href="javascript:history.back()">Regresar</a>
                     </div>
-                </form> 
-                
+                </form>
+
             </div>
     </div> -->
     @endsection
