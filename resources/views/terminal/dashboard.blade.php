@@ -5,6 +5,7 @@
             #checkout-f {
                 padding-top: 50px
             }
+
             .card {
                 padding: 1em;
                 border-radius: .8em;
@@ -15,7 +16,6 @@
             .btn-outline-dark:hover {
                 color: #fff;
             }
-
         </style>
     @endpush
     <!-- Button trigger modal -->
@@ -64,108 +64,114 @@
     </div>
     <header>
         <div class="hapix-cuerpo">
-        <div class="container-fluid pb-3">
-            <div class="hapix-fluid">
-            <div class="row pt-5 pb-3 ">
-                <div class="col-lg-5 hapix__datos">
-                    <h2 class="anek-600 pb-3">Información del cliente</h2>
-                    <li class="anek-400">
-                        Nombre: <br>
-                        <p class="hapix-bg" >Alvar David Buenfil Vadillo</p>
-                    </li>
-                    <li class="anek-400">
-                        RFC: <br> <p class="hapix-bg">{{ auth()->user()->RFC }}</p>
-                    </li>
-                    <li class="anek-400">
-                        Teléfono: <br>
-                        <p class="hapix-bg" >999 389 3710</p>
-                    </li>
-                    <li class="anek-400">
-                        Dirección: <br>
-                        <p class="hapix-bg" >Calle 15h x 8 y 8a Vergel 3 CP 97173</p>
-                    </li>
-                    <li class="anek-400">
-                        Email: <br>
-                        <p class="hapix-bg" >ab@agenciavandu.com</p>
-                    </li>
-                    <li class="anek-400">
-                        Empresa: <br>
-                        <p class="hapix-bg" >{{ auth()->user()->company_name }}</p>
-                    </li>
-                    <li class="anek-400">
-                        Razón social: <br> <p class="hapix-bg">{{ auth()->user()->bussiness_name }}</p>
-                    </li>
-                    <li class="anek-300">
-                    <small>Puede solicitar el cambio de sus datos de contacto al correo soporte@hapix.com</small>
-                    </li>
-                    <button type="button" class="btn btn-light btn-sm mt-2 mb-2" data-toggle="modal" data-target="#cambiar-password">Cambiar contraseña</button>
-                    <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <a href="" class="btn btn-outline-dark btn-sm" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
-                    </form>
-                </div>
-                 <div class="col-lg-7 text-left ">
-                 <h2 class="h2-hapix anek-600 pb-3">Tickets de compra</h2>
-                 @foreach ($orders as $order)
-                    <div class="card mt-3"> {{-- titulo de orden de compra --}}
-                        <div class="row hapix-espacio">
-                            <div class="col-lg-8">
-                                <li><small style="color:gray;">08 de septiembre 2022</small></li>
-                                <li class="anek-500">{{ $order->contract }}</li>
-                                <li>Total: </li>
-                            </div>
-                            <div class="col-lg-4 anek-600 m-auto">
-                                <div class="text-center">
-                                <a href="{{ route('terminal.order', $order) }}" class="btn btn-primary btn-block anek-600">VER MÁS</a>
+            <div class="container-fluid pb-3">
+                <div class="hapix-fluid">
+                    <div class="row pt-5 pb-3 ">
+                        <div class="col-lg-5 hapix__datos">
+                            <h2 class="anek-600 pb-3">Información del cliente</h2>
+                            <li class="anek-400">
+                                Nombre: <br>
+                                <p class="hapix-bg">{{ auth()->user()->name }}</p>
+                            </li>
+                            <li class="anek-400">
+                                RFC: <br>
+                                <p class="hapix-bg">{{ auth()->user()->RFC }}</p>
+                            </li>
+                            <li class="anek-400">
+                                Teléfono: <br>
+                                <p class="hapix-bg">{{ auth()->user()->phone }}</p>
+                            </li>
+                            <li class="anek-400">
+                                Dirección: <br>
+                                <p class="hapix-bg">{{ auth()->user()->address }}</p>
+                            </li>
+                            <li class="anek-400">
+                                Email: <br>
+                                <p class="hapix-bg">{{ auth()->user()->email }}</p>
+                            </li>
+                            <li class="anek-400">
+                                Empresa: <br>
+                                <p class="hapix-bg">{{ auth()->user()->company_name }}</p>
+                            </li>
+                            <li class="anek-400">
+                                Razón social: <br>
+                                <p class="hapix-bg">{{ auth()->user()->bussiness_name }}</p>
+                            </li>
+                            <li class="anek-300">
+                                <small>Puede solicitar el cambio de sus datos de contacto al correo
+                                    soporte@hapix.com</small>
+                            </li>
+                            <button type="button" class="btn btn-light btn-sm mt-2 mb-2" data-toggle="modal"
+                                data-target="#cambiar-password">Cambiar contraseña</button>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="" class="btn btn-outline-dark btn-sm" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
+                            </form>
+                        </div>
+                        <div class="col-lg-7 text-left ">
+                            <h2 class="h2-hapix anek-600 pb-3">Tickets de compra</h2>
+                            @foreach ($orders as $order)
+                                <div class="card mt-3"> {{-- titulo de orden de compra --}}
+                                    <div class="row hapix-espacio">
+                                        <div class="col-lg-8">
+                                            <li><small style="color:gray;">08 de septiembre 2022</small></li>
+                                            <li class="anek-500">{{ $order->contract }}</li>
+                                            <li>Total: </li>
+                                        </div>
+                                        <div class="col-lg-4 anek-600 m-auto">
+                                            <div class="text-center">
+                                                <a href="{{ route('terminal.order', $order) }}"
+                                                    class="btn btn-primary btn-block anek-600">VER MÁS</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--  <section id="ordenes">
+            <div class="container">
+                @foreach ($orders as $order)
+    <div class="card mb-3"> {{-- titulo de orden de compra --}}
+                        <div class="row pt-3 pb-4">
+                            <div class="col-lg-8 m-auto">
+                                <h5 class="source-semibold text-center">
+                                    OC: <span style="color: gray">{{ $order->contract }}</span>
+                                </h5>
+                            </div>
+                            <div class="col-lg-4 text-center source-bold">
+                                <a href="{{ route('terminal.order', $order) }}" class="btn btn-primary source-bold">Ver
+                                    detalle</a>
                             </div>
                         </div>
                     </div>
-                @endforeach
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </header>
-   <!--  <section id="ordenes">
-        <div class="container">
-            @foreach ($orders as $order)
-                <div class="card mb-3"> {{-- titulo de orden de compra --}}
-                    <div class="row pt-3 pb-4">
+    @endforeach
+               <div class="card mb-3">
+                <div class="row pt-3 pb-4">
                         <div class="col-lg-8 m-auto">
                             <h5 class="source-semibold text-center">
-                                OC: <span style="color: gray">{{ $order->contract }}</span>
+                                OC: <span style="color: gray">OC-ADDONKF-ALIANZAMEX-TRANSPORTES YOYO-21012022</span>
                             </h5>
                         </div>
                         <div class="col-lg-4 text-center source-bold">
-                            <a href="{{ route('terminal.order', $order) }}" class="btn btn-primary source-bold">Ver
-                                detalle</a>
+                            <a href="/bill" class="btn btn-primary source-bold">Ver detalle</a>
                         </div>
                     </div>
-                </div>
-            @endforeach
-           <div class="card mb-3"> 
-            <div class="row pt-3 pb-4">
-                    <div class="col-lg-8 m-auto">
-                        <h5 class="source-semibold text-center">
-                            OC: <span style="color: gray">OC-ADDONKF-ALIANZAMEX-TRANSPORTES YOYO-21012022</span>
-                        </h5>
-                    </div>
-                    <div class="col-lg-4 text-center source-bold">
-                        <a href="/bill" class="btn btn-primary source-bold">Ver detalle</a>
-                    </div>
-                </div>
-        </div>
-        </div>
-        <div class="col m-auto text-center">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+            </div>
+            </div>
+            <div class="col m-auto text-center">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="" class="btn btn-outline-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     this.closest('form').submit();">Cerrar sesión</a>
-            </form>
-            <button type="button" class="btn btn-light btn-sm mt-2" data-toggle="modal"
-                        data-target="#cambiar-password">Cambiar contraseña</button>
-        </div>
-    </section> -->
+                </form>
+                <button type="button" class="btn btn-light btn-sm mt-2" data-toggle="modal"
+                            data-target="#cambiar-password">Cambiar contraseña</button>
+            </div>
+        </section> -->
 @endsection
