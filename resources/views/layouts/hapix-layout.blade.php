@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    {{-- <script type="text/javascript" src="https://js.openpay.mx/openpay.v1.min.js"></script>
-    <script type='text/javascript' src="https://js.openpay.mx/openpay-data.v1.min.js"></script> --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     @livewireStyles
@@ -22,10 +20,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-hapix fixed-top">
+   <!--  <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/img/logo-kanan-bco.svg') }}" width="120" alt="">
+                <img src="{{ asset('/img/hapix-logo.svg') }}" width="120" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,10 +43,19 @@
                 </div>
                 </ul>
                 
+            </div> 
+        </div>
+    </nav>   -->
+    @yield('contenido')
+    <div class="pagar-ahora fixed-bottom">
+        <div class="container">
+            <div class="row text-center pt-3">
+                <div class="col-12">
+                    <p class="anek-400">Si ya eres cliente Hapix <a class="anek-600"  href="/login">haz clic aquí e inicia sesión</a></p>
+                </div>
             </div>
         </div>
-    </nav>  
-    @yield('contenido')
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

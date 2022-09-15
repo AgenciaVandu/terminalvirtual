@@ -118,3 +118,35 @@ li {
   background-color: #59C9A8;
   color: #fff;
 }
+.cabecera {
+  padding-top: 8em;
+} @media (max-width:500px) {
+  .cabecera {
+    padding-top: 8em;
+  }
+}
+.cabecera__titular h1{
+  font-size: 3.5em;
+}
+.cabecera__titular h4 {
+  text-align: center;
+}
+.blue-hapix {
+  color: #0028B4;
+}
+.btn-dark {
+  background-color: #0028B4;
+  border: none;
+  padding: .5em 1em .5em 1em;
+  border-radius: .8em;
+}
+.pagar-ahora {
+  min-height: 50px;
+  background-color: #0028B4;
+}
+.pagar-ahora p {
+  color: #fff;
+}
+.pagar-ahora p a {
+  color: #fff;
+}
