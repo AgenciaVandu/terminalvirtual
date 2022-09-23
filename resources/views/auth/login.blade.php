@@ -72,10 +72,10 @@
         <form class="" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="text-center">
-                <img class=" mb-4" src="{{ asset('/img/hapix-logo.svg') }}" width="120" alt="">
+                <img class=" mb-4" src="{{ asset('/img/hapix-icono.svg') }}" width="80" alt="">
             </div>
             <h4 class="mt-3 mb-3 anek-500">Bienvenido a tu portal de pagos
-                <br><span class="anek-300" style="font-size: .8em; color: gray">Inicia sesión para ver tu cuenta</span>
+                <br><span class="anek-300" style="font-size: .8em; color: gray">Inicia sesión para usar tu cuenta</span>
             </h4>
             <label class="anek-400 ">Correo electrónico</label>
             <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>

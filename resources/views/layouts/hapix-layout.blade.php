@@ -20,7 +20,7 @@
 </head>
 
 <body>
-   <!--  <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ asset('/img/hapix-logo.svg') }}" width="120" alt="">
@@ -45,7 +45,7 @@
                 
             </div> 
         </div>
-    </nav>   -->
+    </nav>  
     @yield('contenido')
     <div class="pagar-ahora fixed-bottom">
         <div class="container">

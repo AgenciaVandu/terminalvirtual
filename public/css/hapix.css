@@ -119,10 +119,12 @@ li {
   color: #fff;
 }
 .cabecera {
-  padding-top: 8em;
+  padding-top: 7em;
+
 } @media (max-width:500px) {
   .cabecera {
     padding-top: 8em;
+    padding-bottom: 3em;
   }
 }
 .cabecera__titular h1{
@@ -148,5 +150,26 @@ li {
   color: #fff;
 }
 .pagar-ahora p a {
+  color: #fff;
+}
+.plataforma {
+  background-color: #FAFBFF;
+  min-height: 600px;
+}
+.plataforma__info h2 {
+  color: #363636;
+}
+.plataforma__info p {
+  text-align: justify;
+}
+.soluciones {
+  background-color: #000F43;
+  min-height: 500px;
+}
+.soluciones__info h5 {
+  color: #fff;
+  padding-top: 1em;
+}
+.soluciones__info p {
   color: #fff;
 }
