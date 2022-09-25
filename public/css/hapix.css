@@ -33,7 +33,9 @@
     font-weight: 800;
 }
 /*end fonts*/
-
+html {
+  scroll-behavior: smooth;
+}
   @media (max-width:991px) {
     .hapix-user-bg {
       background-color: #000F43;
@@ -172,7 +174,10 @@ li {
 }
 .soluciones {
   background-color: #000F43;
-  min-height: 500px;
+  min-height: 600px;
+}
+.soluciones__info {
+  padding-top:8em;
 }
 .soluciones__info h5 {
   color: #fff;
@@ -180,4 +185,11 @@ li {
 }
 .soluciones__info p {
   color: #fff;
+}
+.integraciones {
+  padding-top: 3em;
+  min-height: 400px;
+}
+.integraciones h4 {
+  padding-bottom: 1em;
 }

@@ -38,11 +38,10 @@
             </div>
         </div>
     </div>
-    <div class="soluciones">
+    <div class="soluciones" id="soluciones">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12"></div>
-                <div class="col-lg-6 col-md-12 col-sm-12 soluciones__info m-auto">
+                <div class="col-lg-12 col-md-12 col-sm-12 soluciones__info">
                     <div class="row">
                         <div class="col-6">
                             <img src="{{asset('/img/icon/vector.svg')}}" width="29" alt="">
@@ -65,6 +64,24 @@
                             <p class="anek-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nostrum blanditiis voluptatibus.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="integraciones" id="integraciones">
+        <div class="container">
+            <h4 class="anek-600 text-center">
+                Utilizamos los mejores motores de pago
+            </h4>
+            <div class="row text-center">
+                <div class="col-4">
+                <img src="{{asset('/img/integraciones/integracion-1.png')}}" class="img-fluid" alt="">
+                </div>
+                <div class="col-4">
+                <img src="{{asset('/img/integraciones/integracion-2.png')}}" class="img-fluid" alt="">
+                </div>
+                <div class="col-4">
+                <img src="{{asset('/img/integraciones/integracion-3.png')}}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>

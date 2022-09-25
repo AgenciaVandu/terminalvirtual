@@ -35,7 +35,10 @@
                     <a class="nav-link anek-400" href="#">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link anek-400" href="#">Home </a>
+                    <a class="nav-link anek-400" href="#soluciones">Soluciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link anek-400" href="#integraciones">Integraciones</a>
                 </li>
                 <div class="nav-item ">
                     <a href="https://www.facebook.com/hapix.mx" class="nav-link" target="blank_" >
