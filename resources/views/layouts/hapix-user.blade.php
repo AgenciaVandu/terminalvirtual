@@ -22,10 +22,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-kanan fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light hapix-user-bg fixed-top">
         <div class="container-fluid" style="padding-left: 3em;">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('/img/hapix-bco.svg') }}" width="120" alt="">
+                <img src="{{ asset('/img/hapix-bco-1.svg') }}" width="120" alt="">
             </a>
         </div>
     </nav>

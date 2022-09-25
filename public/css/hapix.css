@@ -33,6 +33,13 @@
     font-weight: 800;
 }
 /*end fonts*/
+
+  @media (max-width:991px) {
+    .hapix-user-bg {
+      background-color: #000F43;
+    }
+  }
+
 .bg-splits {
     background-color: #FAFBFF;
 }
@@ -43,12 +50,13 @@ li {
     padding: 0 .5em 0 0;
 }
 .nav-link {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    color: #fff !important;
+    color: #000F43 !important;
 }
 .bg-hapix {
   background-color: #00321f;
+}
+.hapix-nav {
+  background-color: #fff;
 }
 .hapix-cuerpo {
   padding-top: 3em;

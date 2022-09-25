@@ -69,9 +69,9 @@
                                     onclick="event.preventDefault(); this.closest('form').submit();">Cerrar sesión</a>
                             </form>
                         </div>
-                        <div class="col-lg-7 text-left ">
+                        <div class="col-lg-7 text-left">
                             <h2 class="h2-hapix anek-600 pb-3">Órdenes de compra</h2>
-                            <table class="table table-striped table-hover table-borderless">
+                            <table class="table table-striped table-hover table-borderless" style="background-color: #fff; border-radius: .4em;">
                                 <thead>
                                     <tr>
                                         <th scope="col" class="anek-500 text-left">#</th>

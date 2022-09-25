@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light hapix-nav  fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="{{ asset('/img/hapix-logo.svg') }}" width="120" alt="">
@@ -31,15 +31,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                <div class="form-inline my-2 my-lg-0">
-                    <a href="https://www.linkedin.com/showcase/kananfleet/" class="pr-2" target="blank_"
-                        style="color:#fff; font-size: 1.3em">
-                        <i class="fab fa-linkedin"></i>
+                <li class="nav-item">
+                    <a class="nav-link anek-400" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link anek-400" href="#">Home </a>
+                </li>
+                <div class="nav-item ">
+                    <a href="https://www.facebook.com/hapix.mx" class="nav-link" target="blank_" >
+                        <i class="fab fa-instagram pr-3"></i>
                     </a>
-                    <a href="https://www.facebook.com/Kananfleet" target="blank_" style="color:#fff; font-size: 1.3em">
-                        <i class="fab fa-facebook pr-3"></i>
-                    </a>
-                    <a href="/login" class="btn btn-secondary btn-sm source-semibold">PAGO EN LINEA</a>
                 </div>
                 </ul>
                 
@@ -62,11 +63,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
-    </script>
-    <script>
-        $(window).scroll(function() {
-            $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
-        })
     </script>
     <script src="/js/carrusel.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
